@@ -1,5 +1,5 @@
 name: Deploy static site
-
+# trigger
 on:
   push:
     branches: ["main"]

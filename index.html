@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Pipeline — NFL Pick’em 2026</title>
+<title>The Pipeline — NFL Pick'em 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0d1117;--bg2:#161b24;--bg3:#1e2633;--bg4:#252e3d;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#e6edf3;--text2:#8b96a7;--text3:#4e5a6a;--green:#2ea043;--green2:#3fb950;--blue:#1f6feb;--blue2:#388bfd;--amber:#d29922;--amber2:#e3b341;--red:#da3633;--red2:#f85149;--teal:#0891b2;--teal2:#22d3ee;--gold:#f0a82e}
@@ -139,10 +139,16 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
 .legal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 28px}
 @media(max-width:768px){.legal-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.legal-grid{margin:8px 12px;gap:8px}}
-.legal-card{background:rgba(0,188,212,0.12);border:2px solid #00BCD4;border-radius:8px;padding:14px;color:#00BCD4}
-.legal-card-title{font-size:13px;font-weight:700;margin-bottom:8px}
+.legal-card{background:rgba(0,188,212,0.12);border:2px solid #00BCD4;border-radius:8px;padding:14px;color:#00BCD4;overflow-y:auto;max-height:600px}
+.legal-card-title{font-size:13px;font-weight:700;margin-bottom:8px;color:#00BCD4}
 .legal-card-body{font-size:11px;line-height:1.75;color:#ffffff}
+.legal-card-body strong{color:#00BCD4;font-weight:600}
 .legal-card-body a{text-decoration:underline;color:#ffffff}
+.legal-card-body a:hover{opacity:0.8}
+.legal-card-body p{margin-bottom:10px}
+.legal-card-body ul{margin-left:16px;margin:10px 0 10px 16px}
+.legal-card-body li{margin-bottom:8px;line-height:1.6}
+.legal-card-body h4{margin-top:14px;margin-bottom:8px;color:#00BCD4;font-size:12px;font-weight:700}
 </style>
 </head>
 <body>
@@ -153,7 +159,7 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
   <div class="header-left">
     <div>
       <div class="htitle-main">The Pipeline <span>2026</span></div>
-      <div class="htitle-sub">Walk-Forward Model Validation · 60.0% historical pick’em accuracy over 1,359 games (2021–2025)</div>
+      <div class="htitle-sub">Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)</div>
     </div>
     <div class="hlive">LIVE</div>
   </div>
@@ -167,38 +173,99 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
   <div class="legal-card">
     <div class="legal-card-title">⚠️ ENTERTAINMENT ONLY</div>
     <div class="legal-card-body">
-      This app is for entertainment and recreational pick’em pool use only.<br><br>This app does not provide betting advice, sportsbook odds, or real-money wagering features. No guarantees are made regarding outcomes or future performance. Weekly selections, confidence rankings, model ratings, and stats are for informational purposes only.<br><br>
-      <strong>🆘 Need help?</strong><br>
-      🇺🇸 <a href="https://www.ncpgambling.org" target="_blank">1-800-GAMBLER</a><br>
-      🇬🇧 <a href="https://www.begambleaware.org" target="_blank">0808 8020 133</a><br>
-      🇦🇺 <a href="https://www.gamblinghelponline.org.au" target="_blank">1800 858 858</a>
+      <p><strong>This app is for entertainment and recreational pool use only. It is NOT a betting or gambling app.</strong></p>
+      <p>No real-money gambling features. No sportsbook integration. No betting advice or odds. No guarantees on predictions.</p>
+      <p>The Pipeline is a data-driven, recreational NFL pick'em and confidence pool assistant. It uses historical model validation (60% accuracy over 1,359 games, 2021–2025) to generate weekly predictions and help you track pool results. This app is for entertainment purposes only.</p>
+      <p>Weekly selections, confidence rankings, model ratings, and stats are for informational purposes only and do not guarantee future outcomes.</p>
+      <h4>Historical Model Validation</h4>
+      <p>Walk-forward model validation: 60.0% accuracy across 1,359 historical NFL games (2021–2025). Provided for informational purposes only and does not guarantee future results.</p>
+      <h4>🆘 If You Struggle with Gambling</h4>
+      <ul>
+        <li>🇺🇸 <a href="https://www.ncpgambling.org" target="_blank">1-800-GAMBLER</a> (ncpgambling.org)</li>
+        <li>🇬🇧 <a href="https://www.begambleaware.org" target="_blank">0808 8020 133</a> (begambleaware.org)</li>
+        <li>🇦🇺 <a href="https://www.gamblinghelponline.org.au" target="_blank">1800 858 858</a> (gamblinghelponline.org.au)</li>
+      </ul>
     </div>
   </div>
+
   <div class="legal-card">
     <div class="legal-card-title">🔒 PRIVACY POLICY — April 2026</div>
     <div class="legal-card-body">
-      All data is stored <strong>locally on your device only</strong>.<br><br>
-      We do <strong>not</strong> collect personal data, sell data, or share user information. No account or login is required. Not affiliated with the NFL.<br><br>
-      If future features introduce data collection, this policy will be updated accordingly.<br><br>
-      <strong>Children:</strong> Not for users under 13.<br><br>
-      <strong>Contact:</strong> <a href="mailto:thepipelinenfl@gmail.com">thepipelinenfl@gmail.com</a>
+      <h4>Data Stored on Your Device (Local Only)</h4>
+      <p>All of the following data is stored <strong>only on your device</strong> in your browser. We never send this to our servers or any other company:</p>
+      <ul>
+        <li>Weekly pick selections and confidence scores</li>
+        <li>Pool results (wins, losses, points each week)</li>
+        <li>Season performance history</li>
+        <li>Game notes and preferences</li>
+      </ul>
+      <p><strong>You control this data:</strong> Clear your browser cache anytime to delete everything permanently.</p>
+      <h4>Weather & Lightning Data (Optional Features)</h4>
+      <p>When you click "Load Weather," the app fetches real-time weather data from <strong>Open-Meteo</strong> (openmeteo.com) to help you adjust confidence scores for outdoor stadiums. We also provide a link to <strong>LightningMaps.org</strong> for real-time lightning tracking near game venues.</p>
+      <p><strong>What we send:</strong></p>
+      <ul>
+        <li>Stadium latitude and longitude coordinates (public information)</li>
+        <li><strong>NO personal data:</strong> No names, emails, device IDs, or personal identifiers</li>
+      </ul>
+      <p><strong>Your control:</strong></p>
+      <ul>
+        <li>Both features are <strong>completely optional</strong> — use them only when you need weather or lightning data</li>
+        <li>The app works 100% offline without these features</li>
+        <li><strong>Not affiliated:</strong> We are not affiliated with Open-Meteo or LightningMaps. Review their privacy policies: <a href="https://openmeteo.com/en/privacy" target="_blank">openmeteo.com/en/privacy</a></li>
+      </ul>
+      <h4>What We Do NOT Collect</h4>
+      <ul>
+        <li>❌ Personal information (name, email, phone, address)</li>
+        <li>❌ Account logins or authentication data</li>
+        <li>❌ Device identifiers, tracking cookies, or analytics</li>
+        <li>❌ Your actual location or location history</li>
+        <li>❌ Betting or gambling activity</li>
+        <li>❌ Crash reports or error logs</li>
+      </ul>
+      <p><strong>We have no servers, no account system, and no way to track you. All your data stays on your device.</strong></p>
+      <h4>Children (Under 13)</h4>
+      <p>This app is not intended for users under 13 years old. We do not knowingly collect data from children.</p>
+      <h4>Contact</h4>
+      <p>Questions about this privacy policy? Email: <strong><a href="mailto:thepipelineedge@gmail.com">thepipelineedge@gmail.com</a></strong></p>
     </div>
   </div>
+
   <div class="legal-card">
-    <div class="legal-card-title" style="font-size:16px;margin-bottom:12px">💎 POOL PRO</div>
-    <div class="legal-card-body" style="font-size:12px">
-      <strong style="font-size:20px;color:#ff4444">$7.77 / 7 months</strong><br><br>
-      One-time seasonal access — Weeks 1–18. No auto-renewal.<br><br>
-      Includes:<br>• Weekly pick’em predictions<br>• Confidence ranking system<br>• Weather and game context tools<br>• Pool tracking and results logging<br>• Model validation data<br><br>
-      <strong>Purchase note:</strong> Purchases are handled securely through the platform store when enabled. No payments are accepted inside this HTML file.
+    <div class="legal-card-title">📋 TERMS OF SERVICE</div>
+    <div class="legal-card-body">
+      <h4>Entertainment Purposes Only</h4>
+      <p>This app provides NFL pick information and confidence scoring for entertainment and informational purposes only. It is not gambling advice, betting advice, or financial advice.</p>
+      <h4>No Guarantees</h4>
+      <p>We do not guarantee the accuracy of picks, predictions, or outcomes. Historical model validation (60% accuracy over 1,359 games) is provided for informational purposes only and does not guarantee future results. All decisions are made at your own risk.</p>
+      <h4>User Responsibility</h4>
+      <p>You are fully responsible for any decisions, bets, or financial actions you take based on this app. By using The Pipeline, you acknowledge that you understand the risks.</p>
+      <h4>No Liability</h4>
+      <p>The Pipeline Edge is not responsible for any losses, damages, or outcomes resulting from use of this app.</p>
+      <h4>Changes to the App</h4>
+      <p>We may update, modify, or discontinue features of this app at any time without notice.</p>
+      <h4>Intellectual Property</h4>
+      <p>The Pipeline Edge and its content are the property of The Pipeline Edge. You may not copy, distribute, or use any part of this app without permission.</p>
+      <p style="margin-top:16px;font-size:10px;color:#aaa">© 2026 The Pipeline. All rights reserved. Not affiliated with the National Football League (NFL).</p>
     </div>
   </div>
+
   <div class="legal-card">
     <div class="legal-card-title">🛒 AMAZON AFFILIATE DISCLOSURE</div>
     <div class="legal-card-body">
-      The Pipeline participates in the Amazon Services LLC Associates Program.<br><br>
-      When you click an Amazon link and make a purchase, we may earn a small commission at <strong>no additional cost to you</strong>.<br><br>
-      These links do not influence weekly selections or analysis.<br><br>External links open in your browser. We are not responsible for third-party content.
+      <h4>Amazon Associates Program</h4>
+      <p>The Pipeline participates in the Amazon Services LLC Associates Program.</p>
+      <p>When you click an Amazon link and make a purchase, we may earn a small commission at <strong>no additional cost to you.</strong></p>
+      <p>These links do not influence weekly selections or analysis.</p>
+      <p>External links open in your browser. We are not responsible for third-party content.</p>
+      <h4>External Links & Affiliations</h4>
+      <ul>
+        <li><strong>Lightning Tracker & Weather:</strong> We provide links to external tools (LightningMaps.org, Open-Meteo, etc.) for informational purposes only. <strong>We are not affiliated with these services.</strong> We are not responsible for their content, accuracy, or privacy practices. Review their policies directly.</li>
+        <li><strong>Other External Links:</strong> Any links to external websites open in your browser. Review their privacy policies directly.</li>
+      </ul>
+      <h4>Paid Features (Pool PRO)</h4>
+      <p><strong>Pool PRO Subscription ($7.77 / 7 months):</strong> One-time seasonal purchase covering Pre-Season through Super Bowl (August through February). Includes weekly predictions, confidence ranking tools, weather context, and pool tracking. No auto-renewal. Purchases are handled securely by the app platform. We do not collect payment information — that's handled by the store.</p>
+      <h4>Important</h4>
+      <p>The Pipeline is <strong>not a betting service, sportsbook, or gambling platform.</strong> All content is educational and informational only.</p>
     </div>
   </div>
 </div>
@@ -207,7 +274,7 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
 </div>
 
 <div class="note" style="margin:0 28px 16px">
-  The Pipeline is a data-driven NFL pick’em and confidence pool assistant. It provides weekly predictions, confidence rankings, and historical model validation for recreational pool players. This app does not support or promote real-money gambling.
+  The Pipeline is a data-driven NFL pick'em and confidence pool assistant. It provides weekly predictions, confidence rankings, and historical model validation for recreational pool players. This app does not support or promote real-money gambling.
 </div>
 
 <div class="nav-group">
@@ -250,13 +317,17 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
   </div>
   <div id="picksArea">
     <div class="empty-state">
-      <div class="empty-title">Selections Posted Here Every Wednesday</div>
-      <div class="empty-desc">The Pipeline uses updated game data, context, and model inputs for recreational pick’em pool selections.</div>
-      <div class="empty-cmd">Load Weekly Selections Every Wednesday</div>
-      <button class="btn btn-outline" onclick="loadTestPicks()" style="margin-top:12px;font-size:12px;padding:8px 16px">📋 Load Test Selections</button>
+      <div class="empty-title">Free Picks Posted Every Wednesday</div>
+      <div class="empty-desc">See exactly what you're getting. View this week's premium selections, confidence ratings, and analysis. Compare our picks against yours before the season kicks off.</div>
+
+      <button class="btn btn-green" onclick="loadTestPicks()" style="margin-top:12px;font-size:13px;padding:12px 28px;font-weight:700;letter-spacing:0.05em">🔥 THE PIPELINE EDGE</button>
     </div>
   </div>
   <div id="picksTable" style="display:none">
+    <div style="background:rgba(0,188,212,0.15);border:2px solid #00BCD4;border-radius:8px;padding:12px;margin-bottom:16px;text-align:center">
+      <div style="font-weight:700;color:#00BCD4;font-size:13px">🔒 DEMO — Sample Data</div>
+      <div style="font-size:11px;color:#ffffff;margin-top:4px">🔥 Upgrade to THE PIPELINE EDGE PRO — Live picks every Wednesday</div>
+    </div>
     <div class="note-amber" id="weekNote"></div>
     <div style="overflow-x:auto;border-radius:10px;border:1px solid var(--border)">
       <table class="picks-table">
@@ -377,6 +448,10 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
 <!-- PANE 6: GAME ENTRY -->
 <div class="pane" id="pane6">
   <div class="mode-banner manual">🛠️ MANUAL BACKUP MODE — Enter game details yourself</div>
+  <div style="background:rgba(0,188,212,0.15);border:2px solid #00BCD4;border-radius:8px;padding:14px;margin-bottom:16px">
+    <div style="font-weight:700;color:#00BCD4;font-size:12px;margin-bottom:6px">ℹ️ HELP</div>
+    <div style="font-size:11px;color:#ffffff">New to Game Entry? <a href="https://www.youtube.com/watch?v=GAME_ENTRY_VIDEO_ID" target="_blank" style="color:#ffffff;text-decoration:underline;font-weight:600">Watch our tutorial on YouTube</a></div>
+  </div>
   <div class="stitle">Game Entry — Confidence Calculator</div>
   <div class="tier3-bar" id="tier3Bar">⛔ TIER 3 INJURY DETECTED — Drop this game. Assign 1 pt, pick home team.</div>
   <div class="g2">
@@ -455,6 +530,10 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
 <!-- PANE 7: WEEKLY POOL -->
 <div class="pane" id="pane7">
   <div class="mode-banner manual">🛠️ MANUAL BACKUP MODE — Rank your picks</div>
+  <div style="background:rgba(0,188,212,0.15);border:2px solid #00BCD4;border-radius:8px;padding:14px;margin-bottom:16px">
+    <div style="font-weight:700;color:#00BCD4;font-size:12px;margin-bottom:6px">ℹ️ HELP</div>
+    <div style="font-size:11px;color:#ffffff">New to Weekly Pool? <a href="https://www.youtube.com/watch?v=WEEKLY_POOL_VIDEO_ID" target="_blank" style="color:#ffffff;text-decoration:underline;font-weight:600">Watch our tutorial on YouTube</a></div>
+  </div>
   <div class="stitle">Weekly Pool — <span id="poolWeekLabel" style="color:var(--gold)">Rank 16→1</span></div>
   <div class="note-amber">Assign confidence 16 (most confident) down to 1. Tier 3 injury = assign 1, pick home team.</div>
   <div style="display:flex;gap:10px;margin:16px 0">
@@ -472,8 +551,12 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
 <!-- PANE 8: POOL RATING SIGNALS -->
 <div class="pane" id="pane8">
   <div class="mode-banner manual">🛠️ MANUAL BACKUP — line context entry for rating calculation</div>
+  <div style="background:rgba(0,188,212,0.15);border:2px solid #00BCD4;border-radius:8px;padding:14px;margin-bottom:16px">
+    <div style="font-weight:700;color:#00BCD4;font-size:12px;margin-bottom:6px">ℹ️ HELP</div>
+    <div style="font-size:11px;color:#ffffff">New to Pool Rating Signals? <a href="https://www.youtube.com/watch?v=POOL_RATING_VIDEO_ID" target="_blank" style="color:#ffffff;text-decoration:underline;font-weight:600">Watch our tutorial on YouTube</a></div>
+  </div>
   <div class="stitle">Pool Rating Signals — Line Context</div>
-  <div class="note-red" style="margin-bottom:16px"><strong>⚠️ EDUCATIONAL USE ONLY</strong><br><br>Line context is provided for <strong>pick’em pool analysis and education purposes only</strong>. It is <strong>NOT betting advice</strong>, not a wagering tool, and not a recommendation for real-money gambling. This tool is for informational reference only.</div>
+  <div class="note-red" style="margin-bottom:16px"><strong>⚠️ EDUCATIONAL USE ONLY</strong><br><br>Line context is provided for <strong>pick'em pool analysis and education purposes only</strong>. It is <strong>NOT betting advice</strong>, not a wagering tool, and not a recommendation for real-money gambling. This tool is for informational reference only.</div>
   <div class="cards">
     <div class="card"><div class="card-lbl">Strong Rating</div><div class="card-val c-green">+5%+</div></div>
     <div class="card"><div class="card-lbl">Solid Rating</div><div class="card-val c-blue">+2–5%</div></div>
@@ -492,6 +575,10 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
 <!-- PANE 9: SCORE REFERENCE -->
 <div class="pane" id="pane9">
   <div class="mode-banner manual">🛠️ MANUAL BACKUP MODE — Score reference guide</div>
+  <div style="background:rgba(0,188,212,0.15);border:2px solid #00BCD4;border-radius:8px;padding:14px;margin-bottom:16px">
+    <div style="font-weight:700;color:#00BCD4;font-size:12px;margin-bottom:6px">ℹ️ HELP</div>
+    <div style="font-size:11px;color:#ffffff">New to Confidence Scoring? <a href="https://www.youtube.com/watch?v=SCORE_REFERENCE_VIDEO_ID" target="_blank" style="color:#ffffff;text-decoration:underline;font-weight:600">Watch our tutorial on YouTube</a></div>
+  </div>
   <div class="stitle">Confidence Score — 6-Layer System</div>
   <div class="g2">
     <div class="box">
@@ -524,6 +611,10 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
 <!-- PANE 10: REFEREE LOOKUP -->
 <div class="pane" id="pane10">
   <div class="mode-banner manual">🛠️ MANUAL BACKUP MODE — Referee crew data</div>
+  <div style="background:rgba(0,188,212,0.15);border:2px solid #00BCD4;border-radius:8px;padding:14px;margin-bottom:16px">
+    <div style="font-weight:700;color:#00BCD4;font-size:12px;margin-bottom:6px">ℹ️ HELP</div>
+    <div style="font-size:11px;color:#ffffff">New to Referee Data? <a href="https://www.youtube.com/watch?v=REFEREE_VIDEO_ID" target="_blank" style="color:#ffffff;text-decoration:underline;font-weight:600">Watch our tutorial on YouTube</a></div>
+  </div>
   <div class="stitle">Referee Crew Adjustments</div>
   <div class="note" style="margin-bottom:16px">Assignments post Tuesday/Wednesday. Positive = home benefit. Combine with injuries, weather, and blend edge.</div>
   <div class="tbl-wrap"><table>
@@ -535,6 +626,10 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
 <!-- PANE 11: LUCK FLAGS -->
 <div class="pane" id="pane11">
   <div class="mode-banner manual">🛠️ MANUAL BACKUP MODE — Luck factor data</div>
+  <div style="background:rgba(0,188,212,0.15);border:2px solid #00BCD4;border-radius:8px;padding:14px;margin-bottom:16px">
+    <div style="font-weight:700;color:#00BCD4;font-size:12px;margin-bottom:6px">ℹ️ HELP</div>
+    <div style="font-size:11px;color:#ffffff">New to Luck Flags? <a href="https://www.youtube.com/watch?v=LUCK_FLAGS_VIDEO_ID" target="_blank" style="color:#ffffff;text-decoration:underline;font-weight:600">Watch our tutorial on YouTube</a></div>
+  </div>
   <div class="stitle">Luck Factor — 2026 Flags</div>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Team</th><th>2024 Luck</th><th>Pyth W</th><th>Actual W</th><th>Gap</th><th>2026 Flag</th></tr></thead>
@@ -561,13 +656,13 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
   <div class="mode-banner manual">🛠️ MODEL VALIDATION — Historical walk-forward testing</div>
   <div class="stitle">Model Validation — Walk-Forward Test Results</div>
   <div class="cards">
-    <div class="card"><div class="card-lbl">Historical Pick’em Accuracy</div><div class="card-val c-gold">60.0%</div><div class="card-sub">Walk-forward model validation across 1,359 historical NFL games (2021–2025).</div></div>
+    <div class="card"><div class="card-lbl">Historical Pick'em Accuracy</div><div class="card-val c-gold">60.0%</div><div class="card-sub">Walk-forward model validation across 1,359 historical NFL games (2021–2025).</div></div>
     <div class="card"><div class="card-lbl">Best Season</div><div class="card-val c-green">65.1%</div><div class="card-sub">2024 · 177/272</div></div>
     <div class="card"><div class="card-lbl">Worst Season</div><div class="card-val c-amber">57.0%</div><div class="card-sub">2023 · 155/272</div></div>
     <div class="card"><div class="card-lbl">Seasons Tested</div><div class="card-val c-blue">5</div><div class="card-sub">2021–2025</div></div>
   </div>
   <div class="note">
-    These results represent historical model validation across past NFL seasons. They are provided for transparency and informational purposes only. They do not guarantee future outcomes. This system is designed for recreational NFL pick’em and confidence pool leagues.
+    These results represent historical model validation across past NFL seasons. They are provided for transparency and informational purposes only. They do not guarantee future outcomes. This system is designed for recreational NFL pick'em and confidence pool leagues.
   </div>
   <div class="note">
     Weekly selections are generated using updated data inputs and uploaded manually. Results are tracked as a rolling model average for validation and transparency.
@@ -635,7 +730,7 @@ function showWelcome(){
   if(localStorage.getItem('welcomeShown')) return;
   const overlay=document.createElement('div');
   overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:9999';
-  overlay.innerHTML=`<div style="background:var(--bg2);border:2px solid var(--gold);border-radius:20px;padding:40px;max-width:500px;text-align:center;color:var(--text)"><div style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:0.05em;margin-bottom:10px">The Pipeline <span style="color:var(--gold)">2026</span></div><div style="font-size:14px;color:var(--text2);margin-bottom:30px;line-height:1.6">NFL weekly pick’em predictions powered by walk-forward model validation across 1,359 historical games (2021–2025)</div><div style="background:rgba(46,160,67,0.1);border:1px solid rgba(46,160,67,0.3);border-radius:10px;padding:20px;margin-bottom:20px"><div style="font-weight:600;color:var(--green2);margin-bottom:8px">🤖 FREE</div><div style="font-size:13px;color:var(--text2)">Weekly selections every Wednesday</div></div><div style="background:rgba(240,168,46,0.1);border:1px solid rgba(240,168,46,0.3);border-radius:10px;padding:20px;margin-bottom:30px"><div style="font-weight:600;color:var(--gold);margin-bottom:8px">💎 POOL PRO</div><div style="font-size:13px;color:var(--text2)">Manual pool tools ($7.77 / 7 months)</div></div><button onclick="localStorage.setItem('welcomeShown','true');this.closest('div').parentElement.remove()" style="width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer">Let's Go 🚀</button></div>`;
+  overlay.innerHTML=`<div style="background:var(--bg2);border:2px solid var(--gold);border-radius:20px;padding:40px;max-width:500px;text-align:center;color:var(--text)"><div style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:0.05em;margin-bottom:10px">The Pipeline <span style="color:var(--gold)">2026</span></div><div style="font-size:14px;color:var(--text2);margin-bottom:30px;line-height:1.6">NFL weekly pick'em predictions powered by walk-forward model validation across 1,359 historical games (2021–2025)</div><div style="background:rgba(46,160,67,0.1);border:1px solid rgba(46,160,67,0.3);border-radius:10px;padding:20px;margin-bottom:20px"><div style="font-weight:600;color:var(--green2);margin-bottom:8px">🤖 FREE</div><div style="font-size:13px;color:var(--text2)">Weekly selections every Wednesday</div></div><div style="background:rgba(240,168,46,0.1);border:1px solid rgba(240,168,46,0.3);border-radius:10px;padding:20px;margin-bottom:30px"><div style="font-weight:600;color:var(--gold);margin-bottom:8px">💎 POOL PRO</div><div style="font-size:13px;color:var(--text2)">Manual pool tools ($7.77 / 7 months)</div></div><button onclick="localStorage.setItem('welcomeShown','true');this.closest('div').parentElement.remove()" style="width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer">Let's Go 🚀</button></div>`;
   document.body.appendChild(overlay);
 }
 

@@ -8,7 +8,7 @@
 <style>
 :root{--bg:#0d1117;--bg2:#161b24;--bg3:#1e2633;--bg4:#252e3d;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#e6edf3;--text2:#8b96a7;--text3:#4e5a6a;--green:#2ea043;--green2:#3fb950;--blue:#1f6feb;--blue2:#388bfd;--amber:#d29922;--amber2:#e3b341;--red:#da3633;--red2:#f85149;--teal:#0891b2;--teal2:#22d3ee;--gold:#f0a82e}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:13px}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:13px;overflow-x:hidden}
 .header{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--bg2);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:100}
 @media(max-width:480px){.header{padding:12px 14px;flex-direction:column;gap:8px;text-align:center}}
 .header-left{display:flex;align-items:center;gap:14px}
@@ -31,9 +31,9 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);colo
 .ntab:hover{color:var(--text)}
 .ntab.active{color:var(--text);border-bottom-color:var(--gold)}
 .ntab.auto-tab.active{border-bottom-color:var(--green2)}
-.pane{display:none;padding:28px;max-width:1280px;margin:0 auto}
+.pane{display:none;padding:16px;max-width:100%;margin:0}
 .pane.active{display:block}
-@media(max-width:480px){.pane{padding:16px}}
+@media(max-width:480px){.pane{padding:12px}}
 .stitle{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.05em;margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .stitle::after{content:'';flex:1;height:1px;background:var(--border)}
 .week-header{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:20px}
@@ -45,8 +45,8 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);colo
 .status-waiting{background:rgba(255,255,255,0.06);color:var(--text2);border:1px solid var(--border)}
 .picks-table{width:100%;border-collapse:collapse;margin-bottom:20px}
 .picks-table thead tr{background:var(--bg3)}
-.picks-table th{padding:10px 14px;text-align:left;font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;white-space:nowrap}
-.picks-table td{padding:11px 14px;border-top:1px solid var(--border);font-size:13px}
+.picks-table th{padding:10px 14px;text-align:left;font-size:9px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.picks-table td{padding:8px 10px;border-top:1px solid var(--border);font-size:11px}
 .picks-table tbody tr:hover td{background:rgba(255,255,255,0.02)}
 .picks-table .tr-top td{background:rgba(240,168,46,0.05)}
 .pool-pts{font-family:'Bebas Neue',sans-serif;font-size:26px;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center}
@@ -61,7 +61,7 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);colo
 .conf-bar{width:60px;height:4px;background:rgba(255,255,255,.08);border-radius:2px;margin:4px auto 0}
 .conf-fill{height:100%;border-radius:2px}
 .edge-cell{text-align:center;font-family:'DM Mono',monospace;font-size:13px;font-weight:500}
-.ml-badge{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.04em}
+.ml-badge{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
 .ml-yes{background:rgba(46,160,67,0.2);color:var(--green2);border:1px solid rgba(46,160,67,0.3)}
 .ml-no{background:rgba(255,255,255,0.05);color:var(--text3);border:1px solid var(--border);font-size:9px}
 .flag-cell{font-size:11px;color:var(--text2);max-width:200px}
@@ -70,25 +70,25 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);colo
 .empty-title{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--text2);letter-spacing:.05em;margin-bottom:8px}
 .empty-desc{font-size:13px;color:var(--text3);line-height:1.7;max-width:480px;margin:0 auto}
 .empty-cmd{display:inline-block;margin-top:16px;background:var(--green);border:1px solid var(--green);color:#fff;padding:10px 20px;border-radius:8px;font-family:'DM Mono',monospace;font-size:13px;font-weight:500}
-.box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px}
+.box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px}
 @media(max-width:480px){.box{padding:12px;margin-bottom:12px}}
 .box-title{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:14px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:6px;margin-bottom:16px}
 @media(max-width:480px){.cards{grid-template-columns:1fr}}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;transition:.15s}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px;transition:.15s}
 @media(max-width:480px){.card{padding:12px}}
 .card:hover{border-color:var(--border2)}
-.card-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
-.card-val{font-size:28px;font-family:'Bebas Neue',sans-serif;letter-spacing:.02em}
-.card-sub{font-size:10px;color:var(--text3);margin-top:3px}
+.card-lbl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.card-val{font-size:24px;font-family:'Bebas Neue',sans-serif;letter-spacing:.02em}
+.card-sub{font-size:9px;color:var(--text3);margin-top:2px}
 .c-green{color:var(--green2)}.c-amber{color:var(--amber2)}.c-blue{color:var(--blue2)}.c-red{color:var(--red2)}.c-gold{color:var(--gold)}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 @media(max-width:800px){.g2{grid-template-columns:1fr}}
-.tbl-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border)}
-table{width:100%;border-collapse:collapse}
+.tbl-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:auto}
 thead tr{background:var(--bg3)}
-th{padding:9px 12px;text-align:left;font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
-td{padding:9px 12px;border-top:1px solid var(--border);font-size:12px}
+th{padding:8px 10px;text-align:left;font-size:9px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+td{padding:8px 10px;border-top:1px solid var(--border);font-size:11px}
 tbody tr:hover td{background:rgba(255,255,255,.02)}
 .mono{font-family:'DM Mono',monospace;font-size:11px}
 .badge{display:inline-flex;align-items:center;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600}
@@ -105,11 +105,11 @@ tbody tr:hover td{background:rgba(255,255,255,.02)}
 .note-neon{background:rgba(210,153,34,0.07);border-left:3px solid var(--amber2);padding:14px 18px;border-radius:0 6px 6px 0;font-size:11px;color:#8ec5ff;line-height:1.8}
 .formula{background:var(--bg3);border-left:3px solid var(--gold);padding:9px 14px;border-radius:0 6px 6px 0;font-family:'DM Mono',monospace;font-size:11px;color:var(--text2);margin:6px 0;line-height:1.7}
 label{display:block;font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
-input,select{width:100%;padding:8px 12px;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;margin-bottom:12px;-webkit-appearance:none}
+input,select{width:100%;padding:8px 12px;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;margin-bottom:8px;-webkit-appearance:none}
 input:focus,select:focus{outline:none;border-color:var(--blue2)}
 .form-group{margin-bottom:0}
 .form-group label{display:block;font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
-.form-group input,.form-group select{width:100%;padding:8px 12px;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;-webkit-appearance:none;margin-bottom:0}
+.form-group input,.form-group select{width:100%;padding:8px 12px;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;-webkit-appearance:none;margin-bottom:6px}
 @media(max-width:480px){.form-group input,.form-group select{padding:7px 10px;font-size:12px;margin-bottom:8px}}
 .result-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:600px){.result-form{grid-template-columns:1fr}}
@@ -329,7 +329,7 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
       <div style="font-size:11px;color:#ffffff;margin-top:4px">🔥 Upgrade to THE PIPELINE EDGE PRO — Live picks every Wednesday</div>
     </div>
     <div class="note-amber" id="weekNote"></div>
-    <div style="overflow-x:auto;border-radius:10px;border:1px solid var(--border)">
+    <div style="overflow-x:auto;border-radius:10px;border:1px solid var(--border);-webkit-overflow-scrolling:touch">
       <table class="picks-table">
         <thead><tr><th>Pool Pts</th><th>Matchup</th><th>Selection</th><th style="text-align:center">Conf</th><th style="text-align:center">Rating</th><th>Flags</th><th>Spotlight</th></tr></thead>
         <tbody id="picksBody"></tbody>
@@ -344,7 +344,7 @@ input:focus,select:focus{outline:none;border-color:var(--blue2)}
 <div class="pane" id="pane1">
   <div class="mode-banner manual">⛅ WEATHER — Live conditions for every outdoor stadium</div>
   <div class="stitle">Stadium Weather — Game Day Conditions</div>
-  <div class="note-amber" style="margin-bottom:16px">Weather adjustments are informational only. Wind &gt;15mph or temp &lt;32°F may trigger a −1 confidence adjustment for pool analysis. Check every Wednesday.</div>
+  <div class="note-amber" style="margin-bottom:16px">Weather adjustments are informational only. Wind >15mph or temp <32°F may trigger a −1 confidence adjustment for pool analysis. Check every Wednesday.</div>
   <div class="cards">
     <div class="card"><div class="card-lbl">Dome Stadiums</div><div class="card-val c-blue">11</div><div class="card-sub">Weather neutral</div></div>
     <div class="card"><div class="card-lbl">Outdoor Stadiums</div><div class="card-val c-amber">21</div><div class="card-sub">Weather affects confidence</div></div>
@@ -726,6 +726,12 @@ const WEEK_AVG=[52,54,48,53,51,65,58,69,61,63,72,62,74,64,67,59,67,59];
 let weekLog=[];
 let pool=[];
 
+function dismissLegal(){
+  localStorage.setItem('legalDismissed','true');
+  document.getElementById('legalGrid').style.display='none';
+  document.querySelector('button[onclick="dismissLegal()"]').parentElement.style.display='none';
+}
+
 function showWelcome(){
   if(localStorage.getItem('welcomeShown')) return;
   const overlay=document.createElement('div');
@@ -927,7 +933,7 @@ function buildRefTable(){
 }
 function buildLuckTable(){
   const body=document.getElementById('luckBody');
-  LUCK.forEach(r=>{const bg=r.d==='bad'?'rgba(218,54,51,0.06)':r.d==='good'?'rgba(46,160,67,0.06)':'',lc=r.d==='bad'?'b-red':r.d==='good'?'b-green':'b-gray',gap=r.ac-r.py;body.innerHTML+=`<tr style="background:${bg}"><td><strong>${r.t}</strong></td><td><span class="badge ${lc}">${r.l>0?'+':''}${r.l}</span></td><td class="mono">${r.py}</td><td class="mono">${r.ac}</td><td><span class="badge ${gap>0?'b-red':'b-green'}">${gap>0?'+':''}${gap.toFixed(1)}</span></td><td style="color:var(--text2);font-size:11px">${r.f}</td></tr>`;});
+  LUCK.forEach(r=>{const bg=r.d==='bad'?'rgba(218,54,51,0.06)':r.d==='good'?'rgba(46,160,67,0.06)':'',lc=r.d==='bad'?'b-red':r.d==='good'?'b-green':'b-gray',gap=r.ac-r.py,flag=r.d==='bad'?'⬇️ Regress':r.d==='good'?'⬆️ Bounce':'−';body.innerHTML+=`<tr style="background:${bg}"><td><strong>${r.t}</strong></td><td><span class="badge ${lc}">${r.l>0?'+':''}${r.l}</span></td><td class="mono">${r.py}</td><td class="mono">${r.ac}</td><td><span class="badge ${gap>0?'b-red':'b-green'}">${gap>0?'+':''}${gap.toFixed(1)}</span></td><td style="color:var(--text2);font-size:11px;font-weight:600">${flag}</td></tr>`;});
 }
 function buildBacktestWeekBars(){
   const el=document.getElementById('backtestWeekBars');
@@ -984,7 +990,7 @@ async function loadAllWeather(){
   if(!grid||!status)return;
   const outdoor=Object.entries(STADIUMS).filter(([,s])=>!s.dome),dome=Object.entries(STADIUMS).filter(([,s])=>s.dome);
   status.textContent='Loading '+outdoor.length+' outdoor stadiums...';
-  grid.innerHTML=dome.map(([a,s])=>`<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-weight:700">${a}</span><span style="background:rgba(31,111,235,0.15);color:var(--blue2);font-size:10px;padding:2px 7px;border-radius:4px">DOME</span></div><div style="font-size:11px;color:var(--text2)">${s.name}</div><div style="font-size:10px;color:var(--text3);margin-top:4px">${s.city}</div><div style="font-size:12px;color:var(--blue2);margin-top:8px;font-weight:600">Weather neutral</div></div>`).join('');
+  grid.innerHTML='';
   let loaded=0,seen={};
   for(const[abbr,s]of outdoor){
     const key=s.lat+','+s.lon;
@@ -992,6 +998,8 @@ async function loadAllWeather(){
     try{const url='https://api.open-meteo.com/v1/forecast?latitude='+s.lat+'&longitude='+s.lon+'&current=temperature_2m,wind_speed_10m,precipitation,weather_code&wind_speed_unit=mph&temperature_unit=fahrenheit&forecast_days=1';const res=await fetch(url);const data=await res.json();const cur=data.current;const w={temp:Math.round(cur.temperature_2m),wind:Math.round(cur.wind_speed_10m),precip:cur.precipitation,code:cur.weather_code};seen[key]=w;grid.innerHTML+=renderWeatherCard(abbr,s,w);loaded++;status.textContent=loaded+'/'+outdoor.length+' loaded';}catch(e){grid.innerHTML+=renderWeatherCard(abbr,s,null);loaded++;}
     await new Promise(r=>setTimeout(r,150));
   }
+  grid.innerHTML+='<div style="grid-column:1/-1;height:1px;background:var(--border);margin:16px 0"></div>';
+  grid.innerHTML+=dome.map(([a,s])=>`<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-weight:700">${a}</span><span style="background:rgba(31,111,235,0.15);color:var(--blue2);font-size:10px;padding:2px 7px;border-radius:4px">DOME</span></div><div style="font-size:11px;color:var(--text2)">${s.name}</div><div style="font-size:10px;color:var(--text3);margin-top:4px">${s.city}</div><div style="font-size:12px;color:var(--blue2);margin-top:8px;font-weight:600">Weather neutral</div></div>`).join('');
   status.textContent='✅ All loaded — '+new Date().toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true});
 }
 
@@ -1007,26 +1015,23 @@ function renderWeatherCard(abbr,s,w){
 
 function loadTestPicks(){
   const tp=[
-    {home:'BUF',away:'ARI',pick:'BUF',diff:6,prob:0.80,conf:10,pool_pts:16,drop:false,ml_bet:false,ref:'Brad Allen',isML:false,isDrop:false,poolPts:16,edge:5},
-    {home:'KC',away:'LAC',pick:'KC',diff:3,prob:0.75,conf:9,pool_pts:15,drop:false,ml_bet:false,ref:'Ron Torbert',isML:false,isDrop:false,poolPts:15,edge:3},
-    {home:'SF',away:'GB',pick:'SF',diff:4,prob:0.78,conf:9,pool_pts:14,drop:false,ml_bet:false,ref:'Carl Cheffers',isML:false,isDrop:false,poolPts:14,edge:4},
-    {home:'BAL',away:'PIT',pick:'BAL',diff:2,prob:0.70,conf:8,pool_pts:13,drop:false,ml_bet:false,ref:'Shawn Hochuli',isML:false,isDrop:false,poolPts:13,edge:2},
-    {home:'DET',away:'PHI',pick:'PHI',diff:-1,prob:0.65,conf:7,pool_pts:12,drop:false,ml_bet:false,ref:'Alex Kemp',isML:false,isDrop:false,poolPts:12,edge:1},
-    {home:'DAL',away:'NYG',pick:'DAL',diff:3,prob:0.72,conf:8,pool_pts:11,drop:false,ml_bet:false,ref:'Brad Rogers',isML:false,isDrop:false,poolPts:11,edge:2},
-    {home:'TB',away:'NO',pick:'TB',diff:5,prob:0.77,conf:9,pool_pts:10,drop:false,ml_bet:false,ref:'Craig Wrolstad',isML:false,isDrop:false,poolPts:10,edge:3},
-    {home:'MIN',away:'CHI',pick:'MIN',diff:4,prob:0.76,conf:9,pool_pts:9,drop:false,ml_bet:false,ref:'John Hussey',isML:false,isDrop:false,poolPts:9,edge:3},
-    {home:'NE',away:'MIA',pick:'MIA',diff:-2,prob:0.62,conf:7,pool_pts:8,drop:false,ml_bet:false,ref:'Land Clark',isML:false,isDrop:false,poolPts:8,edge:1},
-    {home:'JAX',away:'TEN',pick:'JAX',diff:2,prob:0.68,conf:8,pool_pts:7,drop:false,ml_bet:false,ref:'Alan Eck',isML:false,isDrop:false,poolPts:7,edge:2},
-    {home:'SEA',away:'LAR',pick:'SEA',diff:1,prob:0.65,conf:7,pool_pts:6,drop:false,ml_bet:false,ref:'Alex Moore',isML:false,isDrop:false,poolPts:6,edge:1},
-    {home:'CLE',away:'DEN',pick:'CLE',diff:3,prob:0.73,conf:8,pool_pts:5,drop:false,ml_bet:false,ref:'Clay Martin',isML:false,isDrop:false,poolPts:5,edge:2},
-    {home:'ATL',away:'CAR',pick:'ATL',diff:4,prob:0.74,conf:8,pool_pts:4,drop:false,ml_bet:false,ref:'Clete Blakeman',isML:false,isDrop:false,poolPts:4,edge:2},
-    {home:'GB',away:'CIN',pick:'GB',diff:2,prob:0.69,conf:8,pool_pts:3,drop:false,ml_bet:false,ref:'Novak',isML:false,isDrop:false,poolPts:3,edge:1},
-    {home:'HOU',away:'IND',pick:'HOU',diff:5,prob:0.79,conf:9,pool_pts:2,drop:false,ml_bet:false,ref:'Shawn Smith',isML:false,isDrop:false,poolPts:2,edge:3},
-    {home:'WAS',away:'NYJ',pick:'WAS',diff:1,prob:0.64,conf:7,pool_pts:1,drop:false,ml_bet:false,ref:'Bill Vinovich',isML:false,isDrop:false,poolPts:1,edge:1}
+    {away:'ARI',home:'BUF',pick:'BUF',diff:6,prob:0.80,conf:10,poolPts:16,edge:5,isML:false,isDrop:false,ref:'Brad Allen'},
+    {away:'LAC',home:'KC',pick:'KC',diff:3,prob:0.75,conf:9,poolPts:15,edge:3,isML:false,isDrop:false,ref:'Ron Torbert'},
+    {away:'GB',home:'SF',pick:'SF',diff:4,prob:0.78,conf:9,poolPts:14,edge:4,isML:false,isDrop:false,ref:'Carl Cheffers'},
+    {away:'PIT',home:'BAL',pick:'BAL',diff:2,prob:0.70,conf:8,poolPts:13,edge:2,isML:false,isDrop:false,ref:'Shawn Hochuli'},
+    {away:'PHI',home:'DET',pick:'PHI',diff:-1,prob:0.65,conf:7,poolPts:12,edge:1,isML:false,isDrop:false,ref:'Alex Kemp'},
+    {away:'NYG',home:'DAL',pick:'DAL',diff:3,prob:0.72,conf:8,poolPts:11,edge:2,isML:false,isDrop:false,ref:'Brad Rogers'},
+    {away:'NO',home:'TB',pick:'TB',diff:5,prob:0.77,conf:9,poolPts:10,edge:3,isML:false,isDrop:false,ref:'Craig Wrolstad'},
+    {away:'CHI',home:'MIN',pick:'MIN',diff:4,prob:0.76,conf:9,poolPts:9,edge:3,isML:false,isDrop:false,ref:'John Hussey'},
+    {away:'MIA',home:'NE',pick:'MIA',diff:-2,prob:0.62,conf:7,poolPts:8,edge:1,isML:false,isDrop:false,ref:'Land Clark'},
+    {away:'TEN',home:'JAX',pick:'JAX',diff:2,prob:0.68,conf:8,poolPts:7,edge:2,isML:false,isDrop:false,ref:'Alan Eck'},
+    {away:'LAR',home:'SEA',pick:'SEA',diff:1,prob:0.65,conf:7,poolPts:6,edge:1,isML:false,isDrop:false,ref:'Alex Moore'},
+    {away:'DEN',home:'CLE',pick:'CLE',diff:3,prob:0.73,conf:8,poolPts:5,edge:2,isML:false,isDrop:false,ref:'Clay Martin'},
+    {away:'CAR',home:'ATL',pick:'ATL',diff:4,prob:0.74,conf:8,poolPts:4,edge:2,isML:false,isDrop:false,ref:'Clete Blakeman'},
+    {away:'CIN',home:'GB',pick:'GB',diff:2,prob:0.69,conf:8,poolPts:3,edge:1,isML:false,isDrop:false,ref:'Novak'},
+    {away:'IND',home:'HOU',pick:'HOU',diff:5,prob:0.79,conf:9,poolPts:2,edge:3,isML:false,isDrop:false,ref:'Shawn Smith'},
+    {away:'NYJ',home:'WAS',pick:'WAS',diff:1,prob:0.64,conf:7,poolPts:1,edge:1,isML:false,isDrop:false,ref:'Bill Vinovich'}
   ];
   renderPicks(1,'Test Data — 16 Games Loaded',tp);
   show(0);
 }
-</script>
-</body>
-</html>

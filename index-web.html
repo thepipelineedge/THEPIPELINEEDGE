@@ -4,11 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Pipeline — NFL Pick'em 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Bebas Neue';src:url('https://fonts.gstatic.com/s/bebasneue/v9/JTUSjIg69CK48gSG63HxTvEjN_cPYK2o.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'DM Mono';src:url('https://fonts.gstatic.com/s/dmmono/v4/Gg82L_cVWIw56GovePy-Aw.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'DM Mono';src:url('https://fonts.gstatic.com/s/dmmono/v4/Gg82L_cVWIw56GovePy-Aw.woff2') format('woff2');font-weight:500;font-display:swap}
+</style>
 <style>
 :root{--bg:#0d1117;--bg2:#161b24;--bg3:#1e2633;--border:rgba(255,255,255,0.07);--text:#e6edf3;--text2:#8b96a7;--text3:#4e5a6a;--green:#2ea043;--green2:#3fb950;--blue:#1f6feb;--blue2:#388bfd;--amber:#d29922;--amber2:#e3b341;--red:#da3633;--red2:#f85149;--gold:#f0a82e}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;overflow-x:hidden}
+html,body{height:100%;font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background:var(--bg);color:var(--text);font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .access-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:2000}
 .access-popup{background:linear-gradient(135deg,#1a1f2e 0%,#0f1419 100%);border:2px solid var(--gold);border-radius:20px;padding:40px;max-width:500px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(255,165,0,0.25)}
 .access-popup h1{color:#ffffff;font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.06em;margin-bottom:15px}
@@ -479,7 +487,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <label>Luck Factor</label>
       <select id="luckAdj" onchange="calc()"><option value="0">Neutral (0)</option><option value="1">Positive (+1)</option><option value="-1">Negative (−1)</option></select>
       <label>2-MIN WARNING FLAG</label>
-      <select id="flag2min" onchange="calc()"><option value="0">None — No flag (0)</option><option value="-1">Opponent had 5+ 40C wins — caution (−1)</option><option value="1">Sep Wks 1–4 underdog pick — early season boost (+1)</option></select>
+      <select id="flag2min" onchange="calc()"><option value="0">None — No flag (0)</option><option value="-1">Opponent had 5+ 4th QT wins — caution (−1)</option><option value="1">Sep Wks 1–4 underdog pick — early season boost (+1)</option></select>
     </div>
   </div>
   <div class="box">

@@ -1,8 +1,10 @@
-# The Pipeline — NFL Pick'em 2026
+# The Pipeline Edge — NFL Pick'em 2026
 
 **Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)**
 
 A data-driven, recreational NFL pick'em and confidence pool assistant for weekly selections, weather analysis, and pool tracking.
+
+**[Live Web App](https://thepipelineedge.com)** | **[Privacy Policy](https://thepipelineedge.com/privacy.html)** | **[Terms of Service](https://thepipelineedge.com/terms.html)** | **[GitHub](https://github.com/thepipelineedge/THEPIPELINEEDGE)**
 
 ---
 
@@ -28,7 +30,7 @@ A data-driven, recreational NFL pick'em and confidence pool assistant for weekly
 
 ---
 
-## 📊 Model Validation
+## 📊 Model Performance
 
 Walk-forward model validation across 1,359 historical NFL games (2021–2025):
 
@@ -82,6 +84,25 @@ Both features are completely optional. The app works 100% offline without them.
 
 ---
 
+## 💰 Refunds & Money Back Guarantee
+
+**All refunds are managed exclusively by Google Play Store, not by The Pipeline Edge.**
+
+### Refund Policy:
+- **Refund Window:** 48 hours from purchase
+- **How to Request:** Open Google Play Store → Manage Purchases → Select The Pipeline Edge → Request Refund
+- **Processing:** Google Play processes refunds per their standard policy
+- **Limitations:** We cannot manually process refunds or extend the refund window
+- **Support:** For refund issues, contact Google Play Store support directly
+
+### Important Notes:
+- You are fully responsible for any decisions made using this app
+- Refunds are subject to Google Play Store's refund policies
+- We cannot process refunds manually or bypass the 48-hour window
+- For all refund inquiries, contact Google Play Store support directly
+
+---
+
 ## 🆘 Gambling Support
 
 If you struggle with gambling, help is available:
@@ -94,15 +115,15 @@ If you struggle with gambling, help is available:
 
 ## 📱 Platforms
 
-- ✅ **Web** — `index.html` (responsive, mobile-friendly)
-- 🔨 **Android** — Building AAB file
+- ✅ **Web** — Fully responsive, mobile-friendly
+- 🔨 **Android** — Building AAB file for Google Play
 - 🍎 **iOS** — Building IPA file (Mac required)
 
 ---
 
 ## 🌐 Live Web App
 
-Visit **https://thepipelineedge.com** to use The Pipeline right now!
+Visit **[https://thepipelineedge.com](https://thepipelineedge.com)** to use The Pipeline right now!
 
 **Features:**
 - ✅ **English/Spanish toggle** in header
@@ -120,7 +141,8 @@ THEPIPELINEEDGE/
 ├── index.html          # Main app (2,587 lines)
 ├── privacy.html        # Privacy Policy
 ├── terms.html          # Terms of Service
-└── README.md          # This file
+├── README.md           # This file
+└── .gitignore         # Git ignore rules
 ```
 
 ---
@@ -175,26 +197,21 @@ THEPIPELINEEDGE/
 ### Step 5: Track Results
 - Log weekly wins/losses/points
 - View season summary
-- Track performance by phase (Pre-Season/Regular/Post-Season)
+- Track performance by phase
 
 ---
 
-## 🌐 Live Deployment
+## 🚀 Deployment
 
-- **Website:** https://thepipelineedge.com
-- **Privacy Policy:** https://thepipelineedge.com/privacy.html
-- **GitHub:** https://github.com/thepipelineedge/THEPIPELINEEDGE
+- **Website:** [https://thepipelineedge.com](https://thepipelineedge.com)
+- **Hosting:** Cloudflare Pages (auto-deploy from GitHub)
+- **GitHub:** [https://github.com/thepipelineedge/THEPIPELINEEDGE](https://github.com/thepipelineedge/THEPIPELINEEDGE)
 
----
-
-## 📄 Legal
-
-**© 2026 The Pipeline. All rights reserved.**
-
-- [Privacy Policy](https://thepipelineedge.com/privacy.html)
-- [Terms of Service](https://thepipelineedge.com/terms.html)
-
-Entertainment purposes only. No guarantees on predictions. User assumes all responsibility for decisions made using this app.
+### Auto-Deploy Workflow
+1. Push changes to GitHub
+2. Cloudflare automatically detects changes
+3. Builds and deploys the live site
+4. Live in seconds! ⚡
 
 ---
 
@@ -204,6 +221,18 @@ For issues, questions, or feedback:
 1. Check the in-app help sections
 2. Review injury/ref/luck reference tables
 3. Test with sample picks (load test data button)
+4. Email: **thepipelineedge@gmail.com**
+
+---
+
+## 📄 Legal
+
+**© 2026 The Pipeline Edge. All rights reserved.**
+
+- [Privacy Policy](https://thepipelineedge.com/privacy.html)
+- [Terms of Service](https://thepipelineedge.com/terms.html)
+
+Entertainment purposes only. No guarantees on predictions. User assumes all responsibility for decisions made using this app.
 
 ---
 

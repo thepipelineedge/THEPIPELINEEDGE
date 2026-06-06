@@ -1164,7 +1164,10 @@ function loadPipelineDefaults(){
 }
 
 
-checkTierSelection();
+// FORCE THE FREE / PRO CHOICE SCREEN TO STAY OPEN ON EVERY LOAD
+localStorage.removeItem('selectedTier');
+document.getElementById('accessOverlay').style.display='flex';
+document.getElementById('appContainer').style.display='none';
 </script>
 
 </body>

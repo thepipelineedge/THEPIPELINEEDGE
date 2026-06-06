@@ -185,8 +185,8 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   <div class="paywall-content">
     <h2>🔒 NFL EDGE PRO™ FEATURE</h2>
     <p>This feature is only available with the NFL EDGE PRO™ Season Pass. Upgrade to access advanced tools, confidence rankings, survivor board, and complete analysis.</p>
-    <button class="cta-button" onclick="document.getElementById('paywallModal').style.display='none'" style="background:var(--gold);color:#000;margin-bottom:12px">UPGRADE TO NFL EDGE PRO™ — $10.00</button>
-    <button class="btn btn-outline" onclick="document.getElementById('paywallModal').style.display='none'" style="width:100%">Continue as FREE</button>
+    <button class="cta-button" onclick="alert('THE PIPELINE EDGE PRO™ Season Pass will connect through Google Play after the billing rebuild.')" style="background:var(--gold);color:#000;margin-bottom:12px">UPGRADE TO NFL EDGE PRO™ — $10.00</button>
+    <button class="btn btn-outline" onclick="document.getElementById('paywallModal').style.display='none'; selectTier('free')" style="width:100%">Continue as FREE</button>
   </div>
 </div>
 
@@ -768,16 +768,21 @@ const STADIUMS=[{tm:'ARI',st:'State Farm Stadium',tp:'Dome',ct:'Glendale, AZ',el
 let weekLog=[],pool=[];
 
 function checkTierSelection(){
-  const selectedTier=localStorage.getItem('selectedTier');
-  if(selectedTier){
-    loadTierContent(selectedTier);
-    showAppContainer();
-  }
+  // PAYWALL FIX: Always show the Free / Pro choice screen on page load.
+  // This prevents old saved browser values from auto-skipping the access screen.
+  localStorage.removeItem('selectedTier');
+  document.getElementById('accessOverlay').style.display='flex';
+  document.getElementById('appContainer').style.display='none';
 }
 
 function selectTier(tier){
-  localStorage.setItem('selectedTier',tier);
-  loadTierContent(tier);
+  if(tier==='pro'){
+    // PRO is not unlocked until Google Play Billing is added in the Android build.
+    document.getElementById('paywallModal').style.display='flex';
+    return;
+  }
+  localStorage.setItem('selectedTier','free');
+  loadTierContent('free');
   showAppContainer();
 }
 

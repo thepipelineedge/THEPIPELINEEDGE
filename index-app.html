@@ -766,27 +766,43 @@ const LUCK=[{t:'KC',l:'+5.1',py:9.9,ac:15,flag:'⬇️ Regress'},{t:'MIN',l:'+3.
 const STADIUMS=[{tm:'ARI',st:'State Farm Stadium',tp:'Dome',ct:'Glendale, AZ',el:'1,099 ft'},{tm:'ATL',st:'Mercedes-Benz Stadium',tp:'Dome',ct:'Atlanta, GA',el:'1,010 ft'},{tm:'BAL',st:'M&T Bank Stadium',tp:'Outdoor',ct:'Baltimore, MD',el:'19 ft'},{tm:'BUF',st:'Highmark Stadium',tp:'Outdoor',ct:'Buffalo, NY',el:'678 ft'},{tm:'CAR',st:'Bank of America Stadium',tp:'Outdoor',ct:'Charlotte, NC',el:'751 ft'},{tm:'CHI',st:'Soldier Field',tp:'Outdoor',ct:'Chicago, IL',el:'579 ft'},{tm:'CIN',st:'Paycor Stadium',tp:'Outdoor',ct:'Cincinnati, OH',el:'429 ft'},{tm:'CLE',st:'Cleveland Browns Stadium',tp:'Outdoor',ct:'Cleveland, OH',el:'568 ft'},{tm:'DAL',st:'AT&T Stadium',tp:'Dome',ct:'Arlington, TX',el:'515 ft'},{tm:'DEN',st:'Empower Field at Mile High',tp:'Outdoor',ct:'Denver, CO',el:'5,280 ft'},{tm:'DET',st:'Ford Field',tp:'Dome',ct:'Detroit, MI',el:'573 ft'},{tm:'GB',st:'Lambeau Field',tp:'Outdoor',ct:'Green Bay, WI',el:'606 ft'},{tm:'HOU',st:'NRG Stadium',tp:'Dome',ct:'Houston, TX',el:'47 ft'},{tm:'IND',st:'Lucas Oil Stadium',tp:'Dome',ct:'Indianapolis, IN',el:'718 ft'},{tm:'JAX',st:'TIAA Bank Field',tp:'Outdoor',ct:'Jacksonville, FL',el:'8 ft'},{tm:'KC',st:'Arrowhead Stadium',tp:'Outdoor',ct:'Kansas City, MO',el:'751 ft'},{tm:'LA',st:'SoFi Stadium',tp:'Dome',ct:'Los Angeles, CA',el:'285 ft'},{tm:'LAC',st:'SoFi Stadium',tp:'Dome',ct:'Los Angeles, CA',el:'285 ft'},{tm:'LV',st:'Allegiant Stadium',tp:'Dome',ct:'Las Vegas, NV',el:'2,084 ft'},{tm:'MIA',st:'Hard Rock Stadium',tp:'Outdoor',ct:'Miami, FL',el:'7 ft'},{tm:'MIN',st:'U.S. Bank Stadium',tp:'Dome',ct:'Minneapolis, MN',el:'831 ft'},{tm:'NE',st:'Gillette Stadium',tp:'Outdoor',ct:'Foxborough, MA',el:'56 ft'},{tm:'NO',st:'Caesars Superdome',tp:'Dome',ct:'New Orleans, LA',el:'-6 ft'},{tm:'NYG',st:'MetLife Stadium',tp:'Outdoor',ct:'East Rutherford, NJ',el:'33 ft'},{tm:'NYJ',st:'MetLife Stadium',tp:'Outdoor',ct:'East Rutherford, NJ',el:'33 ft'},{tm:'PHI',st:'Lincoln Financial Field',tp:'Outdoor',ct:'Philadelphia, PA',el:'42 ft'},{tm:'PIT',st:'Acrisure Stadium',tp:'Outdoor',ct:'Pittsburgh, PA',el:'719 ft'},{tm:'SEA',st:'Lumen Field',tp:'Outdoor',ct:'Seattle, WA',el:'21 ft'},{tm:'SF',st:'Levi\'s Stadium',tp:'Outdoor',ct:'Santa Clara, CA',el:'73 ft'},{tm:'TB',st:'Raymond James Stadium',tp:'Outdoor',ct:'Tampa, FL',el:'15 ft'},{tm:'TEN',st:'Nissan Stadium',tp:'Outdoor',ct:'Nashville, TN',el:'394 ft'},{tm:'WAS',st:'Northwest Stadium',tp:'Outdoor',ct:'Landover, MD',el:'106 ft'}];
 
 let weekLog=[],pool=[];
+let accessChoiceMade=false;
+
+function startAccessGate(){
+  // HARD PAYWALL FIX: Always show the Free / Pro choice screen on page load.
+  // Old browser storage cannot skip this screen anymore.
+  accessChoiceMade=false;
+  try{
+    localStorage.removeItem('selectedTier');
+    localStorage.removeItem('proUnlocked');
+    localStorage.removeItem('seasonPass');
+  }catch(e){}
+  const overlay=document.getElementById('accessOverlay');
+  const app=document.getElementById('appContainer');
+  const modal=document.getElementById('paywallModal');
+  if(overlay) overlay.style.display='flex';
+  if(app) app.style.display='none';
+  if(modal) modal.style.display='none';
+}
 
 function checkTierSelection(){
-  // PAYWALL FIX: Always show the Free / Pro choice screen on page load.
-  // This prevents old saved browser values from auto-skipping the access screen.
-  localStorage.removeItem('selectedTier');
-  document.getElementById('accessOverlay').style.display='flex';
-  document.getElementById('appContainer').style.display='none';
+  startAccessGate();
 }
 
 function selectTier(tier){
+  accessChoiceMade=true;
   if(tier==='pro'){
     // PRO is not unlocked until Google Play Billing is added in the Android build.
     document.getElementById('paywallModal').style.display='flex';
     return;
   }
-  localStorage.setItem('selectedTier','free');
+  try{localStorage.setItem('selectedTier','free');}catch(e){}
   loadTierContent('free');
   showAppContainer();
 }
 
 function showAppContainer(){
+  accessChoiceMade=true;
   document.getElementById('accessOverlay').style.display='none';
   document.getElementById('appContainer').style.display='block';
   initializeApp();
@@ -1165,9 +1181,21 @@ function loadPipelineDefaults(){
 
 
 // FORCE THE FREE / PRO CHOICE SCREEN TO STAY OPEN ON EVERY LOAD
-localStorage.removeItem('selectedTier');
-document.getElementById('accessOverlay').style.display='flex';
-document.getElementById('appContainer').style.display='none';
+startAccessGate();
+window.addEventListener('DOMContentLoaded', startAccessGate);
+window.addEventListener('load', startAccessGate);
+
+// Safety guard: if any old script/browser cache tries to auto-open the app during the first seconds,
+// this puts the choice screen back unless the user actually clicked FREE or PRO.
+let accessGateGuard=setInterval(function(){
+  if(!accessChoiceMade){
+    const overlay=document.getElementById('accessOverlay');
+    const app=document.getElementById('appContainer');
+    if(overlay) overlay.style.display='flex';
+    if(app) app.style.display='none';
+  }
+},250);
+setTimeout(function(){clearInterval(accessGateGuard);},6000);
 </script>
 
 </body>

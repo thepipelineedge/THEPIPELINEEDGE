@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026</title>
+<title>THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026 v1.2</title>
+<!-- NFL EDGE PRO v1.2.1 Update Build: synced weekly rankings, fixed consensus values, public-safe maintenance update -->
 <style>
 @font-face{font-family:'Bebas Neue';src:url('https://fonts.gstatic.com/s/bebasneue/v9/JTUSjIg69CK48gSG63HxTvEjN_cPYK2o.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:400;font-display:swap}
@@ -155,7 +156,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
         <div class="tier-features">
           <div>✅ Weekly automated selections</div>
         </div>
-        <button class="cta-button">START FREE</button>
+        <button class="cta-button">CONTINUE FREE</button>
       </div>
 
       <div class="tier-box" onclick="selectTier('pro')">
@@ -170,7 +171,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
           <div>✅ Survivor Board</div>
           <div>✅ Injury & referee data</div>
         </div>
-        <button class="cta-button">UPGRADE TO PRO</button>
+        <button class="cta-button">UNLOCK NFL EDGE PRO™</button>
       </div>
     </div>
 
@@ -185,8 +186,8 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   <div class="paywall-content">
     <h2>🔒 NFL EDGE PRO™ FEATURE</h2>
     <p>This feature is only available with the NFL EDGE PRO™ Season Pass. Upgrade to access advanced tools, confidence rankings, survivor board, and complete analysis.</p>
-    <button class="cta-button" onclick="alert('THE PIPELINE EDGE PRO™ Season Pass will connect through Google Play after the billing rebuild.')" style="background:var(--gold);color:#000;margin-bottom:12px">UPGRADE TO NFL EDGE PRO™ — $10.00</button>
-    <button class="btn btn-outline" onclick="document.getElementById('paywallModal').style.display='none'; selectTier('free')" style="width:100%">Continue as FREE</button>
+    <button class="cta-button" onclick="document.getElementById('paywallModal').style.display='none'" style="background:var(--gold);color:#000;margin-bottom:12px">UNLOCK NFL EDGE PRO™ — $10.00</button>
+    <button class="btn btn-outline" onclick="document.getElementById('paywallModal').style.display='none'" style="width:100%">Continue as FREE</button>
   </div>
 </div>
 
@@ -498,22 +499,22 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <label>Select Week 1 Game</label>
       <select id="gameSelect" onchange="loadPipelineDefaults()">
         <option value="">-- Select Game --</option>
-        <option value="NE|SEA">NE @ SEA — Pipeline Default: EDGE ELITE / 8 of 8</option>
-        <option value="SF|LAR">SF @ LAR — Pipeline Default: EDGE ELITE / 8 of 8</option>
+        <option value="NE|SEA">NE @ SEA — Pipeline Default: EDGE LEAN / 8 of 8</option>
+        <option value="SF|LAR">SF @ LAR — Pipeline Default: EDGE LEAN / 8 of 8</option>
         <option value="CHI|CAR">CHI @ CAR — Pipeline Default: EDGE WATCH / 6 of 8</option>
-        <option value="TB|CIN">TB @ CIN — Pipeline Default: EDGE STRONG / 6 of 8</option>
+        <option value="TB|CIN">TB @ CIN — Pipeline Default: EDGE ELITE / 6 of 8</option>
         <option value="BAL|IND">BAL @ IND — Pipeline Default: EDGE ELITE / 6 of 8</option>
         <option value="NO|DET">NO @ DET — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="BUF|HOU">BUF @ HOU — Pipeline Default: EDGE WATCH / 5 of 8</option>
-        <option value="CLE|JAX">CLE @ JAX — Pipeline Default: EDGE LEAN / 8 of 8</option>
+        <option value="BUF|HOU">BUF @ HOU — Pipeline Default: EDGE ELITE / 5 of 8</option>
+        <option value="CLE|JAX">CLE @ JAX — Pipeline Default: EDGE WATCH / 8 of 8</option>
         <option value="ATL|PIT">ATL @ PIT — Pipeline Default: EDGE LEAN / 8 of 8</option>
         <option value="NYJ|TEN">NYJ @ TEN — Pipeline Default: EDGE STRONG / 7 of 8</option>
-        <option value="ARI|LAC">ARI @ LAC — Pipeline Default: EDGE STRONG / 8 of 8</option>
+        <option value="ARI|LAC">ARI @ LAC — Pipeline Default: EDGE LEAN / 8 of 8</option>
         <option value="MIA|LVR">MIA @ LVR — Pipeline Default: EDGE WATCH / 4 of 8</option>
-        <option value="GB|MIN">GB @ MIN — Pipeline Default: EDGE STRONG / 6 of 8</option>
-        <option value="DAL|NYG">DAL @ NYG — Pipeline Default: EDGE WATCH / 5 of 8</option>
-        <option value="KC|DEN">KC @ DEN — Pipeline Default: EDGE ELITE / 7 of 8</option>
-        <option value="PHI|WAS">PHI @ WAS — Pipeline Default: EDGE LEAN / 5 of 8</option>
+        <option value="GB|MIN">GB @ MIN — Pipeline Default: EDGE ELITE / 6 of 8</option>
+        <option value="DAL|NYG">DAL @ NYG — Pipeline Default: EDGE STRONG / 5 of 8</option>
+        <option value="DEN|KC">DEN @ KC — Pipeline Default: EDGE ELITE / 7 of 8</option>
+        <option value="WAS|PHI">WAS @ PHI — Pipeline Default: EDGE WATCH / 5 of 8</option>
       </select>
 
       <div class="note" id="pipelineDefaultNote" style="margin-top:8px">
@@ -532,9 +533,9 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <label>THE PIPELINE EDGE Consensus</label>
       <select id="models" onchange="calc()">
         <option value="0">4 of 8 Systems</option>
-        <option value="1">5 of 8 Systems</option>
+        <option value="0.5">5 of 8 Systems</option>
         <option value="1">6 of 8 Systems</option>
-        <option value="2">7 of 8 Systems</option>
+        <option value="1.5">7 of 8 Systems</option>
         <option value="2">8 of 8 Systems</option>
       </select>
 
@@ -545,11 +546,31 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
     <div class="box">
       <div class="box-title">Adjustments</div>
       <label>Away Team Injury Filter</label>
-      <select id="awayInjFilter" onchange="calc()"><option value="0">No impact (0)</option><option value="-1">Tier 2: Role player out (−1)</option><option value="-1.5">Tier 2.5: Starting WR/RB out (−1.5)</option><option value="drop">Tier 3: QB/Elite RB/WR out (DROP)</option></select>
+      <select id="awayInjFilter" onchange="calc()">
+        <option value="0">No impact (0)</option>
+        <option value="-1">Away role player out (−1)</option>
+        <option value="1">Home role player out (+1)</option>
+        <option value="-1.5">Away starting WR/RB out (−1.5)</option>
+        <option value="1.5">Home starting WR/RB out (+1.5)</option>
+        <option value="drop">Away QB/Elite RB/WR out (DROP)</option>
+        <option value="2">Home QB/Elite RB/WR out (+2)</option>
+      </select>
       <label>Home Team Injury Filter</label>
-      <select id="injFilter" onchange="calc()"><option value="0">No impact (0)</option><option value="-1">Tier 2: Role player out (−1)</option><option value="-1.5">Tier 2.5: Starting WR/RB out (−1.5)</option><option value="drop">Tier 3: QB/Elite RB/WR out (DROP)</option></select>
+      <select id="injFilter" onchange="calc()">
+        <option value="0">No impact (0)</option>
+        <option value="-1">Home role player out (−1)</option>
+        <option value="1">Away role player out (+1)</option>
+        <option value="-1.5">Home starting WR/RB out (−1.5)</option>
+        <option value="1.5">Away starting WR/RB out (+1.5)</option>
+        <option value="drop">Home QB/Elite RB/WR out (DROP)</option>
+        <option value="2">Away QB/Elite RB/WR out (+2)</option>
+      </select>
       <label>Referee Adjustment</label>
-      <select id="refAdj" onchange="calc()"><option value="0">Neutral (0)</option><option value="1">Home friendly (+1)</option><option value="-1">Road friendly (−1)</option></select>
+      <select id="refAdj" onchange="calc()">
+        <option value="0">No referee edge / skip (0)</option>
+        <option value="1">Referee edge helps my pick (+1)</option>
+        <option value="-1">Referee edge hurts my pick (−1)</option>
+      </select>
       <label>Luck Factor</label>
       <select id="luckAdj" onchange="calc()"><option value="0">Neutral (0)</option><option value="1">Positive (+1)</option><option value="-1">Negative (−1)</option></select>
       <label>2-MIN WARNING FLAG</label>
@@ -599,7 +620,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
     <div class="box">
       <div class="box-title">Confidence Tiers</div>
       <div style="display:grid;gap:10px">
-        <div style="background:rgba(46,160,67,0.08);border:1px solid rgba(46,160,67,0.2);border-radius:8px;padding:14px;text-align:center"><div style="font-size:18px;color:var(--green2);font-weight:700">12–14</div><div style="font-size:10px;color:var(--green2)">THE PIPELINE EDGE ELITE</div></div>
+        <div style="background:rgba(46,160,67,0.08);border:1px solid rgba(46,160,67,0.2);border-radius:8px;padding:14px;text-align:center"><div style="font-size:18px;color:var(--green2);font-weight:700">12–16</div><div style="font-size:10px;color:var(--green2)">THE PIPELINE EDGE ELITE</div></div>
         <div style="background:rgba(56,139,253,0.08);border:1px solid rgba(56,139,253,0.2);border-radius:8px;padding:14px;text-align:center"><div style="font-size:18px;color:var(--blue2);font-weight:700">9–11</div><div style="font-size:10px;color:var(--blue2)">THE PIPELINE EDGE STRONG</div></div>
         <div style="background:rgba(210,153,34,0.08);border:1px solid rgba(210,153,34,0.2);border-radius:8px;padding:14px;text-align:center"><div style="font-size:18px;color:var(--amber2);font-weight:700">5–8</div><div style="font-size:10px;color:var(--amber2)">THE PIPELINE EDGE LEAN</div></div>
         <div style="background:rgba(218,54,51,0.08);border:1px solid rgba(218,54,51,0.2);border-radius:8px;padding:14px;text-align:center"><div style="font-size:18px;color:var(--red2);font-weight:700">1–4</div><div style="font-size:10px;color:var(--red2)">THE PIPELINE EDGE WATCH</div></div>
@@ -766,43 +787,22 @@ const LUCK=[{t:'KC',l:'+5.1',py:9.9,ac:15,flag:'⬇️ Regress'},{t:'MIN',l:'+3.
 const STADIUMS=[{tm:'ARI',st:'State Farm Stadium',tp:'Dome',ct:'Glendale, AZ',el:'1,099 ft'},{tm:'ATL',st:'Mercedes-Benz Stadium',tp:'Dome',ct:'Atlanta, GA',el:'1,010 ft'},{tm:'BAL',st:'M&T Bank Stadium',tp:'Outdoor',ct:'Baltimore, MD',el:'19 ft'},{tm:'BUF',st:'Highmark Stadium',tp:'Outdoor',ct:'Buffalo, NY',el:'678 ft'},{tm:'CAR',st:'Bank of America Stadium',tp:'Outdoor',ct:'Charlotte, NC',el:'751 ft'},{tm:'CHI',st:'Soldier Field',tp:'Outdoor',ct:'Chicago, IL',el:'579 ft'},{tm:'CIN',st:'Paycor Stadium',tp:'Outdoor',ct:'Cincinnati, OH',el:'429 ft'},{tm:'CLE',st:'Cleveland Browns Stadium',tp:'Outdoor',ct:'Cleveland, OH',el:'568 ft'},{tm:'DAL',st:'AT&T Stadium',tp:'Dome',ct:'Arlington, TX',el:'515 ft'},{tm:'DEN',st:'Empower Field at Mile High',tp:'Outdoor',ct:'Denver, CO',el:'5,280 ft'},{tm:'DET',st:'Ford Field',tp:'Dome',ct:'Detroit, MI',el:'573 ft'},{tm:'GB',st:'Lambeau Field',tp:'Outdoor',ct:'Green Bay, WI',el:'606 ft'},{tm:'HOU',st:'NRG Stadium',tp:'Dome',ct:'Houston, TX',el:'47 ft'},{tm:'IND',st:'Lucas Oil Stadium',tp:'Dome',ct:'Indianapolis, IN',el:'718 ft'},{tm:'JAX',st:'TIAA Bank Field',tp:'Outdoor',ct:'Jacksonville, FL',el:'8 ft'},{tm:'KC',st:'Arrowhead Stadium',tp:'Outdoor',ct:'Kansas City, MO',el:'751 ft'},{tm:'LA',st:'SoFi Stadium',tp:'Dome',ct:'Los Angeles, CA',el:'285 ft'},{tm:'LAC',st:'SoFi Stadium',tp:'Dome',ct:'Los Angeles, CA',el:'285 ft'},{tm:'LV',st:'Allegiant Stadium',tp:'Dome',ct:'Las Vegas, NV',el:'2,084 ft'},{tm:'MIA',st:'Hard Rock Stadium',tp:'Outdoor',ct:'Miami, FL',el:'7 ft'},{tm:'MIN',st:'U.S. Bank Stadium',tp:'Dome',ct:'Minneapolis, MN',el:'831 ft'},{tm:'NE',st:'Gillette Stadium',tp:'Outdoor',ct:'Foxborough, MA',el:'56 ft'},{tm:'NO',st:'Caesars Superdome',tp:'Dome',ct:'New Orleans, LA',el:'-6 ft'},{tm:'NYG',st:'MetLife Stadium',tp:'Outdoor',ct:'East Rutherford, NJ',el:'33 ft'},{tm:'NYJ',st:'MetLife Stadium',tp:'Outdoor',ct:'East Rutherford, NJ',el:'33 ft'},{tm:'PHI',st:'Lincoln Financial Field',tp:'Outdoor',ct:'Philadelphia, PA',el:'42 ft'},{tm:'PIT',st:'Acrisure Stadium',tp:'Outdoor',ct:'Pittsburgh, PA',el:'719 ft'},{tm:'SEA',st:'Lumen Field',tp:'Outdoor',ct:'Seattle, WA',el:'21 ft'},{tm:'SF',st:'Levi\'s Stadium',tp:'Outdoor',ct:'Santa Clara, CA',el:'73 ft'},{tm:'TB',st:'Raymond James Stadium',tp:'Outdoor',ct:'Tampa, FL',el:'15 ft'},{tm:'TEN',st:'Nissan Stadium',tp:'Outdoor',ct:'Nashville, TN',el:'394 ft'},{tm:'WAS',st:'Northwest Stadium',tp:'Outdoor',ct:'Landover, MD',el:'106 ft'}];
 
 let weekLog=[],pool=[];
-let accessChoiceMade=false;
-
-function startAccessGate(){
-  // HARD PAYWALL FIX: Always show the Free / Pro choice screen on page load.
-  // Old browser storage cannot skip this screen anymore.
-  accessChoiceMade=false;
-  try{
-    localStorage.removeItem('selectedTier');
-    localStorage.removeItem('proUnlocked');
-    localStorage.removeItem('seasonPass');
-  }catch(e){}
-  const overlay=document.getElementById('accessOverlay');
-  const app=document.getElementById('appContainer');
-  const modal=document.getElementById('paywallModal');
-  if(overlay) overlay.style.display='flex';
-  if(app) app.style.display='none';
-  if(modal) modal.style.display='none';
-}
 
 function checkTierSelection(){
-  startAccessGate();
+  const selectedTier=localStorage.getItem('selectedTier');
+  if(selectedTier){
+    loadTierContent(selectedTier);
+    showAppContainer();
+  }
 }
 
 function selectTier(tier){
-  accessChoiceMade=true;
-  if(tier==='pro'){
-    // PRO is not unlocked until Google Play Billing is added in the Android build.
-    document.getElementById('paywallModal').style.display='flex';
-    return;
-  }
-  try{localStorage.setItem('selectedTier','free');}catch(e){}
-  loadTierContent('free');
+  localStorage.setItem('selectedTier',tier);
+  loadTierContent(tier);
   showAppContainer();
 }
 
 function showAppContainer(){
-  accessChoiceMade=true;
   document.getElementById('accessOverlay').style.display='none';
   document.getElementById('appContainer').style.display='block';
   initializeApp();
@@ -959,7 +959,7 @@ function renderWeekLog(){
     body.innerHTML='<tr><td colspan="5" style="color:var(--text3);text-align:center;padding:20px">No weeks logged</td></tr>';
     return;
   }
-  body.innerHTML=weekLog.map((r,i)=>`<tr><td>${r.week.replace('Week','Wk')}</td><td class="c-green">${r.wins}</td><td class="c-red">${r.losses}</td><td class="c-gold">${r.pts}</td><td><button class="btn" style="padding:4px 8px;font-size:10px;background:var(--red2);color:#fff;cursor:pointer;border:none;border-radius:4px" onclick="weekLog.splice(${i},1);localStorage.setItem('weekLog',JSON.stringify(weekLog));renderWeekLog();updateStats()">FLUSH</button></td></tr>`).join('');
+  body.innerHTML=weekLog.map((r,i)=>`<tr><td>${r.week.replace('Week','Wk')}</td><td class="c-green">${r.wins}</td><td class="c-red">${r.losses}</td><td class="c-gold">${r.pts}</td><td><button class="btn" style="padding:4px 8px;font-size:10px;background:var(--red2);color:#fff;cursor:pointer;border:none;border-radius:4px" onclick="weekLog.splice(${i},1);localStorage.setItem('weekLog',JSON.stringify(weekLog));renderWeekLog();updateStats()">✕ DELETE</button></td></tr>`).join('');
 }
 
 function updateStats(){
@@ -1017,7 +1017,7 @@ function calc(){
   const inj=document.getElementById('injFilter').value;
   const l=parseFloat(document.getElementById('luckAdj').value)||0;
   const flag2min=parseFloat(document.getElementById('flag2min').value)||0;
-  const badge=document.getElementById('edgeTierBadge');
+  const badge=document.getElementById('edgeTier') || document.getElementById('edgeTierBadge');
 
   if(awayInj==='drop'||inj==='drop'){
     document.getElementById('finalScore').textContent='DROP';
@@ -1038,7 +1038,15 @@ function calc(){
   const tier=getEdgeTier(total);
   document.getElementById('finalScore').textContent=total;
   document.getElementById('finalScore').style.color=tier.color;
-  if(badge){badge.textContent=tier.txt;badge.style.color=tier.color;}
+  if(badge){
+    badge.textContent=tier.txt;
+    badge.style.color=tier.color;
+    badge.className='edge-tier-badge';
+    if(total>=12)badge.classList.add('edge-elite');
+    else if(total>=9)badge.classList.add('edge-strong');
+    else if(total>=5)badge.classList.add('edge-lean');
+    else badge.classList.add('edge-watch');
+  }
 }
 function addToPool(){
   const away=document.getElementById('awayTeam').value;
@@ -1128,22 +1136,25 @@ function buildStadiumTable(){
 
 
 const PIPELINE_DEFAULTS={
-  'NE|SEA':{away:'NE',home:'SEA',rating:'12',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'SF|LAR':{away:'SF',home:'LAR',rating:'12',consensusText:'8 of 8 Systems',consensusVal:'2'},
+  // Synced to the visible Week 1 confidence ranking board.
+  // Rating values: WATCH=3, LEAN=7, STRONG=10, ELITE=12.
+  // Consensus values are now unique: 4/8=0, 5/8=0.5, 6/8=1, 7/8=1.5, 8/8=2.
+  'NE|SEA':{away:'NE',home:'SEA',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
+  'SF|LAR':{away:'SF',home:'LAR',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
   'CHI|CAR':{away:'CHI',home:'CAR',rating:'3',consensusText:'6 of 8 Systems',consensusVal:'1'},
-  'TB|CIN':{away:'TB',home:'CIN',rating:'10',consensusText:'6 of 8 Systems',consensusVal:'1'},
+  'TB|CIN':{away:'TB',home:'CIN',rating:'12',consensusText:'6 of 8 Systems',consensusVal:'1'},
   'BAL|IND':{away:'BAL',home:'IND',rating:'12',consensusText:'6 of 8 Systems',consensusVal:'1'},
   'NO|DET':{away:'NO',home:'DET',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'BUF|HOU':{away:'BUF',home:'HOU',rating:'3',consensusText:'5 of 8 Systems',consensusVal:'1'},
-  'CLE|JAX':{away:'CLE',home:'JAX',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
+  'BUF|HOU':{away:'BUF',home:'HOU',rating:'12',consensusText:'5 of 8 Systems',consensusVal:'0.5'},
+  'CLE|JAX':{away:'CLE',home:'JAX',rating:'3',consensusText:'8 of 8 Systems',consensusVal:'2'},
   'ATL|PIT':{away:'ATL',home:'PIT',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'NYJ|TEN':{away:'NYJ',home:'TEN',rating:'10',consensusText:'7 of 8 Systems',consensusVal:'2'},
-  'ARI|LAC':{away:'ARI',home:'LAC',rating:'10',consensusText:'8 of 8 Systems',consensusVal:'2'},
+  'NYJ|TEN':{away:'NYJ',home:'TEN',rating:'10',consensusText:'7 of 8 Systems',consensusVal:'1.5'},
+  'ARI|LAC':{away:'ARI',home:'LAC',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
   'MIA|LVR':{away:'MIA',home:'LVR',rating:'3',consensusText:'4 of 8 Systems',consensusVal:'0'},
-  'GB|MIN':{away:'GB',home:'MIN',rating:'10',consensusText:'6 of 8 Systems',consensusVal:'1'},
-  'DAL|NYG':{away:'DAL',home:'NYG',rating:'3',consensusText:'5 of 8 Systems',consensusVal:'1'},
-  'KC|DEN':{away:'KC',home:'DEN',rating:'12',consensusText:'7 of 8 Systems',consensusVal:'2'},
-  'PHI|WAS':{away:'PHI',home:'WAS',rating:'7',consensusText:'5 of 8 Systems',consensusVal:'1'}
+  'GB|MIN':{away:'GB',home:'MIN',rating:'12',consensusText:'6 of 8 Systems',consensusVal:'1'},
+  'DAL|NYG':{away:'DAL',home:'NYG',rating:'10',consensusText:'5 of 8 Systems',consensusVal:'0.5'},
+  'DEN|KC':{away:'DEN',home:'KC',rating:'12',consensusText:'7 of 8 Systems',consensusVal:'1.5'},
+  'WAS|PHI':{away:'WAS',home:'PHI',rating:'3',consensusText:'5 of 8 Systems',consensusVal:'0.5'}
 };
 
 function setSelectOptionByText(selectEl,text){
@@ -1177,25 +1188,11 @@ function loadPipelineDefaults(){
     note.innerHTML='<strong>Pipeline Default Loaded:</strong> '+g.away+' @ '+g.home+' · <span style="color:'+tier.color+'">'+tier.txt+'</span> · '+g.consensusText+' <br><span style="color:var(--text3)">Defaults are editable for NFL EDGE PRO™ users.</span>';
   }
   calc();
+  saveGameData();
 }
 
 
-// FORCE THE FREE / PRO CHOICE SCREEN TO STAY OPEN ON EVERY LOAD
-startAccessGate();
-window.addEventListener('DOMContentLoaded', startAccessGate);
-window.addEventListener('load', startAccessGate);
-
-// Safety guard: if any old script/browser cache tries to auto-open the app during the first seconds,
-// this puts the choice screen back unless the user actually clicked FREE or PRO.
-let accessGateGuard=setInterval(function(){
-  if(!accessChoiceMade){
-    const overlay=document.getElementById('accessOverlay');
-    const app=document.getElementById('appContainer');
-    if(overlay) overlay.style.display='flex';
-    if(app) app.style.display='none';
-  }
-},250);
-setTimeout(function(){clearInterval(accessGateGuard);},6000);
+checkTierSelection();
 </script>
 
 </body>

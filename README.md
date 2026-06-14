@@ -1,9 +1,44 @@
 [README.md](https://github.com/user-attachments/files/28921801/README.md)
-# THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026
+THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026
+Where Information Becomes an Edge™
 
-**Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)**
+Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)
 
-A data-driven, recreational NFL pick'em, confidence pool, survivor pool, and football analysis assistant for weekly selections, weather context, pool tracking, and season-long decision support.
+THE PIPELINE EDGE™ was inspired by the old saying, "information coming down the pipeline." Long before the logo, the models, or the ratings system existed, the idea began with a simple observation: information is constantly moving.
+
+In the NFL, information never stops flowing. Injuries, weather reports, power ratings, matchup statistics, line movement, team trends, consensus models, and game-day developments are always moving through the football landscape.
+
+The challenge is not finding information.
+
+The challenge is determining which information matters.
+
+THE PIPELINE EDGE™ was created to organize, process, and transform football information into actionable insights for NFL pick'em pools, confidence pools, survivor contests, and season-long football analysis.
+
+The Pipeline represents the flow of information.
+
+The Edge represents the advantage created when that information is properly filtered, evaluated, and understood.
+
+The concept also reflects the unpredictable nature of football itself. Every NFL season is filled with uncertainty. Injuries happen unexpectedly. Weather changes without warning. Teams outperform expectations. Markets move. Public perception shifts. Every game exists inside a storm of constantly changing information.
+
+THE PIPELINE EDGE™ is designed to help navigate that uncertainty.
+
+Information enters the pipeline.
+
+The noise gets filtered out.
+
+The edge comes out the other side.
+
+The football represents the game itself.
+
+The pipeline represents the process.
+
+The edge represents the advantage.
+
+The mission of THE PIPELINE EDGE™ is simple:
+
+Transform information into an edge.
+
+A data-driven, recreational NFL pick'em, confidence pool, survivor pool, and football analysis assistant for weekly selections, weather context, pool tracking, and season-long decision support
 
 **[Live Web App](https://thepipelineedge.com)** | **[Privacy Policy](https://thepipelineedge.com/privacy.html)** | **[Terms of Service](https://thepipelineedge.com/terms.html)** | **[GitHub](https://github.com/thepipelineedge/THEPIPELINEEDGE)**
 

@@ -1,1 +1,283 @@
-# THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026 **Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)** A data-driven, recreational NFL pick'em, confidence pool, survivor pool, and football analysis assistant for weekly selections, weather context, pool tracking, and season-long decision support. **[Live Web App](https://thepipelineedge.com)** | **[Privacy Policy](https://thepipelineedge.com/privacy.html)** | **[Terms of Service](https://thepipelineedge.com/terms.html)** | **[GitHub](https://github.com/thepipelineedge/THEPIPELINEEDGE)** --- ## 🎯 Features ### 🤖 Automated Mode — Free * **Weekly Selections** — Free weekly NFL picks posted during the season * **Weather Tracker** — Stadium weather context for NFL games * **Lightning Alerts** — Lightning tracking near outdoor venues * **Pool Tracker** — Log weekly results and track season performance * **Season Summary** — Running totals and performance tracking * **Fan Resources** — NFL fan links and resources * **Stadium Data** — NFL stadium reference with dome/outdoor classification --- ## 🛠️ NFL EDGE PRO™ Mode ### NFL EDGE PRO™ Season Pass * **One-Time Seasonal Purchase** * **Price:** $10.00 USD * **Coverage:** NFL Preseason through Super Bowl * **No Automatic Renewal** * **No Recurring Charges** ### PRO Features * Weekly NFL Predictions * Weekly Confidence Rankings * Weekly Pool Builder * Pool Tracking Tools * Weather Context * Stadium Reference * Survivor Board * Subscriber-Only NFL EDGE PRO™ Features --- ## 🏆 Survivor Board ### 🥇 THE PIPELINE EDGE LOCK Highest survivor confidence selection for the week. ### 🥈 THE PIPELINE EDGE VALUE Strong selection while preserving future opportunities. ### 🎯 THE PIPELINE EDGE DIFFERENCE Alternative lower-ownership path for players seeking differentiation. --- ## 📊 Model Performance Walk-forward model validation across 1,359 historical NFL games from 2021–2025: | Year | Accuracy | Record | | ----------- | --------- | --------------- | | 2025 | 62.4% | In progress | | 2024 | 65.1% | 177/272 | | 2023 | 57.0% | — | | 2022 | 59.2% | — | | 2021 | 57.8% | — | | **Overall** | **60.0%** | **1,359 games** | **Methodology:** The model blends multiple prediction systems using historical NFL data, team strength metrics, matchup analysis, and advanced football statistics. Results are provided for entertainment and informational purposes only and do not guarantee future outcomes. --- ## 🏈 THE PIPELINE EDGE™ Rating System ### EDGE Tier Classification | THE PIPELINE EDGE Rating | EDGE Tier | | ------------------------ | ------------------------ | | 1–4 | THE PIPELINE EDGE WATCH | | 5–8 | THE PIPELINE EDGE LEAN | | 9–11 | THE PIPELINE EDGE STRONG | | 12–14+ | THE PIPELINE EDGE ELITE | ### Weekly Pool Rankings Weekly confidence rankings are assigned from highest-rated selection to lowest-rated selection. Example: * Highest Rated Pick = 16 Confidence Points * Next Highest = 15 * Continue descending through the weekly card No fixed cap is applied to ranking calculations. Weekly pool rankings are generated from the highest-rated selections entered by the user. --- ## 🔧 Rebuild 1.3 Updates * Auto-Filled Game Dropdowns * Weekly Ranking Engine * EDGE Tier Display System * Raw Score Sorting * Confidence Assignment Automation * Mobile-Optimized Workflow * Weekly Pool Confidence Assignment --- ## ⚠️ Entertainment Only **THE PIPELINE EDGE™ is for entertainment and recreational pool use only. It is NOT a betting or gambling app.** * ✅ No real-money gambling features * ✅ No sportsbook integration * ✅ No betting transactions * ✅ No betting advice or odds * ✅ No guarantees on predictions Weekly selections, confidence rankings, model ratings, and stats are informational only and do not guarantee future outcomes. --- ## 🔒 Privacy & Data ### Data Stored Locally User-generated data is stored locally on your device. Examples include: * Weekly pick selections * Confidence rankings * Pool results * Season performance history * Game notes and preferences This data is not transmitted to our servers. You may remove local data by clearing browser or app storage. ### Optional Features When optional features such as weather or lightning tracking are used, the app may reference public stadium coordinates. No personal information is required for these features. ### Third-Party Services THE PIPELINE EDGE™ may utilize: * **Google Play Store** — App distribution, purchases, and refunds * **Open-Meteo** — Weather information * **LightningMaps** — Lightning tracking * **Cloudflare** — Website hosting and delivery These services operate under their own terms, privacy policies, and service rules. --- ## 💰 Refund Policy All refunds are managed exclusively by Google Play Store, not by THE PIPELINE EDGE™. Refund requests must be submitted directly through Google Play Store and are subject to Google's current policies and eligibility requirements. THE PIPELINE EDGE™ cannot: * Issue refunds directly * Override Google Play Store decisions * Extend refund eligibility periods * Process payment disputes For refund assistance, contact Google Play Store Support. --- ## 📱 Platforms * ✅ **Web** — Fully responsive and mobile-friendly * 🔨 **Android** — Google Play release workflow * 🚧 **iOS** — Future development --- ## 🌐 Live Web App Visit **https://thepipelineedge.com** to use THE PIPELINE EDGE™. Features include: * Mobile responsive design * Offline mode * Local storage * English / Spanish support * No account required --- ## 📋 File Structure text THEPIPELINEEDGE/ ├── index.html # Main app ├── privacy.html # Privacy Policy ├── terms.html # Terms of Service ├── README.md # Repository information └── .gitignore # Git ignore rules --- ## 🎮 How It Works ### Step 1: Enter Weekly Games Add the weekly NFL matchups into the game entry section. ### Step 2: Apply Ratings Enter THE PIPELINE EDGE™ rating information for each matchup. ### Step 3: Generate EDGE Tier Each game displays its EDGE Tier: * THE PIPELINE EDGE WATCH * THE PIPELINE EDGE LEAN * THE PIPELINE EDGE STRONG * THE PIPELINE EDGE ELITE ### Step 4: Build Weekly Pool The weekly pool builder ranks selections from highest-rated to lowest-rated and assigns confidence points. ### Step 5: Track Results Log wins, losses, points, and season performance. --- ## 🚀 Deployment * **Website:** https://thepipelineedge.com * **Hosting:** Cloudflare Pages * **GitHub:** https://github.com/thepipelineedge/THEPIPELINEEDGE ### Auto-Deploy Workflow 1. Push changes to GitHub 2. Cloudflare detects changes 3. Site automatically rebuilds 4. Updates deploy live --- ## 🤝 Support For issues, questions, or feedback: **Email:** [thepipelineedge@gmail.com](mailto:thepipelineedge@gmail.com) --- ## 📄 Legal **© 2026 THE PIPELINE EDGE™. All Rights Reserved.** * [Privacy Policy](https://thepipelineedge.com/privacy.html) * [Terms of Service](https://thepipelineedge.com/terms.html) Entertainment purposes only. No guarantees are made regarding predictions, rankings, or outcomes. Users assume full responsibility for all decisions made using information provided by THE PIPELINE EDGE™. --- **THE PIPELINE EDGE™ — Trust the Process. Trust the Data. 🏈**
+[README.md](https://github.com/user-attachments/files/28921801/README.md)
+# THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026
+
+**Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)**
+
+A data-driven, recreational NFL pick'em, confidence pool, survivor pool, and football analysis assistant for weekly selections, weather context, pool tracking, and season-long decision support.
+
+**[Live Web App](https://thepipelineedge.com)** | **[Privacy Policy](https://thepipelineedge.com/privacy.html)** | **[Terms of Service](https://thepipelineedge.com/terms.html)** | **[GitHub](https://github.com/thepipelineedge/THEPIPELINEEDGE)**
+
+---
+
+## 🎯 Features
+
+### 🤖 Automated Mode — Free
+
+* **Weekly Selections** — Free weekly NFL picks posted during the season
+* **Weather Tracker** — Stadium weather context for NFL games
+* **Lightning Alerts** — Lightning tracking near outdoor venues
+* **Pool Tracker** — Log weekly results and track season performance
+* **Season Summary** — Running totals and performance tracking
+* **Fan Resources** — NFL fan links and resources
+* **Stadium Data** — NFL stadium reference with dome/outdoor classification
+
+---
+
+## 🛠️ NFL EDGE PRO™ Mode
+
+### NFL EDGE PRO™ Season Pass
+
+* **One-Time Seasonal Purchase**
+* **Price:** $10.00 USD
+* **Coverage:** NFL Preseason through Super Bowl
+* **No Automatic Renewal**
+* **No Recurring Charges**
+
+### PRO Features
+
+* Weekly NFL Predictions
+* Weekly Confidence Rankings
+* Weekly Pool Builder
+* Pool Tracking Tools
+* Weather Context
+* Stadium Reference
+* Survivor Board
+* Subscriber-Only NFL EDGE PRO™ Features
+
+---
+
+## 🏆 Survivor Board
+
+### 🥇 THE PIPELINE EDGE LOCK
+
+Highest survivor confidence selection for the week.
+
+### 🥈 THE PIPELINE EDGE VALUE
+
+Strong selection while preserving future opportunities.
+
+### 🎯 THE PIPELINE EDGE DIFFERENCE
+
+Alternative lower-ownership path for players seeking differentiation.
+
+---
+
+## 📊 Model Performance
+
+Walk-forward model validation across 1,359 historical NFL games from 2021–2025:
+
+| Year        | Accuracy  | Record          |
+| ----------- | --------- | --------------- |
+| 2025        | 62.4%     | In progress     |
+| 2024        | 65.1%     | 177/272         |
+| 2023        | 57.0%     | —               |
+| 2022        | 59.2%     | —               |
+| 2021        | 57.8%     | —               |
+| **Overall** | **60.0%** | **1,359 games** |
+
+**Methodology:** The model blends multiple prediction systems using historical NFL data, team strength metrics, matchup analysis, and advanced football statistics. Results are provided for entertainment and informational purposes only and do not guarantee future outcomes.
+
+---
+
+## 🏈 THE PIPELINE EDGE™ Rating System
+
+### EDGE Tier Classification
+
+| THE PIPELINE EDGE Rating | EDGE Tier                |
+| ------------------------ | ------------------------ |
+| 1–4                      | THE PIPELINE EDGE WATCH  |
+| 5–8                      | THE PIPELINE EDGE LEAN   |
+| 9–11                     | THE PIPELINE EDGE STRONG |
+| 12–14+                   | THE PIPELINE EDGE ELITE  |
+
+### Weekly Pool Rankings
+
+Weekly confidence rankings are assigned from highest-rated selection to lowest-rated selection.
+
+Example:
+
+* Highest Rated Pick = 16 Confidence Points
+* Next Highest = 15
+* Continue descending through the weekly card
+
+No fixed cap is applied to ranking calculations. Weekly pool rankings are generated from the highest-rated selections entered by the user.
+
+---
+
+## 🔧 Rebuild 1.3 Updates
+
+* Auto-Filled Game Dropdowns
+* Weekly Ranking Engine
+* EDGE Tier Display System
+* Raw Score Sorting
+* Confidence Assignment Automation
+* Mobile-Optimized Workflow
+* Weekly Pool Confidence Assignment
+
+---
+
+## ⚠️ Entertainment Only
+
+**THE PIPELINE EDGE™ is for entertainment and recreational pool use only. It is NOT a betting or gambling app.**
+
+* ✅ No real-money gambling features
+* ✅ No sportsbook integration
+* ✅ No betting transactions
+* ✅ No betting advice or odds
+* ✅ No guarantees on predictions
+
+Weekly selections, confidence rankings, model ratings, and stats are informational only and do not guarantee future outcomes.
+
+---
+
+## 🔒 Privacy & Data
+
+### Data Stored Locally
+
+User-generated data is stored locally on your device.
+
+Examples include:
+
+* Weekly pick selections
+* Confidence rankings
+* Pool results
+* Season performance history
+* Game notes and preferences
+
+This data is not transmitted to our servers. You may remove local data by clearing browser or app storage.
+
+### Optional Features
+
+When optional features such as weather or lightning tracking are used, the app may reference public stadium coordinates.
+
+No personal information is required for these features.
+
+### Third-Party Services
+
+THE PIPELINE EDGE™ may utilize:
+
+* **Google Play Store** — App distribution, purchases, and refunds
+* **Open-Meteo** — Weather information
+* **LightningMaps** — Lightning tracking
+* **Cloudflare** — Website hosting and delivery
+
+These services operate under their own terms, privacy policies, and service rules.
+
+---
+
+## 💰 Refund Policy
+
+All refunds are managed exclusively by Google Play Store, not by THE PIPELINE EDGE™.
+
+Refund requests must be submitted directly through Google Play Store and are subject to Google's current policies and eligibility requirements.
+
+THE PIPELINE EDGE™ cannot:
+
+* Issue refunds directly
+* Override Google Play Store decisions
+* Extend refund eligibility periods
+* Process payment disputes
+
+For refund assistance, contact Google Play Store Support.
+
+---
+
+## 📱 Platforms
+
+* ✅ **Web** — Fully responsive and mobile-friendly
+* 🔨 **Android** — Google Play release workflow
+* 🚧 **iOS** — Future development
+
+---
+
+## 🌐 Live Web App
+
+Visit **https://thepipelineedge.com** to use THE PIPELINE EDGE™.
+
+Features include:
+
+* Mobile responsive design
+* Offline mode
+* Local storage
+* English / Spanish support
+* No account required
+
+---
+
+## 📋 File Structure
+
+```text
+THEPIPELINEEDGE/
+├── index.html          # Main app
+├── privacy.html        # Privacy Policy
+├── terms.html          # Terms of Service
+├── README.md           # Repository information
+└── .gitignore          # Git ignore rules
+```
+
+---
+
+## 🎮 How It Works
+
+### Step 1: Enter Weekly Games
+
+Add the weekly NFL matchups into the game entry section.
+
+### Step 2: Apply Ratings
+
+Enter THE PIPELINE EDGE™ rating information for each matchup.
+
+### Step 3: Generate EDGE Tier
+
+Each game displays its EDGE Tier:
+
+* THE PIPELINE EDGE WATCH
+* THE PIPELINE EDGE LEAN
+* THE PIPELINE EDGE STRONG
+* THE PIPELINE EDGE ELITE
+
+### Step 4: Build Weekly Pool
+
+The weekly pool builder ranks selections from highest-rated to lowest-rated and assigns confidence points.
+
+### Step 5: Track Results
+
+Log wins, losses, points, and season performance.
+
+---
+
+## 🚀 Deployment
+
+* **Website:** https://thepipelineedge.com
+* **Hosting:** Cloudflare Pages
+* **GitHub:** https://github.com/thepipelineedge/THEPIPELINEEDGE
+
+### Auto-Deploy Workflow
+
+1. Push changes to GitHub
+2. Cloudflare detects changes
+3. Site automatically rebuilds
+4. Updates deploy live
+
+---
+
+## 🤝 Support
+
+For issues, questions, or feedback:
+
+**Email:** [thepipelineedge@gmail.com](mailto:thepipelineedge@gmail.com)
+
+---
+
+## 📄 Legal
+
+**© 2026 THE PIPELINE EDGE™. All Rights Reserved.**
+
+* [Privacy Policy](https://thepipelineedge.com/privacy.html)
+* [Terms of Service](https://thepipelineedge.com/terms.html)
+
+Entertainment purposes only. No guarantees are made regarding predictions, rankings, or outcomes. Users assume full responsibility for all decisions made using information provided by THE PIPELINE EDGE™.
+
+---
+
+**THE PIPELINE EDGE™ — Trust the Process. Trust the Data. 🏈**

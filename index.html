@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026 v1.2</title>
+<title>THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026 v1.3 Production</title>
 <style>
 @font-face{font-family:'Bebas Neue';src:url('https://fonts.gstatic.com/s/bebasneue/v9/JTUSjIg69CK48gSG63HxTvEjN_cPYK2o.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:400;font-display:swap}
@@ -151,7 +151,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 <div class="access-overlay" id="accessOverlay">
   <div class="access-popup">
     <h1>THE PIPELINE <span>EDGE™ 2026</span></h1>
-    <p class="access-subtitle">NFL weekly pick'em predictions powered by walk-forward model validation across 1,359 historical games (2021–2025)</p>
+    <p class="access-subtitle">Where Information Becomes an Edge™<br>NFL weekly pick'em predictions powered by walk-forward model validation across 1,359 historical games (2021–2025)</p>
     
     <div class="tier-boxes">
       <div class="tier-box free" onclick="selectTier('free')">
@@ -161,29 +161,34 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
         <div class="tier-price"></div>
         <div class="tier-features">
           <div>✅ Weekly automated selections</div>
+          <div>✅ Survivor pick</div>
+          <div>✅ Value pick</div>
+          <div>✅ Difference pick</div>
+          <div>✅ Weekly confidence notes</div>
         </div>
-        <button class="cta-button">START FREE</button>
+        <button class="cta-button">CONTINUE TO FREE PICKS</button>
       </div>
 
       <div class="tier-box" onclick="selectTier('pro')">
         <div class="tier-icon">💎</div>
         <div class="tier-name">NFL EDGE PRO™</div>
         <div class="tier-desc">Season pass tools & advanced pool analysis</div>
-        <div class="tier-price"><strong>$10.00</strong> one-time season pass (Preseason–Super Bowl)</div>
+        <div class="tier-price"><strong>$10.00</strong> one-time season pass<br>No auto-renewal · Preseason–Super Bowl</div>
         <div class="tier-features">
           <div>✅ Everything in FREE</div>
-          <div>✅ Confidence rankings</div>
-          <div>✅ Manual pool tools</div>
+          <div>✅ Full confidence rankings</div>
+          <div>✅ Manual pool builder</div>
           <div>✅ Survivor Board</div>
-          <div>✅ Injury & referee data</div>
+          <div>✅ Injury & referee reference</div>
+          <div>✅ Advanced pool tools</div>
         </div>
-        <button class="cta-button">UPGRADE TO PRO</button>
+        <button class="cta-button">UNLOCK NFL EDGE PRO™</button>
       </div>
     </div>
 
     <div class="footer-legal">
       <p>Questions? Email <a href="mailto:thepipelineedge@gmail.com">thepipelineedge@gmail.com</a></p>
-      <p style="margin-top:8px">For responsible gaming resources: <a href="https://www.ncpgambling.org" target="_blank">1-800-GAMBLER</a></p>
+      <p style="margin-top:8px">Entertainment and recreational pool use only. No sportsbook. No betting transactions.</p>
     </div>
   </div>
 </div>
@@ -192,8 +197,8 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   <div class="paywall-content">
     <h2>🔒 NFL EDGE PRO™ FEATURE</h2>
     <p>This feature is only available with the NFL EDGE PRO™ Season Pass. Upgrade to access advanced tools, confidence rankings, survivor board, and complete analysis.</p>
-    <button class="cta-button" onclick="document.getElementById('paywallModal').style.display='none'" style="background:var(--gold);color:#000;margin-bottom:12px">UPGRADE TO NFL EDGE PRO™ — $10.00</button>
-    <button class="btn btn-outline" onclick="document.getElementById('paywallModal').style.display='none'" style="width:100%">Continue as FREE</button>
+    <button class="cta-button" onclick="document.getElementById('paywallModal').style.display='none'" style="background:var(--gold);color:#000;margin-bottom:12px">UNLOCK NFL EDGE PRO™ — $10.00</button>
+    <button class="btn btn-outline" onclick="document.getElementById('paywallModal').style.display='none'" style="width:100%">Continue as FREE VERSION</button>
   </div>
 </div>
 
@@ -205,21 +210,21 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <div class="htitle-main">THE PIPELINE <span>EDGE™ 2026</span></div>
       <div class="htitle-sub">Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)</div>
     </div>
-    <a href="https://www.youtube.com/@ThePipelineEdge" target="_blank" rel="noopener noreferrer" class="youtube-btn">▶️ YouTube</a>
+    <a href="https://www.youtube.com/@ThePipelineEdge" target="_blank" rel="noopener noreferrer" class="youtube-btn">🎥 HOW TO USE THE APP</a>
     <div class="hlive">LIVE</div>
   </div>
   <div class="header-right">
     <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
       <div style="text-align:center">
-        <div style="font-size:13px;font-weight:500" id="hdate">—</div>
+        <div style="font-size:18px;font-weight:700" id="hdate">—</div>
         <div style="font-size:11px;color:var(--text2);margin-top:2px" id="tierStatus">Loading...</div>
       </div>
     </div>
   </div>
 </div>
 
-<div style="display:flex;justify-content:center;padding:12px 28px">
-  <button class="btn btn-green" onclick="dismissLegal()" style="font-size:12px;padding:10px 20px;background:var(--green2);color:#fff">✕ DISMISS LEGAL</button>
+<div id="legalTopButton" style="display:flex;justify-content:center;padding:12px 28px">
+  <button class="btn btn-green" onclick="dismissLegal()" style="font-size:12px;padding:10px 20px;background:var(--green2);color:#fff">CLOSE LEGAL NOTICE</button>
 </div>
 
 <div class="legal-grid" id="legalGrid">
@@ -329,8 +334,8 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   </div>
 </div>
 
-<div style="display:flex;justify-content:center;padding:12px 28px;margin-bottom:20px">
-  <button class="btn btn-green" onclick="dismissLegal()" style="font-size:12px;padding:10px 20px;background:var(--green2);color:#fff">✕ DISMISS LEGAL</button>
+<div id="legalBottomButton" style="display:flex;justify-content:center;padding:12px 28px;margin-bottom:20px">
+  <button class="btn btn-green" onclick="dismissLegal()" style="font-size:12px;padding:10px 20px;background:var(--green2);color:#fff">I UNDERSTAND</button>
 </div>
 
 <div class="nav-group" id="navGroup" style="display:none">
@@ -357,7 +362,6 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 </div>
 
 <div class="pane active" id="pane0">
-  <div class="mode-banner auto">🏈 THE PIPELINE EDGE — weekly selections uploaded Wednesday Night</div>
   <div class="pick-hero">
     <div class="pick-brand">THE PIPELINE <span>EDGE</span></div>
     <div class="pick-week">Week 1 Selections · Updated Every Wednesday Night</div>
@@ -416,7 +420,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 
   <div class="pro-callout">
     <div class="pro-callout-title">💎 NFL EDGE PRO™</div>
-    <div class="feature-note">Unlock the manual pool confidence builder, weekly pool ranking board, injury reference, referee reference, and advanced confidence tools.</div>
+    <div class="feature-note">Unlock the manual pool confidence builder, weekly pool ranking board, injury reference, referee reference, survivor tools, and advanced confidence tools.</div>
   </div>
 </div>
 
@@ -839,7 +843,12 @@ function blockProFeature(e){
 
 function dismissLegal(){
   const legalGrid=document.getElementById('legalGrid');
-  if(legalGrid)legalGrid.style.display='none';
+  const legalTopButton=document.getElementById('legalTopButton');
+  const legalBottomButton=document.getElementById('legalBottomButton');
+
+  if(legalGrid) legalGrid.style.display='none';
+  if(legalTopButton) legalTopButton.style.display='none';
+  if(legalBottomButton) legalBottomButton.style.display='none';
 }
 
 function initializeApp(){
@@ -1003,7 +1012,7 @@ function calc(){
   const inj=document.getElementById('injFilter').value;
   const l=parseFloat(document.getElementById('luckAdj').value)||0;
   const flag2min=parseFloat(document.getElementById('flag2min').value)||0;
-  const badge=document.getElementById('edgeTierBadge');
+  const badge=document.getElementById('edgeTier');
 
   if(awayInj==='drop'||inj==='drop'){
     document.getElementById('finalScore').textContent='DROP';

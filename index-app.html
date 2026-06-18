@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026 v1.2</title>
-<!-- NFL EDGE PRO v1.2.1 Update Build: synced weekly rankings, fixed consensus values, public-safe maintenance update -->
+<title>THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026 v1.3 Production</title>
 <style>
 @font-face{font-family:'Bebas Neue';src:url('https://fonts.gstatic.com/s/bebasneue/v9/JTUSjIg69CK48gSG63HxTvEjN_cPYK2o.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:400;font-display:swap}
@@ -137,6 +136,13 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 
 @media(max-width:1200px){.g3{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.g2{grid-template-columns:1fr}.g3{grid-template-columns:1fr}}
+
+@media(max-width:600px){
+  #poolBody td{padding:4px 5px;font-size:10px}
+  #pane7 th{padding:5px 5px;font-size:8px}
+  #pane7 .tbl-wrap table{table-layout:auto}
+  #pane7 .btn{padding:6px 8px;font-size:10px}
+}
 @media(max-width:600px){.access-popup{padding:30px 20px}.access-popup h1{font-size:28px}.tier-boxes{grid-template-columns:1fr;gap:12px}.header{padding:10px 12px}.header-left{flex-direction:column;gap:8px}.header-right{flex-direction:column;gap:8px}.htitle-main{font-size:18px}.htitle-sub{font-size:9px}.nav{padding:0 10px}.ntab{padding:8px 10px;font-size:10px}.pane{padding:12px}.stitle{font-size:16px}.box{padding:10px}.cards{grid-template-columns:repeat(2,1fr)}.card-val{font-size:18px}.btn{padding:7px 14px;font-size:11px}table{font-size:9px}th{padding:5px 6px}td{padding:5px 6px}.legal-grid{grid-template-columns:1fr;margin:12px}.legal-card{max-height:400px}}
 </style>
 </head>
@@ -145,7 +151,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 <div class="access-overlay" id="accessOverlay">
   <div class="access-popup">
     <h1>THE PIPELINE <span>EDGE™ 2026</span></h1>
-    <p class="access-subtitle">NFL weekly pick'em predictions powered by walk-forward model validation across 1,359 historical games (2021–2025)</p>
+    <p class="access-subtitle">Where Information Becomes an Edge™<br>NFL weekly pick'em predictions powered by walk-forward model validation across 1,359 historical games (2021–2025)</p>
     
     <div class="tier-boxes">
       <div class="tier-box free" onclick="selectTier('free')">
@@ -155,21 +161,26 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
         <div class="tier-price"></div>
         <div class="tier-features">
           <div>✅ Weekly automated selections</div>
+          <div>✅ Survivor pick</div>
+          <div>✅ Value pick</div>
+          <div>✅ Difference pick</div>
+          <div>✅ Weekly confidence notes</div>
         </div>
-        <button class="cta-button">CONTINUE FREE</button>
+        <button class="cta-button">CONTINUE TO FREE PICKS</button>
       </div>
 
       <div class="tier-box" onclick="selectTier('pro')">
         <div class="tier-icon">💎</div>
         <div class="tier-name">NFL EDGE PRO™</div>
         <div class="tier-desc">Season pass tools & advanced pool analysis</div>
-        <div class="tier-price"><strong>$10.00</strong> one-time season pass (Preseason–Super Bowl)</div>
+        <div class="tier-price"><strong>$10.00</strong> one-time season pass<br>No auto-renewal · Preseason–Super Bowl</div>
         <div class="tier-features">
           <div>✅ Everything in FREE</div>
-          <div>✅ Confidence rankings</div>
-          <div>✅ Manual pool tools</div>
+          <div>✅ Full confidence rankings</div>
+          <div>✅ Manual pool builder</div>
           <div>✅ Survivor Board</div>
-          <div>✅ Injury & referee data</div>
+          <div>✅ Injury & referee reference</div>
+          <div>✅ Advanced pool tools</div>
         </div>
         <button class="cta-button">UNLOCK NFL EDGE PRO™</button>
       </div>
@@ -177,7 +188,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 
     <div class="footer-legal">
       <p>Questions? Email <a href="mailto:thepipelineedge@gmail.com">thepipelineedge@gmail.com</a></p>
-      <p style="margin-top:8px">For responsible gaming resources: <a href="https://www.ncpgambling.org" target="_blank">1-800-GAMBLER</a></p>
+      <p style="margin-top:8px">Entertainment and recreational pool use only. No sportsbook. No betting transactions.</p>
     </div>
   </div>
 </div>
@@ -187,7 +198,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
     <h2>🔒 NFL EDGE PRO™ FEATURE</h2>
     <p>This feature is only available with the NFL EDGE PRO™ Season Pass. Upgrade to access advanced tools, confidence rankings, survivor board, and complete analysis.</p>
     <button class="cta-button" onclick="document.getElementById('paywallModal').style.display='none'" style="background:var(--gold);color:#000;margin-bottom:12px">UNLOCK NFL EDGE PRO™ — $10.00</button>
-    <button class="btn btn-outline" onclick="document.getElementById('paywallModal').style.display='none'" style="width:100%">Continue as FREE</button>
+    <button class="btn btn-outline" onclick="document.getElementById('paywallModal').style.display='none'" style="width:100%">Continue as FREE VERSION</button>
   </div>
 </div>
 
@@ -199,21 +210,21 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <div class="htitle-main">THE PIPELINE <span>EDGE™ 2026</span></div>
       <div class="htitle-sub">Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)</div>
     </div>
-    <a href="https://www.youtube.com/@ThePipelineEdge" target="_blank" rel="noopener noreferrer" class="youtube-btn">▶️ YouTube</a>
+    <a href="https://www.youtube.com/@ThePipelineEdge" target="_blank" rel="noopener noreferrer" class="youtube-btn">🎥 HOW TO USE THE APP</a>
     <div class="hlive">LIVE</div>
   </div>
   <div class="header-right">
     <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
       <div style="text-align:center">
-        <div style="font-size:13px;font-weight:500" id="hdate">—</div>
+        <div style="font-size:18px;font-weight:700" id="hdate">—</div>
         <div style="font-size:11px;color:var(--text2);margin-top:2px" id="tierStatus">Loading...</div>
       </div>
     </div>
   </div>
 </div>
 
-<div style="display:flex;justify-content:center;padding:12px 28px">
-  <button class="btn btn-green" onclick="dismissLegal()" style="font-size:12px;padding:10px 20px;background:var(--green2);color:#fff">✕ DISMISS LEGAL</button>
+<div id="legalTopButton" style="display:flex;justify-content:center;padding:12px 28px">
+  <button class="btn btn-green" onclick="dismissLegal()" style="font-size:12px;padding:10px 20px;background:var(--green2);color:#fff">CLOSE LEGAL NOTICE</button>
 </div>
 
 <div class="legal-grid" id="legalGrid">
@@ -323,8 +334,8 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   </div>
 </div>
 
-<div style="display:flex;justify-content:center;padding:12px 28px;margin-bottom:20px">
-  <button class="btn btn-green" onclick="dismissLegal()" style="font-size:12px;padding:10px 20px;background:var(--green2);color:#fff">✕ DISMISS LEGAL</button>
+<div id="legalBottomButton" style="display:flex;justify-content:center;padding:12px 28px;margin-bottom:20px">
+  <button class="btn btn-green" onclick="dismissLegal()" style="font-size:12px;padding:10px 20px;background:var(--green2);color:#fff">I UNDERSTAND</button>
 </div>
 
 <div class="nav-group" id="navGroup" style="display:none">
@@ -351,7 +362,6 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 </div>
 
 <div class="pane active" id="pane0">
-  <div class="mode-banner auto">🏈 THE PIPELINE EDGE — weekly selections uploaded Wednesday Night</div>
   <div class="pick-hero">
     <div class="pick-brand">THE PIPELINE <span>EDGE</span></div>
     <div class="pick-week">Week 1 Selections · Updated Every Wednesday Night</div>
@@ -403,14 +413,14 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   </div>
 
   <div class="cards">
-    <div class="card"><div class="card-lbl">Model Status</div><div class="card-val c-green">Updated</div><div class="card-sub">Wednesday Night</div></div>
+    <div class="card"><div class="card-lbl">Model Status</div><div class="card-val c-green">Updated</div><div class="card-sub">06-11-26</div></div>
     <div class="card"><div class="card-lbl">Use Case</div><div class="card-val c-gold">Pick'em</div><div class="card-sub">Confidence pools</div></div>
     <div class="card"><div class="card-lbl">Public View</div><div class="card-val c-blue">Free</div><div class="card-sub">Weekly selections</div></div>
   </div>
 
   <div class="pro-callout">
     <div class="pro-callout-title">💎 NFL EDGE PRO™</div>
-    <div class="feature-note">Unlock the manual pool confidence builder, weekly pool ranking board, injury reference, referee reference, and advanced confidence tools.</div>
+    <div class="feature-note">Unlock the manual pool confidence builder, weekly pool ranking board, injury reference, referee reference, survivor tools, and advanced confidence tools.</div>
   </div>
 </div>
 
@@ -499,22 +509,22 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <label>Select Week 1 Game</label>
       <select id="gameSelect" onchange="loadPipelineDefaults()">
         <option value="">-- Select Game --</option>
-        <option value="NE|SEA">NE @ SEA — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="SF|LAR">SF @ LAR — Pipeline Default: EDGE LEAN / 8 of 8</option>
+        <option value="NE|SEA">NE @ SEA — Pipeline Default: EDGE ELITE / 8 of 8</option>
+        <option value="SF|LAR">SF @ LAR — Pipeline Default: EDGE ELITE / 8 of 8</option>
         <option value="CHI|CAR">CHI @ CAR — Pipeline Default: EDGE WATCH / 6 of 8</option>
-        <option value="TB|CIN">TB @ CIN — Pipeline Default: EDGE ELITE / 6 of 8</option>
+        <option value="TB|CIN">TB @ CIN — Pipeline Default: EDGE STRONG / 6 of 8</option>
         <option value="BAL|IND">BAL @ IND — Pipeline Default: EDGE ELITE / 6 of 8</option>
         <option value="NO|DET">NO @ DET — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="BUF|HOU">BUF @ HOU — Pipeline Default: EDGE ELITE / 5 of 8</option>
-        <option value="CLE|JAX">CLE @ JAX — Pipeline Default: EDGE WATCH / 8 of 8</option>
+        <option value="BUF|HOU">BUF @ HOU — Pipeline Default: EDGE WATCH / 5 of 8</option>
+        <option value="CLE|JAX">CLE @ JAX — Pipeline Default: EDGE LEAN / 8 of 8</option>
         <option value="ATL|PIT">ATL @ PIT — Pipeline Default: EDGE LEAN / 8 of 8</option>
         <option value="NYJ|TEN">NYJ @ TEN — Pipeline Default: EDGE STRONG / 7 of 8</option>
-        <option value="ARI|LAC">ARI @ LAC — Pipeline Default: EDGE LEAN / 8 of 8</option>
+        <option value="ARI|LAC">ARI @ LAC — Pipeline Default: EDGE STRONG / 8 of 8</option>
         <option value="MIA|LVR">MIA @ LVR — Pipeline Default: EDGE WATCH / 4 of 8</option>
-        <option value="GB|MIN">GB @ MIN — Pipeline Default: EDGE ELITE / 6 of 8</option>
-        <option value="DAL|NYG">DAL @ NYG — Pipeline Default: EDGE STRONG / 5 of 8</option>
-        <option value="DEN|KC">DEN @ KC — Pipeline Default: EDGE ELITE / 7 of 8</option>
-        <option value="WAS|PHI">WAS @ PHI — Pipeline Default: EDGE WATCH / 5 of 8</option>
+        <option value="GB|MIN">GB @ MIN — Pipeline Default: EDGE STRONG / 6 of 8</option>
+        <option value="DAL|NYG">DAL @ NYG — Pipeline Default: EDGE WATCH / 5 of 8</option>
+        <option value="KC|DEN">KC @ DEN — Pipeline Default: EDGE ELITE / 7 of 8</option>
+        <option value="PHI|WAS">PHI @ WAS — Pipeline Default: EDGE LEAN / 5 of 8</option>
       </select>
 
       <div class="note" id="pipelineDefaultNote" style="margin-top:8px">
@@ -533,9 +543,9 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <label>THE PIPELINE EDGE Consensus</label>
       <select id="models" onchange="calc()">
         <option value="0">4 of 8 Systems</option>
-        <option value="0.5">5 of 8 Systems</option>
+        <option value="1">5 of 8 Systems</option>
         <option value="1">6 of 8 Systems</option>
-        <option value="1.5">7 of 8 Systems</option>
+        <option value="2">7 of 8 Systems</option>
         <option value="2">8 of 8 Systems</option>
       </select>
 
@@ -546,31 +556,11 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
     <div class="box">
       <div class="box-title">Adjustments</div>
       <label>Away Team Injury Filter</label>
-      <select id="awayInjFilter" onchange="calc()">
-        <option value="0">No impact (0)</option>
-        <option value="-1">Away role player out (−1)</option>
-        <option value="1">Home role player out (+1)</option>
-        <option value="-1.5">Away starting WR/RB out (−1.5)</option>
-        <option value="1.5">Home starting WR/RB out (+1.5)</option>
-        <option value="drop">Away QB/Elite RB/WR out (DROP)</option>
-        <option value="2">Home QB/Elite RB/WR out (+2)</option>
-      </select>
+      <select id="awayInjFilter" onchange="calc()"><option value="0">No impact (0)</option><option value="-1">Tier 2: Role player out (−1)</option><option value="-1.5">Tier 2.5: Starting WR/RB out (−1.5)</option><option value="drop">Tier 3: QB/Elite RB/WR out (DROP)</option></select>
       <label>Home Team Injury Filter</label>
-      <select id="injFilter" onchange="calc()">
-        <option value="0">No impact (0)</option>
-        <option value="-1">Home role player out (−1)</option>
-        <option value="1">Away role player out (+1)</option>
-        <option value="-1.5">Home starting WR/RB out (−1.5)</option>
-        <option value="1.5">Away starting WR/RB out (+1.5)</option>
-        <option value="drop">Home QB/Elite RB/WR out (DROP)</option>
-        <option value="2">Away QB/Elite RB/WR out (+2)</option>
-      </select>
+      <select id="injFilter" onchange="calc()"><option value="0">No impact (0)</option><option value="-1">Tier 2: Role player out (−1)</option><option value="-1.5">Tier 2.5: Starting WR/RB out (−1.5)</option><option value="drop">Tier 3: QB/Elite RB/WR out (DROP)</option></select>
       <label>Referee Adjustment</label>
-      <select id="refAdj" onchange="calc()">
-        <option value="0">No referee edge / skip (0)</option>
-        <option value="1">Referee edge helps my pick (+1)</option>
-        <option value="-1">Referee edge hurts my pick (−1)</option>
-      </select>
+      <select id="refAdj" onchange="calc()"><option value="0">Neutral (0)</option><option value="1">Home friendly (+1)</option><option value="-1">Road friendly (−1)</option></select>
       <label>Luck Factor</label>
       <select id="luckAdj" onchange="calc()"><option value="0">Neutral (0)</option><option value="1">Positive (+1)</option><option value="-1">Negative (−1)</option></select>
       <label>2-MIN WARNING FLAG</label>
@@ -593,13 +583,13 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 
 <div class="pane" id="pane7">
   <div class="mode-banner manual">💎 NFL EDGE PRO™ — Rank your picks</div>
-  <div class="stitle">Weekly Pool Rankings — Confidence Points 16 to 1</div>
+  <div class="stitle">Weekly Pool Rankings — Points 16 to 1</div>
   <div style="display:flex;gap:10px;margin-bottom:16px">
     <button class="btn btn-green" onclick="autoRank()">Auto-Rank</button>
     <button class="btn btn-outline" onclick="clearPool()">Clear All</button>
   </div>
   <div class="tbl-wrap">
-    <table><thead><tr><th style="color:var(--gold)">Confidence Pts</th><th>Sort</th><th>Matchup</th><th>Raw Score</th><th>EDGE Tier</th><th></th></tr></thead><tbody id="poolBody"><tr><td colspan="6" style="text-align:center;color:var(--text3);padding:32px">No games added yet</td></tr></tbody></table>
+    <table><thead><tr><th style="color:var(--gold)">Pts</th><th>#</th><th>Game</th><th>Score</th><th>Tier</th><th></th></tr></thead><tbody id="poolBody"><tr><td colspan="6" style="text-align:center;color:var(--text3);padding:32px">No games added yet</td></tr></tbody></table>
   </div>
 </div>
 
@@ -853,7 +843,12 @@ function blockProFeature(e){
 
 function dismissLegal(){
   const legalGrid=document.getElementById('legalGrid');
-  if(legalGrid)legalGrid.style.display='none';
+  const legalTopButton=document.getElementById('legalTopButton');
+  const legalBottomButton=document.getElementById('legalBottomButton');
+
+  if(legalGrid) legalGrid.style.display='none';
+  if(legalTopButton) legalTopButton.style.display='none';
+  if(legalBottomButton) legalBottomButton.style.display='none';
 }
 
 function initializeApp(){
@@ -959,7 +954,7 @@ function renderWeekLog(){
     body.innerHTML='<tr><td colspan="5" style="color:var(--text3);text-align:center;padding:20px">No weeks logged</td></tr>';
     return;
   }
-  body.innerHTML=weekLog.map((r,i)=>`<tr><td>${r.week.replace('Week','Wk')}</td><td class="c-green">${r.wins}</td><td class="c-red">${r.losses}</td><td class="c-gold">${r.pts}</td><td><button class="btn" style="padding:4px 8px;font-size:10px;background:var(--red2);color:#fff;cursor:pointer;border:none;border-radius:4px" onclick="weekLog.splice(${i},1);localStorage.setItem('weekLog',JSON.stringify(weekLog));renderWeekLog();updateStats()">✕ DELETE</button></td></tr>`).join('');
+  body.innerHTML=weekLog.map((r,i)=>`<tr><td>${r.week.replace('Week','Wk')}</td><td class="c-green">${r.wins}</td><td class="c-red">${r.losses}</td><td class="c-gold">${r.pts}</td><td><button class="btn" style="padding:4px 8px;font-size:10px;background:var(--red2);color:#fff;cursor:pointer;border:none;border-radius:4px" onclick="weekLog.splice(${i},1);localStorage.setItem('weekLog',JSON.stringify(weekLog));renderWeekLog();updateStats()">FLUSH</button></td></tr>`).join('');
 }
 
 function updateStats(){
@@ -1017,7 +1012,7 @@ function calc(){
   const inj=document.getElementById('injFilter').value;
   const l=parseFloat(document.getElementById('luckAdj').value)||0;
   const flag2min=parseFloat(document.getElementById('flag2min').value)||0;
-  const badge=document.getElementById('edgeTier') || document.getElementById('edgeTierBadge');
+  const badge=document.getElementById('edgeTier');
 
   if(awayInj==='drop'||inj==='drop'){
     document.getElementById('finalScore').textContent='DROP';
@@ -1038,15 +1033,7 @@ function calc(){
   const tier=getEdgeTier(total);
   document.getElementById('finalScore').textContent=total;
   document.getElementById('finalScore').style.color=tier.color;
-  if(badge){
-    badge.textContent=tier.txt;
-    badge.style.color=tier.color;
-    badge.className='edge-tier-badge';
-    if(total>=12)badge.classList.add('edge-elite');
-    else if(total>=9)badge.classList.add('edge-strong');
-    else if(total>=5)badge.classList.add('edge-lean');
-    else badge.classList.add('edge-watch');
-  }
+  if(badge){badge.textContent=tier.txt;badge.style.color=tier.color;}
 }
 function addToPool(){
   const away=document.getElementById('awayTeam').value;
@@ -1097,7 +1084,12 @@ function loadGameData(){
 
 function autoRank(){pool.sort((a,b)=>b.score-a.score);renderPool();}
 
-function clearPool(){if(confirm('Clear all?')){pool=[];localStorage.setItem('pool',JSON.stringify(pool));renderPool();}}
+function clearPool(){
+  // Clear all weekly pool picks and refresh the table.
+  pool=[];
+  localStorage.removeItem('pool');
+  renderPool();
+}
 
 function renderPool(){
   const body=document.getElementById('poolBody');
@@ -1118,7 +1110,7 @@ function renderPool(){
       <td>${p.away}@${p.home}</td>
       <td style="color:${scoreColor};font-weight:700">${p.score}</td>
       <td><span style="display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:3px 10px;color:${tier.color};font-weight:800;font-size:10px">${tier.txt}</span></td>
-      <td><button class="btn" style="padding:4px 8px;font-size:10px;background:var(--red2);color:#fff;cursor:pointer;border:none;border-radius:4px;width:40px" onclick="pool.splice(${idx},1);localStorage.setItem('pool',JSON.stringify(pool));renderPool()">✕</button></td>
+      <td><button class="btn" style="padding:4px 8px;font-size:10px;background:var(--red2);color:#fff;cursor:pointer;border:none;border-radius:4px;width:28px;min-width:28px" onclick="pool.splice(${idx},1);localStorage.setItem('pool',JSON.stringify(pool));renderPool()">✕</button></td>
     </tr>`;
   }).join('');
 }
@@ -1136,25 +1128,22 @@ function buildStadiumTable(){
 
 
 const PIPELINE_DEFAULTS={
-  // Synced to the visible Week 1 confidence ranking board.
-  // Rating values: WATCH=3, LEAN=7, STRONG=10, ELITE=12.
-  // Consensus values are now unique: 4/8=0, 5/8=0.5, 6/8=1, 7/8=1.5, 8/8=2.
-  'NE|SEA':{away:'NE',home:'SEA',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'SF|LAR':{away:'SF',home:'LAR',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
+  'NE|SEA':{away:'NE',home:'SEA',rating:'12',consensusText:'8 of 8 Systems',consensusVal:'2'},
+  'SF|LAR':{away:'SF',home:'LAR',rating:'12',consensusText:'8 of 8 Systems',consensusVal:'2'},
   'CHI|CAR':{away:'CHI',home:'CAR',rating:'3',consensusText:'6 of 8 Systems',consensusVal:'1'},
-  'TB|CIN':{away:'TB',home:'CIN',rating:'12',consensusText:'6 of 8 Systems',consensusVal:'1'},
+  'TB|CIN':{away:'TB',home:'CIN',rating:'10',consensusText:'6 of 8 Systems',consensusVal:'1'},
   'BAL|IND':{away:'BAL',home:'IND',rating:'12',consensusText:'6 of 8 Systems',consensusVal:'1'},
   'NO|DET':{away:'NO',home:'DET',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'BUF|HOU':{away:'BUF',home:'HOU',rating:'12',consensusText:'5 of 8 Systems',consensusVal:'0.5'},
-  'CLE|JAX':{away:'CLE',home:'JAX',rating:'3',consensusText:'8 of 8 Systems',consensusVal:'2'},
+  'BUF|HOU':{away:'BUF',home:'HOU',rating:'3',consensusText:'5 of 8 Systems',consensusVal:'1'},
+  'CLE|JAX':{away:'CLE',home:'JAX',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
   'ATL|PIT':{away:'ATL',home:'PIT',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'NYJ|TEN':{away:'NYJ',home:'TEN',rating:'10',consensusText:'7 of 8 Systems',consensusVal:'1.5'},
-  'ARI|LAC':{away:'ARI',home:'LAC',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
+  'NYJ|TEN':{away:'NYJ',home:'TEN',rating:'10',consensusText:'7 of 8 Systems',consensusVal:'2'},
+  'ARI|LAC':{away:'ARI',home:'LAC',rating:'10',consensusText:'8 of 8 Systems',consensusVal:'2'},
   'MIA|LVR':{away:'MIA',home:'LVR',rating:'3',consensusText:'4 of 8 Systems',consensusVal:'0'},
-  'GB|MIN':{away:'GB',home:'MIN',rating:'12',consensusText:'6 of 8 Systems',consensusVal:'1'},
-  'DAL|NYG':{away:'DAL',home:'NYG',rating:'10',consensusText:'5 of 8 Systems',consensusVal:'0.5'},
-  'DEN|KC':{away:'DEN',home:'KC',rating:'12',consensusText:'7 of 8 Systems',consensusVal:'1.5'},
-  'WAS|PHI':{away:'WAS',home:'PHI',rating:'3',consensusText:'5 of 8 Systems',consensusVal:'0.5'}
+  'GB|MIN':{away:'GB',home:'MIN',rating:'10',consensusText:'6 of 8 Systems',consensusVal:'1'},
+  'DAL|NYG':{away:'DAL',home:'NYG',rating:'3',consensusText:'5 of 8 Systems',consensusVal:'1'},
+  'KC|DEN':{away:'KC',home:'DEN',rating:'12',consensusText:'7 of 8 Systems',consensusVal:'2'},
+  'PHI|WAS':{away:'PHI',home:'WAS',rating:'7',consensusText:'5 of 8 Systems',consensusVal:'1'}
 };
 
 function setSelectOptionByText(selectEl,text){
@@ -1188,7 +1177,6 @@ function loadPipelineDefaults(){
     note.innerHTML='<strong>Pipeline Default Loaded:</strong> '+g.away+' @ '+g.home+' · <span style="color:'+tier.color+'">'+tier.txt+'</span> · '+g.consensusText+' <br><span style="color:var(--text3)">Defaults are editable for NFL EDGE PRO™ users.</span>';
   }
   calc();
-  saveGameData();
 }
 
 

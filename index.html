@@ -9,7 +9,7 @@
 @font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:400;font-display:swap}
 :root{--bg:#0d1117;--bg2:#161b24;--bg3:#1e2633;--border:rgba(255,255,255,0.07);--text:#e6edf3;--text2:#8b96a7;--text3:#4e5a6a;--green:#2ea043;--green2:#3fb950;--blue:#1f6feb;--blue2:#388bfd;--amber:#d29922;--amber2:#e3b341;--red:#da3633;--red2:#f85149;--gold:#f0a82e}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-bottom:80px;padding-bottom:max(80px,env(safe-area-inset-bottom))}
+html,body{height:100%;font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .access-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:2000}
 .access-popup{background:linear-gradient(135deg,#1a1f2e 0%,#0f1419 100%);border:3px solid var(--gold);border-radius:20px;padding:40px 30px;max-width:500px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(255,165,0,0.25)}
 .access-popup h1{color:#ffffff;font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.08em;margin-bottom:12px}
@@ -137,9 +137,6 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 @media(max-width:1200px){.g3{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.g2{grid-template-columns:1fr}.g3{grid-template-columns:1fr}}
 
-
-/* Android navigation safe-area */
-.safe-bottom-spacer{height:90px;width:100%}
 @media(max-width:600px){
   #poolBody td{padding:4px 5px;font-size:10px}
   #pane7 th{padding:5px 5px;font-size:8px}
@@ -375,17 +372,17 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
     <div class="feature-card survivor">
       <div class="feature-title">🥇 THE PIPELINE EDGE LOCK</div>
       <div class="feature-pick">LAC over ARI</div>
-      <div class="feature-note">Highest survivor confidence selection for the week.</div>
+      <div class="feature-note">Primary survivor safety selection for Week 1.</div>
     </div>
     <div class="feature-card contrarian">
       <div class="feature-title">🎯 THE PIPELINE EDGE DIFFERENCE</div>
       <div class="feature-pick">DET over NO</div>
-      <div class="feature-note">Alternative lower-ownership path for lower-ownership leverage.</div>
+      <div class="feature-note">Lower-ownership survivor path if the crowd stays away.</div>
     </div>
     <div class="feature-card value">
       <div class="feature-title">🥈 THE PIPELINE EDGE VALUE</div>
       <div class="feature-pick">JAX over CLE</div>
-      <div class="feature-note">Strong selection while preserving future opportunities.</div>
+      <div class="feature-note">Strong survivor value with limited better future spots.</div>
     </div>
   </div>
 
@@ -395,30 +392,30 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
     <table>
       <thead><tr><th>Rank</th><th>Selection</th><th>Weekly Note</th></tr></thead>
       <tbody>
-        <tr><td><span class="rank-pill">16</span></td><td class="pick-selection">BUF over HOU</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
-        <tr><td><span class="rank-pill">15</span></td><td class="pick-selection">BAL over IND</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
-        <tr><td><span class="rank-pill">14</span></td><td class="pick-selection">GB over MIN</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
-        <tr><td><span class="rank-pill">13</span></td><td class="pick-selection">KC over DEN</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
-        <tr><td><span class="rank-pill">12</span></td><td class="pick-selection">CIN over TB</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
-        <tr><td><span class="rank-pill">11</span></td><td class="pick-selection">TEN over NYJ</td><td><span class="edge-tier-badge edge-strong" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔵 THE PIPELINE EDGE STRONG</span></td></tr>
-        <tr><td><span class="rank-pill">10</span></td><td class="pick-selection">NYG over DAL</td><td><span class="edge-tier-badge edge-strong" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔵 THE PIPELINE EDGE STRONG</span></td></tr>
+        <tr><td><span class="rank-pill">16</span></td><td class="pick-selection">JAX over CLE</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
+        <tr><td><span class="rank-pill">15</span></td><td class="pick-selection">PHI over WAS</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
+        <tr><td><span class="rank-pill">14</span></td><td class="pick-selection">DET over NO</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
+        <tr><td><span class="rank-pill">13</span></td><td class="pick-selection">PIT over ATL</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
+        <tr><td><span class="rank-pill">12</span></td><td class="pick-selection">LAC over ARI</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
+        <tr><td><span class="rank-pill">11</span></td><td class="pick-selection">SEA over NE</td><td><span class="edge-tier-badge edge-strong" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔵 THE PIPELINE EDGE STRONG</span></td></tr>
+        <tr><td><span class="rank-pill">10</span></td><td class="pick-selection">KC over DEN</td><td><span class="edge-tier-badge edge-strong" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔵 THE PIPELINE EDGE STRONG</span></td></tr>
         <tr><td><span class="rank-pill">9</span></td><td class="pick-selection">LAR over SF</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">8</span></td><td class="pick-selection">SEA over NE</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">7</span></td><td class="pick-selection">LAC over ARI</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">6</span></td><td class="pick-selection">PIT over ATL</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">5</span></td><td class="pick-selection">DET over NO</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">4</span></td><td class="pick-selection">PHI over WAS</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
-        <tr><td><span class="rank-pill">3</span></td><td class="pick-selection">JAX over CLE</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
-        <tr><td><span class="rank-pill">2</span></td><td class="pick-selection">CHI over CAR</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
-        <tr><td><span class="rank-pill">1</span></td><td class="pick-selection">LVR over MIA</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
+        <tr><td><span class="rank-pill">8</span></td><td class="pick-selection">TEN over NYJ</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
+        <tr><td><span class="rank-pill">7</span></td><td class="pick-selection">CIN over TB</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
+        <tr><td><span class="rank-pill">6</span></td><td class="pick-selection">MIN over GB</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
+        <tr><td><span class="rank-pill">5</span></td><td class="pick-selection">IND over BAL</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
+        <tr><td><span class="rank-pill">4</span></td><td class="pick-selection">LVR over MIA</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
+        <tr><td><span class="rank-pill">3</span></td><td class="pick-selection">CAR over CHI</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
+        <tr><td><span class="rank-pill">2</span></td><td class="pick-selection">NYG over DAL</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
+        <tr><td><span class="rank-pill">1</span></td><td class="pick-selection">BUF over HOU</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="cards">
-    <div class="card"><div class="card-lbl">Model Status</div><div class="card-val c-green">Updated</div><div class="card-sub">06-11-26</div></div>
-    <div class="card"><div class="card-lbl">Use Case</div><div class="card-val c-gold">Pick'em</div><div class="card-sub">Confidence pools</div></div>
-    <div class="card"><div class="card-lbl">Public View</div><div class="card-val c-blue">Free</div><div class="card-sub">Weekly selections</div></div>
+    <div class="card"><div class="card-lbl" style="font-size:12px;line-height:1.25">Model Status</div><div class="card-val c-green" style="font-size:34px;line-height:1.1">Updated</div><div class="card-sub" style="font-size:12px;line-height:1.25">06-22-26</div></div>
+    <div class="card"><div class="card-lbl" style="font-size:12px;line-height:1.25">Use Case</div><div class="card-val c-gold" style="font-size:34px;line-height:1.1">Pick'em</div><div class="card-sub" style="font-size:12px;line-height:1.25">Confidence pools</div></div>
+    <div class="card"><div class="card-lbl" style="font-size:12px;line-height:1.25">Public View</div><div class="card-val c-blue" style="font-size:34px;line-height:1.1">Free</div><div class="card-sub" style="font-size:12px;line-height:1.25">Weekly selections</div></div>
   </div>
 
   <div class="pro-callout">
@@ -1185,8 +1182,6 @@ function loadPipelineDefaults(){
 
 checkTierSelection();
 </script>
-
-<div class="safe-bottom-spacer"></div>
 
 </body>
 </html>

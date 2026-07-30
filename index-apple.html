@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026 v1.3 Production</title>
+<title>THE PIPELINE EDGE™ — NFL EDGE PRO™ 2026 v3.2 New Tabs</title>
 <style>
 @font-face{font-family:'Bebas Neue';src:url('https://fonts.gstatic.com/s/bebasneue/v9/JTUSjIg69CK48gSG63HxTvEjN_cPYK2o.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:400;font-display:swap}
@@ -144,6 +144,19 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   #pane7 .btn{padding:6px 8px;font-size:10px}
 }
 @media(max-width:600px){.access-popup{padding:30px 20px}.access-popup h1{font-size:28px}.tier-boxes{grid-template-columns:1fr;gap:12px}.header{padding:10px 12px}.header-left{flex-direction:column;gap:8px}.header-right{flex-direction:column;gap:8px}.htitle-main{font-size:18px}.htitle-sub{font-size:9px}.nav{padding:0 10px}.ntab{padding:8px 10px;font-size:10px}.pane{padding:12px}.stitle{font-size:16px}.box{padding:10px}.cards{grid-template-columns:repeat(2,1fr)}.card-val{font-size:18px}.btn{padding:7px 14px;font-size:11px}table{font-size:9px}th{padding:5px 6px}td{padding:5px 6px}.legal-grid{grid-template-columns:1fr;margin:12px}.legal-card{max-height:400px}}
+
+.week-order-toolbar{display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin-bottom:14px}
+.week-order-toolbar>div{min-width:170px}
+.week-game-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.week-game-card{display:grid;grid-template-columns:34px 44px 1fr 24px 1fr 44px;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:11px}
+.week-game-num{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:rgba(240,168,46,.12);border:1px solid rgba(240,168,46,.35);color:var(--gold);font-size:11px;font-weight:800}
+.week-logo{width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4))}
+.week-matchup{min-width:0}.week-team-name{font-size:12px;font-weight:800;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.week-team-name.home{text-align:right}
+.week-teams{font-size:12px;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.week-pick{font-size:11px;font-weight:800;color:var(--green2);margin-top:4px}
+.week-vs{font-size:9px;color:var(--text3);text-align:center;font-weight:700}
+@media(max-width:800px){.week-game-grid{grid-template-columns:1fr}.week-game-card{grid-template-columns:28px 34px 1fr 20px 1fr 34px;gap:6px}.week-logo{width:32px;height:32px}.week-team-name{font-size:11px}}
+
 </style>
 </head>
 <body>
@@ -211,7 +224,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <div class="htitle-sub">Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)</div>
     </div>
     <a href="https://www.youtube.com/@ThePipelineEdge" target="_blank" rel="noopener noreferrer" class="youtube-btn">🎥 HOW TO USE THE APP</a>
-    <div class="hlive">LIVE</div>
+    <div class="hlive">LIVE — GOOGLE REEDIT 07-29-26</div>
   </div>
   <div class="header-right">
     <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
@@ -339,32 +352,31 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 </div>
 
 <div class="nav-group" id="navGroup" style="display:none">
-  <div class="nav-label">🤖 Automated — Pipeline Output</div>
+  <div class="nav-label">🏈 FREE — WEEKLY PICKS & TRACKING</div>
   <div class="nav">
-    <button class="ntab auto-tab active" onclick="showPane(0, event.target)">📋 Weekly Selections</button>
-    <button class="ntab auto-tab" onclick="blockProFeature(event); showPane(1, event.target)" style="display:none">⛅ Weather</button>
-    <button class="ntab auto-tab" onclick="blockProFeature(event); showPane(2, event.target)" style="display:none">⚡ Lightning</button>
-    <button class="ntab auto-tab" onclick="blockProFeature(event); showPane(3, event.target)" style="display:none">🏆 Pool Tracker</button>
-    <button class="ntab auto-tab" onclick="blockProFeature(event); showPane(4, event.target)" style="display:none">📊 Season Summary</button>
-    <button class="ntab auto-tab" onclick="blockProFeature(event); showPane(5, event.target)" style="display:none">🎮 Fan Resources</button>
+    <button class="ntab auto-tab active" onclick="showPane(0, event.target)">🏈 Free Picks</button>
+    <button class="ntab auto-tab" onclick="showPane(1, event.target)">📅 Team Game Schedule</button>
+    <button class="ntab auto-tab" onclick="showPane(2, event.target)">⛅ Weather</button>
+    <button class="ntab auto-tab" onclick="showPane(3, event.target)">⚡ Lightning</button>
+    <button class="ntab auto-tab" onclick="showPane(4, event.target)">📈 Confidence Pool Tracker</button>
+    <button class="ntab auto-tab" onclick="showPane(5, event.target)">📊 Season Summary</button>
   </div>
-  <div class="nav-label" id="manualLabel" style="display:none">💎 NFL EDGE PRO™ TOOLS</div>
+  <div class="nav-label" id="manualLabel" style="display:none">💎 NFL EDGE PRO™ — BUILD · VALIDATE · REFERENCE</div>
   <div class="nav" id="manualNav" style="display:none">
     <button class="ntab" onclick="blockProFeature(event); showPane(6, event.target)">📋 Game Entry</button>
-    <button class="ntab" onclick="blockProFeature(event); showPane(7, event.target)">🏆 Weekly Pool</button>
-    <button class="ntab" onclick="blockProFeature(event); showPane(8, event.target)">📊 Score Reference</button>
+    <button class="ntab" onclick="blockProFeature(event); showPane(7, event.target)">🏆 Confidence Pool Builder</button>
     <button class="ntab" onclick="blockProFeature(event); showPane(9, event.target)">🏥 Injury Reference</button>
     <button class="ntab" onclick="blockProFeature(event); showPane(10, event.target)">👨‍⚖️ Referee Lookup</button>
     <button class="ntab" onclick="blockProFeature(event); showPane(11, event.target)">🍀 Luck Flags</button>
-    <button class="ntab" onclick="blockProFeature(event); showPane(12, event.target)">📈 Model Validation</button>
     <button class="ntab" onclick="blockProFeature(event); showPane(13, event.target)">🏟️ Stadium Data</button>
+    <button class="ntab" onclick="blockProFeature(event); showPane(8, event.target)">📊 Score Reference</button>
   </div>
 </div>
 
 <div class="pane active" id="pane0">
   <div class="pick-hero">
     <div class="pick-brand">THE PIPELINE <span>EDGE</span></div>
-    <div class="pick-week">Week 1 Selections · Updated Every Wednesday Night</div>
+    <div class="pick-week">Week 1 Free Picks · Command Center Sync 07-29-26</div>
     <div class="feature-note" style="max-width:720px;margin-top:10px">Finished confidence pool selections from the Command Center. No betting. No sportsbook. Pick'em and confidence pool information only.</div>
   </div>
 
@@ -372,17 +384,17 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
     <div class="feature-card survivor">
       <div class="feature-title">🥇 THE PIPELINE EDGE LOCK</div>
       <div class="feature-pick">LAC over ARI</div>
-      <div class="feature-note">Primary survivor safety selection for Week 1.</div>
+      <div class="feature-note">82.7% · -11.5 · Best spot of season.</div>
     </div>
     <div class="feature-card contrarian">
       <div class="feature-title">🎯 THE PIPELINE EDGE DIFFERENCE</div>
       <div class="feature-pick">DET over NO</div>
-      <div class="feature-note">Lower-ownership survivor path if the crowd stays away.</div>
+      <div class="feature-note">75.0% · -7 · Low crowd leverage.</div>
     </div>
     <div class="feature-card value">
       <div class="feature-title">🥈 THE PIPELINE EDGE VALUE</div>
       <div class="feature-pick">JAX over CLE</div>
-      <div class="feature-note">Strong survivor value with limited better future spots.</div>
+      <div class="feature-note">77.6% · -7 · Best week of season.</div>
     </div>
   </div>
 
@@ -395,27 +407,27 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
         <tr><td><span class="rank-pill">16</span></td><td class="pick-selection">JAX over CLE</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
         <tr><td><span class="rank-pill">15</span></td><td class="pick-selection">PHI over WAS</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
         <tr><td><span class="rank-pill">14</span></td><td class="pick-selection">DET over NO</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
-        <tr><td><span class="rank-pill">13</span></td><td class="pick-selection">PIT over ATL</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
-        <tr><td><span class="rank-pill">12</span></td><td class="pick-selection">LAC over ARI</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
-        <tr><td><span class="rank-pill">11</span></td><td class="pick-selection">SEA over NE</td><td><span class="edge-tier-badge edge-strong" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔵 THE PIPELINE EDGE STRONG</span></td></tr>
-        <tr><td><span class="rank-pill">10</span></td><td class="pick-selection">KC over DEN</td><td><span class="edge-tier-badge edge-strong" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔵 THE PIPELINE EDGE STRONG</span></td></tr>
-        <tr><td><span class="rank-pill">9</span></td><td class="pick-selection">LAR over SF</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">8</span></td><td class="pick-selection">TEN over NYJ</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">7</span></td><td class="pick-selection">CIN over TB</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">6</span></td><td class="pick-selection">MIN over GB</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">5</span></td><td class="pick-selection">IND over BAL</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
-        <tr><td><span class="rank-pill">4</span></td><td class="pick-selection">LVR over MIA</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
-        <tr><td><span class="rank-pill">3</span></td><td class="pick-selection">CAR over CHI</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
-        <tr><td><span class="rank-pill">2</span></td><td class="pick-selection">NYG over DAL</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
-        <tr><td><span class="rank-pill">1</span></td><td class="pick-selection">BUF over HOU</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
+        <tr><td><span class="rank-pill">13</span></td><td class="pick-selection">LAC over ARI</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
+        <tr><td><span class="rank-pill">12</span></td><td class="pick-selection">SEA over NE</td><td><span class="edge-tier-badge edge-elite" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟢 THE PIPELINE EDGE ELITE</span></td></tr>
+        <tr><td><span class="rank-pill">11</span></td><td class="pick-selection">LAR over SF</td><td><span class="edge-tier-badge edge-strong" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔵 THE PIPELINE EDGE STRONG</span></td></tr>
+        <tr><td><span class="rank-pill">10</span></td><td class="pick-selection">PIT over ATL</td><td><span class="edge-tier-badge edge-strong" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔵 THE PIPELINE EDGE STRONG</span></td></tr>
+        <tr><td><span class="rank-pill">9</span></td><td class="pick-selection">TEN over NYJ</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
+        <tr><td><span class="rank-pill">8</span></td><td class="pick-selection">CHI over CAR</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
+        <tr><td><span class="rank-pill">7</span></td><td class="pick-selection">BAL over IND</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
+        <tr><td><span class="rank-pill">6</span></td><td class="pick-selection">MIA over LVR</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
+        <tr><td><span class="rank-pill">5</span></td><td class="pick-selection">DAL over NYG</td><td><span class="edge-tier-badge edge-lean" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🟡 THE PIPELINE EDGE LEAN</span></td></tr>
+        <tr><td><span class="rank-pill">4</span></td><td class="pick-selection">DEN over KC</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
+        <tr><td><span class="rank-pill">3</span></td><td class="pick-selection">CIN over TB</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
+        <tr><td><span class="rank-pill">2</span></td><td class="pick-selection">GB over MIN</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
+        <tr><td><span class="rank-pill">1</span></td><td class="pick-selection">HOU over BUF</td><td><span class="edge-tier-badge edge-watch" style="margin:0;min-width:auto;padding:4px 8px;font-size:10px">🔴 THE PIPELINE EDGE WATCH</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="cards">
-    <div class="card"><div class="card-lbl" style="font-size:12px;line-height:1.25">Model Status</div><div class="card-val c-green" style="font-size:34px;line-height:1.1">Updated</div><div class="card-sub" style="font-size:12px;line-height:1.25">06-22-26</div></div>
-    <div class="card"><div class="card-lbl" style="font-size:12px;line-height:1.25">Use Case</div><div class="card-val c-gold" style="font-size:34px;line-height:1.1">Pick'em</div><div class="card-sub" style="font-size:12px;line-height:1.25">Confidence pools</div></div>
-    <div class="card"><div class="card-lbl" style="font-size:12px;line-height:1.25">Public View</div><div class="card-val c-blue" style="font-size:34px;line-height:1.1">Free</div><div class="card-sub" style="font-size:12px;line-height:1.25">Weekly selections</div></div>
+    <div class="card"><div class="card-lbl">Model Status</div><div class="card-val c-green">Updated</div><div class="card-sub">Afternoon Command Center sync</div></div>
+    <div class="card"><div class="card-lbl">Use Case</div><div class="card-val c-gold">Pick'em</div><div class="card-sub">Confidence pools</div></div>
+    <div class="card"><div class="card-lbl">Public View</div><div class="card-val c-blue">Free</div><div class="card-sub">Weekly selections</div></div>
   </div>
 
   <div class="pro-callout">
@@ -424,7 +436,28 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   </div>
 </div>
 
+
 <div class="pane" id="pane1">
+  <div class="mode-banner auto">📅 TEAM GAME SCHEDULE — Complete 2026 regular-season schedule</div>
+  <div class="stitle">Official Weekly Matchups</div>
+  <div class="week-order-toolbar">
+    <div>
+      <label>Select Week</label>
+      <select id="weeklyGameOrderWeek" onchange="updateWeeklyGameOrder()">
+        <option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option>
+        <option value="4">Week 4</option><option value="5">Week 5</option><option value="6">Week 6</option>
+        <option value="7">Week 7</option><option value="8">Week 8</option><option value="9">Week 9</option>
+        <option value="10">Week 10</option><option value="11">Week 11</option><option value="12">Week 12</option>
+        <option value="13">Week 13</option><option value="14">Week 14</option><option value="15">Week 15</option>
+        <option value="16">Week 16</option><option value="17">Week 17</option><option value="18">Week 18</option>
+      </select>
+    </div>
+  </div>
+  <div class="note" id="weeklyGameOrderNote"><strong>Week 1:</strong> Official away @ home matchups. No predictions are shown on this page.</div>
+  <div class="week-game-grid" id="weeklyGameOrderGrid"></div>
+</div>
+
+<div class="pane" id="pane2">
   <div class="mode-banner auto">⛅ WEATHER — Live conditions for outdoor stadiums</div>
   <div class="stitle">Stadium Weather</div>
   <div class="cards">
@@ -437,7 +470,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   <div id="weatherResults"></div>
 </div>
 
-<div class="pane" id="pane2">
+<div class="pane" id="pane3">
   <div class="mode-banner auto">⚡ LIGHTNING — Live tracker workflow</div>
   <div class="stitle">Lightning Tracker</div>
   <div class="box">
@@ -447,7 +480,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   </div>
 </div>
 
-<div class="pane" id="pane3">
+<div class="pane" id="pane4">
   <div class="mode-banner auto">🤖 AUTOMATED MODE — Log your weekly results</div>
   <div class="stitle">Confidence Pool Tracker</div>
   <div class="cards">
@@ -478,7 +511,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   </div>
 </div>
 
-<div class="pane" id="pane4">
+<div class="pane" id="pane5">
   <div class="mode-banner auto">🤖 AUTOMATED MODE — Running season totals</div>
   <div class="stitle">Season Summary — 2026</div>
   <div class="cards">
@@ -487,16 +520,6 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
     <div class="card"><div class="card-lbl">Total Points</div><div class="card-val c-gold" id="s-pts">—</div></div>
   </div>
   <div style="background:linear-gradient(90deg,rgba(31,111,235,0.1),rgba(8,145,178,0.06));border:1px solid rgba(31,111,235,0.2);border-radius:8px;padding:14px 20px;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.05em;color:var(--text2);margin-top:24px">Good luck. The work is done. <span style="color:var(--gold)">Trust the system.</span> 🏈</div>
-</div>
-
-<div class="pane" id="pane5">
-  <div class="mode-banner auto">🛒 FAN RESOURCES — Shop on Amazon</div>
-  <div class="stitle">Fan Resources</div>
-  <div class="box">
-    <div class="box-title">Games on Amazon</div>
-    <p style="font-size:11px;color:var(--text2);margin-bottom:12px">We participate in the Amazon Associates Program. When you click the link below and make a purchase, we may earn a small commission at no additional cost to you.</p>
-    <a class="btn btn-green" href="https://www.amazon.com/s?k=Games" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-block">🎮 Shop Games on Amazon</a>
-  </div>
 </div>
 
 <div class="pane" id="pane6">
@@ -509,26 +532,26 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <label>Select Week 1 Game</label>
       <select id="gameSelect" onchange="loadPipelineDefaults()">
         <option value="">-- Select Game --</option>
-        <option value="NE|SEA">NE @ SEA — Pipeline Default: EDGE ELITE / 8 of 8</option>
-        <option value="SF|LAR">SF @ LAR — Pipeline Default: EDGE ELITE / 8 of 8</option>
-        <option value="CHI|CAR">CHI @ CAR — Pipeline Default: EDGE WATCH / 6 of 8</option>
-        <option value="TB|CIN">TB @ CIN — Pipeline Default: EDGE STRONG / 6 of 8</option>
-        <option value="BAL|IND">BAL @ IND — Pipeline Default: EDGE ELITE / 6 of 8</option>
-        <option value="NO|DET">NO @ DET — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="BUF|HOU">BUF @ HOU — Pipeline Default: EDGE WATCH / 5 of 8</option>
-        <option value="CLE|JAX">CLE @ JAX — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="ATL|PIT">ATL @ PIT — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="NYJ|TEN">NYJ @ TEN — Pipeline Default: EDGE STRONG / 7 of 8</option>
-        <option value="ARI|LAC">ARI @ LAC — Pipeline Default: EDGE STRONG / 8 of 8</option>
-        <option value="MIA|LVR">MIA @ LVR — Pipeline Default: EDGE WATCH / 4 of 8</option>
-        <option value="GB|MIN">GB @ MIN — Pipeline Default: EDGE STRONG / 6 of 8</option>
-        <option value="DAL|NYG">DAL @ NYG — Pipeline Default: EDGE WATCH / 5 of 8</option>
-        <option value="KC|DEN">KC @ DEN — Pipeline Default: EDGE ELITE / 7 of 8</option>
-        <option value="PHI|WAS">PHI @ WAS — Pipeline Default: EDGE LEAN / 5 of 8</option>
+        <option value="NE|SEA">NE @ SEA — Pick: SEA over NE — Pipeline Default: EDGE ELITE / 8 of 8</option>
+        <option value="SF|LAR">SF @ LAR — Pick: LAR over SF — Pipeline Default: EDGE ELITE / 8 of 8</option>
+        <option value="CHI|CAR">CHI @ CAR — Pick: CHI over CAR — Pipeline Default: EDGE WATCH / 6 of 8</option>
+        <option value="TB|CIN">TB @ CIN — Pick: CIN over TB — Pipeline Default: EDGE STRONG / 6 of 8</option>
+        <option value="BAL|IND">BAL @ IND — Pick: BAL over IND — Pipeline Default: EDGE ELITE / 6 of 8</option>
+        <option value="NO|DET">NO @ DET — Pick: DET over NO — Pipeline Default: EDGE LEAN / 8 of 8</option>
+        <option value="BUF|HOU">BUF @ HOU — Pick: HOU over BUF — Pipeline Default: EDGE WATCH / 5 of 8</option>
+        <option value="CLE|JAX">CLE @ JAX — Pick: JAX over CLE — Pipeline Default: EDGE LEAN / 8 of 8</option>
+        <option value="ATL|PIT">ATL @ PIT — Pick: PIT over ATL — Pipeline Default: EDGE LEAN / 8 of 8</option>
+        <option value="NYJ|TEN">NYJ @ TEN — Pick: TEN over NYJ — Pipeline Default: EDGE STRONG / 7 of 8</option>
+        <option value="ARI|LAC">ARI @ LAC — Pick: LAC over ARI — Pipeline Default: EDGE STRONG / 8 of 8</option>
+        <option value="MIA|LVR">MIA @ LVR — Pick: MIA over LVR — Pipeline Default: EDGE WATCH / 4 of 8</option>
+        <option value="GB|MIN">GB @ MIN — Pick: GB over MIN — Pipeline Default: EDGE STRONG / 6 of 8</option>
+        <option value="DAL|NYG">DAL @ NYG — Pick: DAL over NYG — Pipeline Default: EDGE WATCH / 5 of 8</option>
+        <option value="KC|DEN">KC @ DEN — Pick: DEN over KC — Pipeline Default: EDGE ELITE / 7 of 8</option>
+        <option value="PHI|WAS">PHI @ WAS — Pick: PHI over WAS — Pipeline Default: EDGE LEAN / 5 of 8</option>
       </select>
 
       <div class="note" id="pipelineDefaultNote" style="margin-top:8px">
-        Select a game to auto-fill THE PIPELINE EDGE Rating and THE PIPELINE EDGE Consensus. You can still change both dropdowns.
+        Select a game to auto-fill THE PIPELINE EDGE Rating and Consensus. Each option clearly shows “Pick: WINNER over LOSER” to avoid confusion. You can still change both dropdowns.
       </div>
 
       <label>THE PIPELINE EDGE Rating</label>
@@ -616,6 +639,34 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
         <div style="background:rgba(218,54,51,0.08);border:1px solid rgba(218,54,51,0.2);border-radius:8px;padding:14px;text-align:center"><div style="font-size:18px;color:var(--red2);font-weight:700">1–4</div><div style="font-size:10px;color:var(--red2)">THE PIPELINE EDGE WATCH</div></div>
       </div>
     </div>
+  </div>
+
+  <div style="margin-top:24px">
+    <div class="stitle">Model Validation</div>
+    
+  <div class="mode-banner manual">🛠️ MODEL VALIDATION — Historical walk-forward testing</div>
+  <div class="stitle">Model Validation — Walk-Forward Test Results</div>
+  <div class="cards">
+    <div class="card"><div class="card-lbl">Historical Accuracy</div><div class="card-val c-gold">60.0%</div><div class="card-sub">1,359 games (2021–2025)</div></div>
+    <div class="card"><div class="card-lbl">Best Season</div><div class="card-val c-green">65.1%</div><div class="card-sub">2024</div></div>
+    <div class="card"><div class="card-lbl">Worst Season</div><div class="card-val c-amber">57.0%</div><div class="card-sub">2023</div></div>
+    <div class="card"><div class="card-lbl">Seasons Tested</div><div class="card-val c-blue">5</div><div class="card-sub">2021–2025</div></div>
+  </div>
+  <div class="g2">
+    <div class="box">
+      <div class="box-title">Yearly Performance</div>
+      <div style="display:grid;gap:12px">
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:11px;color:var(--text2)">2025</span><span style="font-size:12px;font-weight:600;color:var(--green2)">62.4%</span></div><div style="width:100%;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:62.4%;height:100%;background:var(--green2)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:11px;color:var(--text2)">2024</span><span style="font-size:12px;font-weight:600;color:var(--green2)">65.1%</span></div><div style="width:100%;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:65.1%;height:100%;background:var(--green2)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:11px;color:var(--text2)">2023</span><span style="font-size:12px;font-weight:600;color:var(--amber2)">57.0%</span></div><div style="width:100%;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:57.0%;height:100%;background:var(--amber2)"></div></div></div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-title">Methodology</div>
+      <p style="font-size:11px;color:var(--text2);line-height:1.7">Walk-forward validation tests the model on historical data it has never seen before, using data from 2021–2025 (1,359 games).</p>
+    </div>
+  </div>
+
   </div>
 </div>
 
@@ -731,32 +782,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   <div class="stitle">Luck Factor — 2026 Flags</div>
   <div class="note">⬇️ <strong>Regress</strong> = Team got lucky, expect worse in 2026 | ⬆️ <strong>Bounce</strong> = Team got unlucky, expect better in 2026 | <strong>−</strong> = Neutral luck</div>
   <div class="tbl-wrap">
-    <table><thead><tr><th>Team</th><th>2024 Luck</th><th>Pyth W</th><th>Actual W</th><th>Gap</th><th>Flag</th></tr></thead><tbody id="luckBody"></tbody></table>
-  </div>
-</div>
-
-<div class="pane" id="pane12">
-  <div class="mode-banner manual">🛠️ MODEL VALIDATION — Historical walk-forward testing</div>
-  <div class="stitle">Model Validation — Walk-Forward Test Results</div>
-  <div class="cards">
-    <div class="card"><div class="card-lbl">Historical Accuracy</div><div class="card-val c-gold">60.0%</div><div class="card-sub">1,359 games (2021–2025)</div></div>
-    <div class="card"><div class="card-lbl">Best Season</div><div class="card-val c-green">65.1%</div><div class="card-sub">2024</div></div>
-    <div class="card"><div class="card-lbl">Worst Season</div><div class="card-val c-amber">57.0%</div><div class="card-sub">2023</div></div>
-    <div class="card"><div class="card-lbl">Seasons Tested</div><div class="card-val c-blue">5</div><div class="card-sub">2021–2025</div></div>
-  </div>
-  <div class="g2">
-    <div class="box">
-      <div class="box-title">Yearly Performance</div>
-      <div style="display:grid;gap:12px">
-        <div><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:11px;color:var(--text2)">2025</span><span style="font-size:12px;font-weight:600;color:var(--green2)">62.4%</span></div><div style="width:100%;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:62.4%;height:100%;background:var(--green2)"></div></div></div>
-        <div><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:11px;color:var(--text2)">2024</span><span style="font-size:12px;font-weight:600;color:var(--green2)">65.1%</span></div><div style="width:100%;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:65.1%;height:100%;background:var(--green2)"></div></div></div>
-        <div><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:11px;color:var(--text2)">2023</span><span style="font-size:12px;font-weight:600;color:var(--amber2)">57.0%</span></div><div style="width:100%;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:57.0%;height:100%;background:var(--amber2)"></div></div></div>
-      </div>
-    </div>
-    <div class="box">
-      <div class="box-title">Methodology</div>
-      <p style="font-size:11px;color:var(--text2);line-height:1.7">Walk-forward validation tests the model on historical data it has never seen before, using data from 2021–2025 (1,359 games).</p>
-    </div>
+    <table><thead><tr><th>Team</th><th>2025 Luck</th><th>Pyth W</th><th>Actual W</th><th>Gap</th><th>Flag</th></tr></thead><tbody id="luckBody"></tbody></table>
   </div>
 </div>
 
@@ -770,9 +796,9 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 </div>
 
 <script>
-const REFS=[{n:'Bill Vinovich',adj:'+2',p:'Fewest flags, let-them-play style',cr:'Lower'},{n:'Brad Allen',adj:'0',p:'Neutral, league average',cr:'Average'},{n:'Carl Cheffers',adj:'-2',p:'Heavy DPI, road dogs thrive',cr:'Higher'},{n:'Clete Blakeman',adj:'-1',p:'Most total flags 2024',cr:'Higher'},{n:'Ron Torbert',adj:'0',p:'Consistent across all categories',cr:'Average'},{n:'Shawn Hochuli',adj:'+1',p:'Slight home team favor',cr:'Average'},{n:'Jerome Boger',adj:'0',p:'Balanced enforcement',cr:'Average'},{n:'Alex Kemp',adj:'-1',p:'Defensive flags favored',cr:'Higher'}];
+const REFS=[{n:'Ron Torbert',adj:'+0.75',p:'Consistent home lean — moderate volume — 3yr blend',cr:'12.94 flags/game'},{n:'Scott Novak',adj:'+0.5',p:'Strong home lean in 2025 — variable crew',cr:'11.54 flags/game'},{n:'John Hussey',adj:'+0.25',p:'Low flags — slight home tilt',cr:'11.52 flags/game'},{n:'Land Clark',adj:'+0.25',p:'Quiet crew — consistently home-friendly',cr:'11.31 flags/game'},{n:'Shawn Hochuli',adj:'+0.25',p:'Volatile crew — home lean in 2025',cr:'13.25 flags/game'},{n:'Adrian Hill',adj:'-0.25',p:'Moderate volume — slight away lean in blend',cr:'13.49 flags/game'},{n:'Alan Eck',adj:'-0.25',p:'Low flags — slight away lean',cr:'10.95 flags/game'},{n:'Brad Allen',adj:'-0.25',p:'Near average — slight away lean',cr:'10.83 flags/game'},{n:'Clay Martin',adj:'-0.25',p:'Most holding calls — away lean',cr:'11.98 flags/game'},{n:'Clete Blakeman',adj:'-0.25',p:'High volume — away lean in blend',cr:'13.17 flags/game'},{n:'Alex Moore',adj:'-0.5',p:'Highest volume 2025 — strong away lean — new referee',cr:'16.13 flags/game'},{n:'Bill Vinovich',adj:'-0.5',p:'Away lean in 3yr blend — reputation exceeds recent data',cr:'12.57 flags/game'},{n:'Brad Rogers',adj:'-0.5',p:'DPI-heavy — away lean in blend',cr:'13.29 flags/game'},{n:'Carl Cheffers',adj:'-0.75',p:'Strongest away lean in league — road dogs thrive',cr:'12.36 flags/game'},{n:'Craig Wrolstad',adj:'-0.5',p:'Moderate volume — consistent away lean',cr:'12.23 flags/game'},{n:'Shawn Smith',adj:'-0.75',p:'Strong road bias — 3yr consistent away lean',cr:'11.98 flags/game'}];
 
-const LUCK=[{t:'KC',l:'+5.1',py:9.9,ac:15,flag:'⬇️ Regress'},{t:'MIN',l:'+3.6',py:10.4,ac:14,flag:'⬇️ Regress'},{t:'SF',l:'-3.2',py:9.2,ac:6,flag:'⬆️ Bounce'},{t:'LV',l:'-2.9',py:6.9,ac:4,flag:'⬆️ Bounce'},{t:'DET',l:'-0.4',py:14.4,ac:14,flag:'−'},{t:'BAL',l:'+1.8',py:11.1,ac:13,flag:'⬇️ Regress'},{t:'TB',l:'-1.2',py:10.1,ac:9,flag:'⬆️ Bounce'},{t:'PHI',l:'+0.9',py:13.8,ac:14,flag:'−'},{t:'BUF',l:'+2.1',py:10.2,ac:13,flag:'⬇️ Regress'},{t:'DAL',l:'-1.5',py:10.3,ac:12,flag:'⬆️ Bounce'},{t:'GB',l:'+0.3',py:9.8,ac:11,flag:'−'},{t:'LAC',l:'-2.3',py:8.1,ac:5,flag:'⬆️ Bounce'},{t:'LAR',l:'+1.2',py:9.6,ac:10,flag:'⬇️ Regress'},{t:'NE',l:'-0.8',py:4.2,ac:4,flag:'−'},{t:'NYG',l:'+0.5',py:3.5,ac:6,flag:'⬇️ Regress'},{t:'PIT',l:'-1.8',py:8.7,ac:8,flag:'⬆️ Bounce'},{t:'NYJ',l:'+1.1',py:7.9,ac:4,flag:'−'},{t:'CIN',l:'+0.6',py:9.8,ac:9,flag:'−'},{t:'HOU',l:'-0.3',py:10.1,ac:10,flag:'−'},{t:'TEN',l:'+2.5',py:7.2,ac:10,flag:'⬇️ Regress'},{t:'IND',l:'-1.4',py:9.1,ac:8,flag:'⬆️ Bounce'},{t:'JAX',l:'-2.6',py:7.1,ac:4,flag:'⬆️ Bounce'},{t:'DEN',l:'+0.2',py:8.9,ac:9,flag:'−'},{t:'SEA',l:'-0.7',py:6.3,ac:6,flag:'−'},{t:'ARI',l:'+1.3',py:6.7,ac:8,flag:'⬇️ Regress'},{t:'CAR',l:'-3.1',py:5.8,ac:2,flag:'⬆️ Bounce'},{t:'ATL',l:'+0.8',py:9.2,ac:9,flag:'−'},{t:'NO',l:'-1.9',py:6.4,ac:5,flag:'⬆️ Bounce'},{t:'WAS',l:'+2.2',py:7.8,ac:12,flag:'⬇️ Regress'},{t:'CHI',l:'-0.6',py:5.4,ac:5,flag:'−'},{t:'CLE',l:'+0.4',py:10.2,ac:11,flag:'−'},{t:'MIA',l:'-2.4',py:8.3,ac:8,flag:'⬆️ Bounce'}];
+const LUCK=[{t:'KC',l:'-3.3',py:9.3,ac:6,flag:'⬆️ Bounce'},{t:'IND',l:'-3.1',py:11.1,ac:8,flag:'⬆️ Bounce'},{t:'BAL',l:'-2.8',py:10.8,ac:8,flag:'⬆️ Bounce'},{t:'DET',l:'-2.8',py:11.8,ac:9,flag:'⬆️ Bounce'},{t:'NYG',l:'-2.6',py:6.6,ac:4,flag:'⬆️ Bounce'},{t:'DAL',l:'-1.3',py:8.3,ac:7,flag:'⬆️ Bounce'},{t:'TB',l:'-1.0',py:9,ac:8,flag:'⬆️ Bounce'},{t:'GB',l:'-1.0',py:10,ac:9,flag:'− Neutral'},{t:'LAR',l:'-2.1',py:14.1,ac:12,flag:'⬇️ Regress'},{t:'LAC',l:'+1.4',py:9.6,ac:11,flag:'⬇️ Regress'},{t:'DEN',l:'+1.2',py:12.8,ac:14,flag:'⬇️ Regress'},{t:'NE',l:'-0.8',py:14.8,ac:14,flag:'− Neutral'},{t:'HOU',l:'-0.8',py:12.8,ac:12,flag:'− Neutral'},{t:'SF',l:'-0.5',py:12.5,ac:12,flag:'− Neutral'},{t:'BUF',l:'-0.5',py:12.5,ac:12,flag:'− Neutral'},{t:'ATL',l:'-0.4',py:8.4,ac:8,flag:'− Neutral'},{t:'NO',l:'-0.2',py:6.2,ac:6,flag:'− Neutral'},{t:'TEN',l:'-0.3',py:3.3,ac:3,flag:'− Neutral'},{t:'JAX',l:'-0.5',py:13.5,ac:13,flag:'− Neutral'},{t:'MIN',l:'+0.1',py:8.9,ac:9,flag:'− Neutral'},{t:'SEA',l:'+0.1',py:13.9,ac:14,flag:'− Neutral'},{t:'PHI',l:'+0.1',py:10.9,ac:11,flag:'− Neutral'},{t:'WAS',l:'-0.9',py:5.9,ac:5,flag:'⬆️ Bounce'},{t:'CIN',l:'-1.8',py:7.8,ac:6,flag:'⬆️ Bounce'},{t:'CAR',l:'+0.7',py:7.3,ac:8,flag:'⬇️ Regress'},{t:'CHI',l:'-0.7',py:11.7,ac:11,flag:'− Neutral'},{t:'CLE',l:'+0.0',py:5,ac:5,flag:'− Neutral'},{t:'LVR',l:'+0.4',py:2.6,ac:3,flag:'⬇️ Regress'},{t:'MIA',l:'-0.1',py:7.1,ac:7,flag:'− Neutral'},{t:'ARI',l:'-0.7',py:3.7,ac:3,flag:'⬆️ Bounce'}];
 
 const STADIUMS=[{tm:'ARI',st:'State Farm Stadium',tp:'Dome',ct:'Glendale, AZ',el:'1,099 ft'},{tm:'ATL',st:'Mercedes-Benz Stadium',tp:'Dome',ct:'Atlanta, GA',el:'1,010 ft'},{tm:'BAL',st:'M&T Bank Stadium',tp:'Outdoor',ct:'Baltimore, MD',el:'19 ft'},{tm:'BUF',st:'Highmark Stadium',tp:'Outdoor',ct:'Buffalo, NY',el:'678 ft'},{tm:'CAR',st:'Bank of America Stadium',tp:'Outdoor',ct:'Charlotte, NC',el:'751 ft'},{tm:'CHI',st:'Soldier Field',tp:'Outdoor',ct:'Chicago, IL',el:'579 ft'},{tm:'CIN',st:'Paycor Stadium',tp:'Outdoor',ct:'Cincinnati, OH',el:'429 ft'},{tm:'CLE',st:'Cleveland Browns Stadium',tp:'Outdoor',ct:'Cleveland, OH',el:'568 ft'},{tm:'DAL',st:'AT&T Stadium',tp:'Dome',ct:'Arlington, TX',el:'515 ft'},{tm:'DEN',st:'Empower Field at Mile High',tp:'Outdoor',ct:'Denver, CO',el:'5,280 ft'},{tm:'DET',st:'Ford Field',tp:'Dome',ct:'Detroit, MI',el:'573 ft'},{tm:'GB',st:'Lambeau Field',tp:'Outdoor',ct:'Green Bay, WI',el:'606 ft'},{tm:'HOU',st:'NRG Stadium',tp:'Dome',ct:'Houston, TX',el:'47 ft'},{tm:'IND',st:'Lucas Oil Stadium',tp:'Dome',ct:'Indianapolis, IN',el:'718 ft'},{tm:'JAX',st:'TIAA Bank Field',tp:'Outdoor',ct:'Jacksonville, FL',el:'8 ft'},{tm:'KC',st:'Arrowhead Stadium',tp:'Outdoor',ct:'Kansas City, MO',el:'751 ft'},{tm:'LA',st:'SoFi Stadium',tp:'Dome',ct:'Los Angeles, CA',el:'285 ft'},{tm:'LAC',st:'SoFi Stadium',tp:'Dome',ct:'Los Angeles, CA',el:'285 ft'},{tm:'LV',st:'Allegiant Stadium',tp:'Dome',ct:'Las Vegas, NV',el:'2,084 ft'},{tm:'MIA',st:'Hard Rock Stadium',tp:'Outdoor',ct:'Miami, FL',el:'7 ft'},{tm:'MIN',st:'U.S. Bank Stadium',tp:'Dome',ct:'Minneapolis, MN',el:'831 ft'},{tm:'NE',st:'Gillette Stadium',tp:'Outdoor',ct:'Foxborough, MA',el:'56 ft'},{tm:'NO',st:'Caesars Superdome',tp:'Dome',ct:'New Orleans, LA',el:'-6 ft'},{tm:'NYG',st:'MetLife Stadium',tp:'Outdoor',ct:'East Rutherford, NJ',el:'33 ft'},{tm:'NYJ',st:'MetLife Stadium',tp:'Outdoor',ct:'East Rutherford, NJ',el:'33 ft'},{tm:'PHI',st:'Lincoln Financial Field',tp:'Outdoor',ct:'Philadelphia, PA',el:'42 ft'},{tm:'PIT',st:'Acrisure Stadium',tp:'Outdoor',ct:'Pittsburgh, PA',el:'719 ft'},{tm:'SEA',st:'Lumen Field',tp:'Outdoor',ct:'Seattle, WA',el:'21 ft'},{tm:'SF',st:'Levi\'s Stadium',tp:'Outdoor',ct:'Santa Clara, CA',el:'73 ft'},{tm:'TB',st:'Raymond James Stadium',tp:'Outdoor',ct:'Tampa, FL',el:'15 ft'},{tm:'TEN',st:'Nissan Stadium',tp:'Outdoor',ct:'Nashville, TN',el:'394 ft'},{tm:'WAS',st:'Northwest Stadium',tp:'Outdoor',ct:'Landover, MD',el:'106 ft'}];
 
@@ -806,7 +832,7 @@ function loadTierContent(tier){
   const panes=document.querySelectorAll('.pane');
   
   if(tier==='free'){
-    tierStatus.innerHTML='<strong>FREE TIER</strong> — Weekly Selections Only';
+    tierStatus.innerHTML='<strong>FREE TIER</strong> — Picks, weekly order, weather, lightning & tracking';
     navGroup.style.display='block';
     manualLabel.style.display='none';
     manualNav.style.display='none';
@@ -814,7 +840,7 @@ function loadTierContent(tier){
     panes.forEach((p,i)=>{if(i===0)p.classList.add('active');else p.classList.remove('active')});
     
     const autoTabs=document.querySelectorAll('.ntab.auto-tab');
-    autoTabs.forEach((t,i)=>{if(i===0)t.classList.add('active');else t.style.display='none'});
+    autoTabs.forEach((t,i)=>{t.style.display=''; if(i===0)t.classList.add('active'); else t.classList.remove('active')});
     
   }else if(tier==='pro'){
     tierStatus.innerHTML='<strong>NFL EDGE PRO™</strong> — Full Access';
@@ -865,12 +891,70 @@ function initializeApp(){
   buildRefTable();
   buildLuckTable();
   buildStadiumTable();
+  updateWeeklyGameOrder();
 }
 
 function loadStoredData(){
   try{const savedWeekLog=localStorage.getItem('weekLog');if(savedWeekLog){weekLog=JSON.parse(savedWeekLog);}}catch(e){weekLog=[];}
   try{const savedPool=localStorage.getItem('pool');if(savedPool){pool=JSON.parse(savedPool).map(p=>{if(!p.tier||p.tier==='UNDEFINED'){const t=getEdgeTier(p.score);p.tier=t.txt;p.tierColor=t.color;}return p;});}}catch(e){pool=[];}
 }
+
+
+
+const SCHEDULE_2026 = {
+  1:[{home:'SEA',away:'NE'},{home:'LAR',away:'SF'},{home:'CAR',away:'CHI'},{home:'CIN',away:'TB'},{home:'IND',away:'BAL'},{home:'DET',away:'NO'},{home:'HOU',away:'BUF'},{home:'JAX',away:'CLE'},{home:'TEN',away:'NYJ'},{home:'PIT',away:'ATL'},{home:'MIN',away:'GB'},{home:'PHI',away:'WAS'},{home:'LVR',away:'MIA'},{home:'LAC',away:'ARI'},{home:'NYG',away:'DAL'},{home:'KC',away:'DEN'}],
+  2:[{home:'BUF',away:'DET'},{home:'ATL',away:'CAR'},{home:'CHI',away:'MIN'},{home:'HOU',away:'CIN'},{home:'NE',away:'PIT'},{home:'NYJ',away:'GB'},{home:'TEN',away:'PHI'},{home:'BAL',away:'NO'},{home:'TB',away:'CLE'},{home:'DEN',away:'JAX'},{home:'LAC',away:'LVR'},{home:'ARI',away:'SEA'},{home:'DAL',away:'WAS'},{home:'SF',away:'MIA'},{home:'KC',away:'IND'},{home:'LAR',away:'NYG'}],
+  3:[{home:'GB',away:'ATL'},{home:'BUF',away:'LAC'},{home:'CLE',away:'CAR'},{home:'IND',away:'HOU'},{home:'DET',away:'NYJ'},{home:'JAX',away:'NE'},{home:'MIA',away:'KC'},{home:'NYG',away:'TEN'},{home:'PIT',away:'CIN'},{home:'WAS',away:'SEA'},{home:'SF',away:'ARI'},{home:'TB',away:'MIN'},{home:'DAL',away:'BAL'},{home:'NO',away:'LVR'},{home:'DEN',away:'LAR'},{home:'CHI',away:'PHI'}],
+  4:[{home:'CLE',away:'PIT'},{home:'WAS',away:'IND'},{home:'BUF',away:'NE'},{home:'CHI',away:'NYJ'},{home:'CIN',away:'JAX'},{home:'HOU',away:'DAL'},{home:'NYG',away:'ARI'},{home:'PHI',away:'LAR'},{home:'BAL',away:'TEN'},{home:'TB',away:'GB'},{home:'MIN',away:'MIA'},{home:'LVR',away:'KC'},{home:'SEA',away:'LAC'},{home:'SF',away:'DEN'},{home:'CAR',away:'DET'},{home:'NO',away:'ATL'}],
+  5:[{home:'DAL',away:'TB'},{home:'JAX',away:'PHI'},{home:'MIA',away:'CIN'},{home:'NO',away:'MIN'},{home:'NE',away:'LVR'},{home:'NYJ',away:'CLE'},{home:'TEN',away:'HOU'},{home:'PIT',away:'IND'},{home:'WAS',away:'NYG'},{home:'LAC',away:'DEN'},{home:'ARI',away:'DET'},{home:'GB',away:'CHI'},{home:'SEA',away:'SF'},{home:'ATL',away:'BAL'},{home:'LAR',away:'BUF'}],
+  6:[{home:'DEN',away:'SEA'},{home:'JAX',away:'HOU'},{home:'ATL',away:'CHI'},{home:'CLE',away:'BAL'},{home:'IND',away:'TEN'},{home:'NE',away:'NYJ'},{home:'NYG',away:'NO'},{home:'PHI',away:'CAR'},{home:'TB',away:'PIT'},{home:'LAR',away:'ARI'},{home:'KC',away:'LAC'},{home:'LVR',away:'BUF'},{home:'GB',away:'DAL'},{home:'SF',away:'WAS'}],
+  7:[{home:'CHI',away:'NE'},{home:'NO',away:'PIT'},{home:'ATL',away:'SF'},{home:'CAR',away:'TB'},{home:'HOU',away:'NYG'},{home:'MIN',away:'IND'},{home:'NYJ',away:'MIA'},{home:'TEN',away:'CLE'},{home:'BAL',away:'CIN'},{home:'ARI',away:'DEN'},{home:'DET',away:'GB'},{home:'LVR',away:'LAR'},{home:'SEA',away:'KC'},{home:'PHI',away:'DAL'}],
+  8:[{home:'GB',away:'CAR'},{home:'BUF',away:'BAL'},{home:'CIN',away:'TEN'},{home:'DAL',away:'ARI'},{home:'DET',away:'MIN'},{home:'JAX',away:'IND'},{home:'NYJ',away:'LVR'},{home:'PIT',away:'CLE'},{home:'TB',away:'ATL'},{home:'LAR',away:'LAC'},{home:'DEN',away:'KC'},{home:'MIA',away:'NE'},{home:'WAS',away:'PHI'},{home:'SEA',away:'CHI'}],
+  9:[{home:'BAL',away:'JAX'},{home:'ATL',away:'CIN'},{home:'CAR',away:'DEN'},{home:'IND',away:'DAL'},{home:'KC',away:'NYJ'},{home:'MIA',away:'DET'},{home:'NO',away:'CLE'},{home:'PHI',away:'NYG'},{home:'WAS',away:'LAR'},{home:'LAC',away:'HOU'},{home:'SF',away:'LVR'},{home:'NE',away:'GB'},{home:'SEA',away:'ARI'},{home:'CHI',away:'TB'},{home:'MIN',away:'BUF'}],
+  10:[{home:'NYG',away:'WAS'},{home:'DET',away:'NE'},{home:'ATL',away:'KC'},{home:'CLE',away:'HOU'},{home:'IND',away:'MIA'},{home:'GB',away:'MIN'},{home:'NO',away:'CAR'},{home:'NYJ',away:'BUF'},{home:'TEN',away:'JAX'},{home:'ARI',away:'LAR'},{home:'LVR',away:'SEA'},{home:'DAL',away:'SF'},{home:'CIN',away:'PIT'},{home:'BAL',away:'LAC'}],
+  11:[{home:'HOU',away:'IND'},{home:'BUF',away:'MIA'},{home:'CAR',away:'BAL'},{home:'CHI',away:'NO'},{home:'DAL',away:'TEN'},{home:'DET',away:'TB'},{home:'KC',away:'ARI'},{home:'NYG',away:'JAX'},{home:'LAC',away:'NYJ'},{home:'DEN',away:'LVR'},{home:'PHI',away:'PIT'},{home:'SF',away:'MIN'},{home:'WAS',away:'CIN'}],
+  12:[{home:'LAR',away:'GB'},{home:'DET',away:'CHI'},{home:'DAL',away:'PHI'},{home:'BUF',away:'KC'},{home:'PIT',away:'DEN'},{home:'CIN',away:'NO'},{home:'CLE',away:'LVR'},{home:'IND',away:'NYG'},{home:'HOU',away:'BAL'},{home:'MIA',away:'NYJ'},{home:'MIN',away:'ATL'},{home:'JAX',away:'TEN'},{home:'ARI',away:'WAS'},{home:'SF',away:'SEA'},{home:'LAC',away:'NE'},{home:'TB',away:'CAR'}],
+  13:[{home:'LAR',away:'KC'},{home:'ATL',away:'DET'},{home:'CHI',away:'JAX'},{home:'CLE',away:'CIN'},{home:'NO',away:'GB'},{home:'NYG',away:'SF'},{home:'TEN',away:'WAS'},{home:'TB',away:'LAC'},{home:'ARI',away:'PHI'},{home:'DEN',away:'MIA'},{home:'MIN',away:'CAR'},{home:'NE',away:'BUF'},{home:'PIT',away:'HOU'},{home:'SEA',away:'DAL'}],
+  14:[{home:'NE',away:'MIN'},{home:'CAR',away:'NO'},{home:'CLE',away:'ATL'},{home:'DET',away:'TEN'},{home:'MIA',away:'CHI'},{home:'NYJ',away:'DEN'},{home:'PHI',away:'IND'},{home:'BAL',away:'TB'},{home:'WAS',away:'HOU'},{home:'LVR',away:'LAC'},{home:'CIN',away:'KC'},{home:'SEA',away:'NYG'},{home:'SF',away:'LAR'},{home:'GB',away:'BUF'},{home:'JAX',away:'PIT'}],
+  15:[{home:'LAC',away:'SF'},{home:'PHI',away:'SEA'},{home:'BUF',away:'CHI'},{home:'CAR',away:'CIN'},{home:'GB',away:'MIA'},{home:'HOU',away:'JAX'},{home:'NYG',away:'CLE'},{home:'TEN',away:'IND'},{home:'PIT',away:'BAL'},{home:'TB',away:'NO'},{home:'WAS',away:'ATL'},{home:'ARI',away:'NYJ'},{home:'LVR',away:'DEN'},{home:'LAR',away:'DAL'},{home:'MIN',away:'DET'},{home:'KC',away:'NE'}],
+  16:[{home:'PHI',away:'HOU'},{home:'CHI',away:'GB'},{home:'DEN',away:'BUF'},{home:'SEA',away:'LAR'},{home:'ATL',away:'TB'},{home:'IND',away:'CIN'},{home:'MIA',away:'LAC'},{home:'MIN',away:'WAS'},{home:'NO',away:'ARI'},{home:'NYJ',away:'NE'},{home:'PIT',away:'CAR'},{home:'BAL',away:'CLE'},{home:'LVR',away:'TEN'},{home:'KC',away:'SF'},{home:'DAL',away:'JAX'},{home:'DET',away:'NYG'}],
+  17:[{home:'CIN',away:'BAL'},{home:'ATL',away:'NO'},{home:'CAR',away:'SEA'},{home:'CLE',away:'IND'},{home:'DAL',away:'NYG'},{home:'JAX',away:'WAS'},{home:'MIA',away:'BUF'},{home:'NE',away:'DEN'},{home:'NYJ',away:'MIN'},{home:'TEN',away:'PIT'},{home:'LAC',away:'KC'},{home:'TB',away:'LAR'},{home:'ARI',away:'LVR'},{home:'CHI',away:'DET'},{home:'SF',away:'PHI'},{home:'GB',away:'HOU'}],
+  18:[{home:'BUF',away:'NYJ'},{home:'CAR',away:'ATL'},{home:'CIN',away:'CLE'},{home:'IND',away:'JAX'},{home:'ARI',away:'SF'},{home:'DEN',away:'LAC'},{home:'GB',away:'DET'},{home:'HOU',away:'TEN'},{home:'KC',away:'LVR'},{home:'MIN',away:'CHI'},{home:'NO',away:'TB'},{home:'NE',away:'MIA'},{home:'NYG',away:'PHI'},{home:'LAR',away:'SEA'},{home:'BAL',away:'PIT'},{home:'WAS',away:'DAL'}]
+};
+
+const TEAM_LOGO_CODES={
+  ARI:'ari',ATL:'atl',BAL:'bal',BUF:'buf',CAR:'car',CHI:'chi',CIN:'cin',CLE:'cle',
+  DAL:'dal',DEN:'den',DET:'det',GB:'gb',HOU:'hou',IND:'ind',JAX:'jax',KC:'kc',
+  LAC:'lac',LAR:'lar',LVR:'lv',MIA:'mia',MIN:'min',NE:'ne',NO:'no',NYG:'nyg',
+  NYJ:'nyj',PHI:'phi',PIT:'pit',SEA:'sea',SF:'sf',TB:'tb',TEN:'ten',WAS:'wsh'
+};
+
+function teamLogoUrl(team){
+  const code=TEAM_LOGO_CODES[team]||team.toLowerCase();
+  return 'https://a.espncdn.com/i/teamlogos/nfl/500/'+code+'.png';
+}
+
+function updateWeeklyGameOrder(){
+  const week=parseInt(document.getElementById('weeklyGameOrderWeek').value,10);
+  const grid=document.getElementById('weeklyGameOrderGrid');
+  const note=document.getElementById('weeklyGameOrderNote');
+  const games=SCHEDULE_2026[week]||[];
+
+  note.innerHTML='<strong>Week '+week+':</strong> '+games.length+' official matchup'+(games.length===1?'':'s')+
+    ' shown in away @ home format. No predictions are displayed on this page.';
+
+  grid.innerHTML=games.map((g,i)=>`
+    <div class="week-game-card">
+      <div class="week-game-num">${i+1}</div>
+      <img class="week-logo" src="${teamLogoUrl(g.away)}" alt="${g.away} logo">
+      <div class="week-team-name">${g.away}</div>
+      <div class="week-vs">@</div>
+      <div class="week-team-name home">${g.home}</div>
+      <img class="week-logo" src="${teamLogoUrl(g.home)}" alt="${g.home} logo">
+    </div>
+  `).join('');
+}
+
 
 function showPane(n,tab){
   const panes=document.querySelectorAll('.pane');
@@ -1162,7 +1246,7 @@ function loadPipelineDefaults(){
   if(!key||!PIPELINE_DEFAULTS[key]){
     document.getElementById('kpDiff').value='';
     calc();
-    if(note)note.innerHTML='Select a game to auto-fill THE PIPELINE EDGE Rating and THE PIPELINE EDGE Consensus. You can still change both dropdowns.';
+    if(note)note.innerHTML='Select a game to auto-fill THE PIPELINE EDGE Rating and Consensus. Each option clearly shows “Pick: WINNER over LOSER” to avoid confusion. You can still change both dropdowns.';
     return;
   }
   const g=PIPELINE_DEFAULTS[key];
@@ -1182,6 +1266,40 @@ function loadPipelineDefaults(){
 
 checkTierSelection();
 </script>
+
+
+<!--
+PUBLIC APP SYNC 07/29/26
+Source: CommandCenter_SCORING_ENGINES_REEDITED_07_29_26
+Synchronized:
+- 18-week / 272-game team schedule
+- Latest Week 1 confidence rankings
+- LOCK / VALUE / DIFFERENCE output
+- Updated Luck Flags (30 teams present in source)
+- Updated referee reference (16 crews)
+Preserved:
+- 13 visible tabs
+- Weather and Lightning
+- Confidence Pool Tracker and Season Summary
+- Game Entry and Confidence Pool Builder
+- Injury Reference and Stadium Data
+- Score Reference and Model Validation
+-->
+
+
+<!--
+GOOGLE PLAY REEDIT — 07/29/26
+Based on THE_PIPELINE_EDGE_3.2_FULL_COMMAND_CENTER_SYNC_07_29_26
+Change:
+- Game Entry dropdown now displays Pick: WINNER over LOSER.
+Preserved:
+- Google Play purchase/refund language
+- 13 visible tabs
+- 272-game schedule
+- Latest Week 1 rankings
+- LOCK / VALUE / DIFFERENCE
+- Weather, Lightning, trackers, and PRO tools
+-->
 
 </body>
 </html>

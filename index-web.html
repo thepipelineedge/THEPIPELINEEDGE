@@ -184,9 +184,9 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
 
       <div class="tier-box" onclick="selectTier('pro')">
         <div class="tier-icon">💎</div>
-        <div class="tier-name">NFL EDGE PRO™</div>
-        <div class="tier-desc">Season pass tools & advanced pool analysis</div>
-        <div class="tier-price"><strong>$10.00</strong> one-time season pass<br>No auto-renewal · Preseason–Super Bowl</div>
+        <div class="tier-name">NFL EDGE PRO™</div><div style="margin:8px 0 2px;color:#fff;font-size:12px;font-weight:800">TAP HERE FOR GAME ENTRY</div>
+        <div class="tier-desc">Full tools access — same open-access setup as last month</div>
+        <div class="tier-price"><strong>OPEN ACCESS</strong><br>Game Entry and all PRO tools available</div>
         <div class="tier-features">
           <div>✅ Everything in FREE</div>
           <div>✅ Full confidence rankings</div>
@@ -195,7 +195,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
           <div>✅ Injury & referee reference</div>
           <div>✅ Advanced pool tools</div>
         </div>
-        <button class="cta-button">UNLOCK NFL EDGE PRO™</button>
+        <button class="cta-button">OPEN GAME ENTRY + PRO TOOLS</button>
       </div>
     </div>
 
@@ -210,7 +210,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   <div class="paywall-content">
     <h2>🔒 NFL EDGE PRO™ FEATURE</h2>
     <p>This feature is only available with the NFL EDGE PRO™ Season Pass. Upgrade to access advanced tools, confidence rankings, survivor board, and complete analysis.</p>
-    <button class="cta-button" onclick="document.getElementById('paywallModal').style.display='none'" style="background:var(--gold);color:#000;margin-bottom:12px">UNLOCK NFL EDGE PRO™ — $10.00</button>
+    <button class="cta-button" onclick="document.getElementById('paywallModal').style.display='none';reopenAccessChoice()" style="background:var(--gold);color:#000;margin-bottom:12px">OPEN GAME ENTRY + PRO TOOLS</button>
     <button class="btn btn-outline" onclick="document.getElementById('paywallModal').style.display='none'" style="width:100%">Continue as FREE VERSION</button>
   </div>
 </div>
@@ -224,7 +224,14 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <div class="htitle-sub">Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)</div>
     </div>
     <a href="https://www.youtube.com/@ThePipelineEdge" target="_blank" rel="noopener noreferrer" class="youtube-btn">🎥 HOW TO USE THE APP</a>
-    <div class="hlive">LIVE — GOOGLE REEDIT 07-29-26</div>
+    <div class="hlive">LIVE — COMMAND CENTER SYNC 07-29-26</div>
+
+<button class="btn btn-outline" id="accessSwitchBtn"
+onclick="reopenAccessChoice()"
+style="font-size:10px;padding:6px 10px;white-space:nowrap">
+FREE / PRO ACCESS
+</button>
+
   </div>
   <div class="header-right">
     <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
@@ -280,8 +287,8 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
         <li>Game notes and preferences</li>
       </ul>
       <p><strong>You control this data:</strong> Clear your browser cache anytime to delete everything permanently.</p>
-      <h4>Weather & Lightning Data (Optional Features)</h4>
-      <p>When you click "Load Weather," the app fetches real-time weather data from <strong>Open-Meteo</strong> (openmeteo.com) to help you adjust confidence scores for outdoor stadiums. We also provide a link to <strong>LightningMaps.org</strong> for real-time lightning tracking near game venues.</p>
+      <h4>Weather Data (Optional Feature)</h4>
+      <p>When you click "Load Weather," the app fetches real-time weather data from <strong>Open-Meteo</strong> (openmeteo.com) to help you adjust confidence scores for outdoor stadiums.</p>
       <p><strong>What we send:</strong></p>
       <ul>
         <li>Stadium latitude and longitude coordinates (public information)</li>
@@ -289,9 +296,9 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       </ul>
       <p><strong>Your control:</strong></p>
       <ul>
-        <li>Both features are <strong>completely optional</strong> — use them only when you need weather or lightning data</li>
+        <li>The weather feature is <strong>completely optional</strong> — use it only when you need weather data</li>
         <li>The app works 100% offline without these features</li>
-        <li><strong>Not affiliated:</strong> We are not affiliated with Open-Meteo or LightningMaps. Review their policies directly.</li>
+        <li><strong>Not affiliated:</strong> We are not affiliated with Open-Meteo. Review its policies directly.</li>
       </ul>
       <h4>What We Do NOT Collect</h4>
       <ul>
@@ -322,7 +329,7 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
       <h4>Refunds</h4>
       <p><strong>All refunds are managed exclusively by Google Play Store, not by THE PIPELINE EDGE™.</strong> Refund requests must be submitted directly through Google Play Store and are subject to Google Play Store policies and eligibility requirements. THE PIPELINE EDGE™ cannot issue refunds directly, override Google Play Store decisions, extend refund eligibility periods, or process payment disputes.</p>
       <h4>Third-Party Services</h4>
-      <p>THE PIPELINE EDGE™ may utilize Google Play Store for app distribution, purchases, and refunds; Open-Meteo for weather information; LightningMaps for lightning tracking; and Cloudflare for website hosting and delivery. These services operate under their own terms, privacy policies, and service rules.</p>
+      <p>THE PIPELINE EDGE™ may utilize Google Play Store for app distribution, purchases, and refunds; Open-Meteo for weather information; and Cloudflare for website hosting and delivery. These services operate under their own terms, privacy policies, and service rules.</p>
       <p style="margin-top:16px;font-size:10px;color:#aaa">© 2026 The Pipeline. All rights reserved.</p>
     </div>
   </div>
@@ -357,7 +364,6 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
     <button class="ntab auto-tab active" onclick="showPane(0, event.target)">🏈 Free Picks</button>
     <button class="ntab auto-tab" onclick="showPane(1, event.target)">📅 Team Game Schedule</button>
     <button class="ntab auto-tab" onclick="showPane(2, event.target)">⛅ Weather</button>
-    <button class="ntab auto-tab" onclick="showPane(3, event.target)">⚡ Lightning</button>
     <button class="ntab auto-tab" onclick="showPane(4, event.target)">📈 Confidence Pool Tracker</button>
     <button class="ntab auto-tab" onclick="showPane(5, event.target)">📊 Season Summary</button>
   </div>
@@ -470,15 +476,6 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
   <div id="weatherResults"></div>
 </div>
 
-<div class="pane" id="pane3">
-  <div class="mode-banner auto">⚡ LIGHTNING — Live tracker workflow</div>
-  <div class="stitle">Lightning Tracker</div>
-  <div class="box">
-    <div class="box-title">Open Live Lightning Map</div>
-    <a class="btn btn-green" href="https://www.lightningmaps.org/" target="_blank" style="text-decoration:none;display:inline-block">⚡ LightningMaps.org</a>
-    <div class="note" style="margin-top:12px">Strikes within 8-10 miles will indicate delay risk for outdoor stadiums.</div>
-  </div>
-</div>
 
 <div class="pane" id="pane4">
   <div class="mode-banner auto">🤖 AUTOMATED MODE — Log your weekly results</div>
@@ -538,20 +535,20 @@ select:focus,input:focus{outline:none;border-color:var(--gold)}
         <option value="TB|CIN">TB @ CIN — Pick: CIN over TB — Pipeline Default: EDGE STRONG / 6 of 8</option>
         <option value="BAL|IND">BAL @ IND — Pick: BAL over IND — Pipeline Default: EDGE ELITE / 6 of 8</option>
         <option value="NO|DET">NO @ DET — Pick: DET over NO — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="BUF|HOU">BUF @ HOU — Pick: HOU over BUF — Pipeline Default: EDGE WATCH / 5 of 8</option>
+        <option value="BUF|HOU">BUF @ HOU — Pick: BUF over HOU — Pipeline Default: EDGE WATCH / 5 of 8</option>
         <option value="CLE|JAX">CLE @ JAX — Pick: JAX over CLE — Pipeline Default: EDGE LEAN / 8 of 8</option>
         <option value="ATL|PIT">ATL @ PIT — Pick: PIT over ATL — Pipeline Default: EDGE LEAN / 8 of 8</option>
         <option value="NYJ|TEN">NYJ @ TEN — Pick: TEN over NYJ — Pipeline Default: EDGE STRONG / 7 of 8</option>
         <option value="ARI|LAC">ARI @ LAC — Pick: LAC over ARI — Pipeline Default: EDGE STRONG / 8 of 8</option>
-        <option value="MIA|LVR">MIA @ LVR — Pick: MIA over LVR — Pipeline Default: EDGE WATCH / 4 of 8</option>
+        <option value="MIA|LVR">MIA @ LVR — Pick: LVR over MIA — Pipeline Default: EDGE WATCH / 4 of 8</option>
         <option value="GB|MIN">GB @ MIN — Pick: GB over MIN — Pipeline Default: EDGE STRONG / 6 of 8</option>
-        <option value="DAL|NYG">DAL @ NYG — Pick: DAL over NYG — Pipeline Default: EDGE WATCH / 5 of 8</option>
-        <option value="KC|DEN">KC @ DEN — Pick: DEN over KC — Pipeline Default: EDGE ELITE / 7 of 8</option>
+        <option value="DAL|NYG">DAL @ NYG — Pick: NYG over DAL — Pipeline Default: EDGE WATCH / 5 of 8</option>
+        <option value="KC|DEN">KC @ DEN — Pick: KC over DEN — Pipeline Default: EDGE ELITE / 7 of 8</option>
         <option value="PHI|WAS">PHI @ WAS — Pick: PHI over WAS — Pipeline Default: EDGE LEAN / 5 of 8</option>
       </select>
 
       <div class="note" id="pipelineDefaultNote" style="margin-top:8px">
-        Select a game to auto-fill THE PIPELINE EDGE Rating and Consensus. Each option clearly shows “Pick: WINNER over LOSER” to avoid confusion. You can still change both dropdowns.
+        Select a game to auto-fill THE PIPELINE EDGE Rating and THE PIPELINE EDGE Consensus. You can still change both dropdowns.
       </div>
 
       <label>THE PIPELINE EDGE Rating</label>
@@ -804,12 +801,22 @@ const STADIUMS=[{tm:'ARI',st:'State Farm Stadium',tp:'Dome',ct:'Glendale, AZ',el
 
 let weekLog=[],pool=[];
 
+
+function reopenAccessChoice(){
+  localStorage.removeItem('selectedTier');
+  const overlay=document.getElementById('accessOverlay');
+  const app=document.getElementById('appContainer');
+  if(app)app.style.display='none';
+  if(overlay)overlay.style.display='flex';
+  window.scrollTo(0,0);
+}
+
 function checkTierSelection(){
-  const selectedTier=localStorage.getItem('selectedTier');
-  if(selectedTier){
-    loadTierContent(selectedTier);
-    showAppContainer();
-  }
+  localStorage.removeItem('selectedTier');
+  const overlay=document.getElementById('accessOverlay');
+  const app=document.getElementById('appContainer');
+  if(app)app.style.display='none';
+  if(overlay)overlay.style.display='flex';
 }
 
 function selectTier(tier){
@@ -1246,7 +1253,7 @@ function loadPipelineDefaults(){
   if(!key||!PIPELINE_DEFAULTS[key]){
     document.getElementById('kpDiff').value='';
     calc();
-    if(note)note.innerHTML='Select a game to auto-fill THE PIPELINE EDGE Rating and Consensus. Each option clearly shows “Pick: WINNER over LOSER” to avoid confusion. You can still change both dropdowns.';
+    if(note)note.innerHTML='Select a game to auto-fill THE PIPELINE EDGE Rating and THE PIPELINE EDGE Consensus. You can still change both dropdowns.';
     return;
   }
   const g=PIPELINE_DEFAULTS[key];
@@ -1288,17 +1295,10 @@ Preserved:
 
 
 <!--
-GOOGLE PLAY REEDIT — 07/29/26
-Based on THE_PIPELINE_EDGE_3.2_FULL_COMMAND_CENTER_SYNC_07_29_26
-Change:
-- Game Entry dropdown now displays Pick: WINNER over LOSER.
-Preserved:
-- Google Play purchase/refund language
-- 13 visible tabs
-- 272-game schedule
-- Latest Week 1 rankings
-- LOCK / VALUE / DIFFERENCE
-- Weather, Lightning, trackers, and PRO tools
+OPEN PRO ACCESS REEDIT — 07/29/26
+Restores the same usable FREE/PRO choice behavior as last month's version.
+No store purchase verification is required in this temporary open-access build.
+Includes a permanent FREE / PRO ACCESS button so users can switch sides on a phone.
 -->
 
 </body>

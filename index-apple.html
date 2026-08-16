@@ -55,7 +55,7 @@ html,body{height:100%;font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Se
 .legal-card-body ul{margin-left:16px;margin:10px 0 10px 16px}
 .legal-card-body li{margin-bottom:8px;line-height:1.6}
 .legal-card-body h4{margin-top:14px;margin-bottom:8px;color:#00BCD4;font-size:12px;font-weight:700}
-.header{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--bg2);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:100}
+.header{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--bg2);border-bottom:2px solid var(--gold);position:relative;top:auto;z-index:auto}
 .header-left{display:flex;align-items:center;gap:14px}
 .header-right{display:flex;align-items:center;gap:20px;justify-content:flex-end}
 .htitle-main{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.06em}
@@ -174,7 +174,6 @@ body{
   padding-left:env(safe-area-inset-left);
   -webkit-text-size-adjust:100%;
 }
-.header{top:0}
 @supports (-webkit-touch-callout:none){
   input,select,button{font-size:16px}
 }

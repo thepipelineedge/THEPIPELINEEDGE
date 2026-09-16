@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-title" content="THE PIPELINE EDGE">
 <meta name="format-detection" content="telephone=no">
 
-<title>THE PIPELINE EDGE™ — Week 1 2026</title>
+<title>THE PIPELINE EDGE™ — Week 2 2026</title>
 <style>
 @font-face{font-family:'Bebas Neue';src:url('https://fonts.gstatic.com/s/bebasneue/v9/JTUSjIg69CK48gSG63HxTvEjN_cPYK2o.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('https://fonts.gstatic.com/s/dmsans/v13/rtemDme5lpS0d1t0/PxIUypg.woff2') format('woff2');font-weight:400;font-display:swap}
@@ -246,7 +246,7 @@ body{
       <div class="htitle-sub">Walk-Forward Model Validation · 60.0% historical pick'em accuracy over 1,359 games (2021–2025)</div>
     </div>
     
-    <div class="hlive">LIVE — COMMAND CENTER SYNC 07-29-26</div>
+    <div class="hlive">LIVE — COMMAND CENTER SYNC 09-16-26</div>
 
 <button class="btn btn-outline" id="accessSwitchBtn"
 onclick="reopenAccessChoice()"
@@ -462,7 +462,7 @@ FREE / PRO ACCESS
     <div>
       <label>Select Week</label>
       <select id="weeklyGameOrderWeek" onchange="updateWeeklyGameOrder()">
-        <option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option>
+        <option value="1">Week 1</option><option value="2" selected>Week 2</option><option value="3">Week 3</option>
         <option value="4">Week 4</option><option value="5">Week 5</option><option value="6">Week 6</option>
         <option value="7">Week 7</option><option value="8">Week 8</option><option value="9">Week 9</option>
         <option value="10">Week 10</option><option value="11">Week 11</option><option value="12">Week 12</option>
@@ -471,7 +471,7 @@ FREE / PRO ACCESS
       </select>
     </div>
   </div>
-  <div class="note" id="weeklyGameOrderNote"><strong>Week 1:</strong> Official away @ home matchups. No predictions are shown on this page.</div>
+  <div class="note" id="weeklyGameOrderNote"><strong>Week 2:</strong> Official away @ home matchups. No predictions are shown on this page.</div>
   <div class="week-game-grid" id="weeklyGameOrderGrid"></div>
 </div>
 
@@ -538,25 +538,25 @@ FREE / PRO ACCESS
     <div class="box">
       <div class="box-title">Game Setup</div>
       
-      <label>Select Week 1 Game</label>
+      <label>Select Week 2 Game</label>
       <select id="gameSelect" onchange="loadPipelineDefaults()">
         <option value="">-- Select Game --</option>
-        <option value="NE|SEA">NE @ SEA — Pick: SEA over NE — Pipeline Default: EDGE ELITE / 8 of 8</option>
-        <option value="SF|LAR">SF @ LAR — Pick: LAR over SF — Pipeline Default: EDGE ELITE / 8 of 8</option>
-        <option value="CHI|CAR">CHI @ CAR — Pick: CHI over CAR — Pipeline Default: EDGE WATCH / 6 of 8</option>
-        <option value="TB|CIN">TB @ CIN — Pick: CIN over TB — Pipeline Default: EDGE STRONG / 6 of 8</option>
-        <option value="BAL|IND">BAL @ IND — Pick: BAL over IND — Pipeline Default: EDGE ELITE / 6 of 8</option>
-        <option value="NO|DET">NO @ DET — Pick: DET over NO — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="BUF|HOU">BUF @ HOU — Pick: BUF over HOU — Pipeline Default: EDGE WATCH / 5 of 8</option>
-        <option value="CLE|JAX">CLE @ JAX — Pick: JAX over CLE — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="ATL|PIT">ATL @ PIT — Pick: PIT over ATL — Pipeline Default: EDGE LEAN / 8 of 8</option>
-        <option value="NYJ|TEN">NYJ @ TEN — Pick: TEN over NYJ — Pipeline Default: EDGE STRONG / 7 of 8</option>
-        <option value="ARI|LAC">ARI @ LAC — Pick: LAC over ARI — Pipeline Default: EDGE STRONG / 8 of 8</option>
-        <option value="MIA|LVR">MIA @ LVR — Pick: LVR over MIA — Pipeline Default: EDGE WATCH / 4 of 8</option>
-        <option value="GB|MIN">GB @ MIN — Pick: GB over MIN — Pipeline Default: EDGE STRONG / 6 of 8</option>
-        <option value="DAL|NYG">DAL @ NYG — Pick: NYG over DAL — Pipeline Default: EDGE WATCH / 5 of 8</option>
-        <option value="KC|DEN">KC @ DEN — Pick: KC over DEN — Pipeline Default: EDGE ELITE / 7 of 8</option>
-        <option value="PHI|WAS">PHI @ WAS — Pick: PHI over WAS — Pipeline Default: EDGE LEAN / 5 of 8</option>
+        <option value="DET|BUF">DET @ BUF — Pick: BUF — Pipeline Default: EDGE STRONG</option>
+        <option value="CAR|ATL">CAR @ ATL — Pick: ATL — Pipeline Default: EDGE STRONG</option>
+        <option value="MIN|CHI">MIN @ CHI — Pick: CHI — Pipeline Default: EDGE LEAN</option>
+        <option value="CIN|HOU">CIN @ HOU — Pick: HOU — Pipeline Default: EDGE LEAN</option>
+        <option value="PIT|NE">PIT @ NE — Pick: NE — Pipeline Default: EDGE LEAN</option>
+        <option value="GB|NYJ">GB @ NYJ — Pick: GB — Pipeline Default: EDGE WATCH</option>
+        <option value="PHI|TEN">PHI @ TEN — Pick: PHI — Pipeline Default: EDGE WATCH</option>
+        <option value="NO|BAL">NO @ BAL — Pick: BAL — Pipeline Default: EDGE ELITE</option>
+        <option value="CLE|TB">CLE @ TB — Pick: TB — Pipeline Default: EDGE ELITE</option>
+        <option value="JAX|DEN">JAX @ DEN — Pick: JAX — Pipeline Default: EDGE WATCH</option>
+        <option value="LVR|LAC">LVR @ LAC — Pick: LAC — Pipeline Default: EDGE ELITE</option>
+        <option value="SEA|ARI">SEA @ ARI — Pick: SEA — Pipeline Default: EDGE WATCH</option>
+        <option value="WAS|DAL">WAS @ DAL — Pick: DAL — Pipeline Default: EDGE STRONG</option>
+        <option value="MIA|SF">MIA @ SF — Pick: SF — Pipeline Default: EDGE ELITE</option>
+        <option value="IND|KC">IND @ KC — Pick: KC — Pipeline Default: EDGE LEAN</option>
+        <option value="NYG|LAR">NYG @ LAR — Pick: LAR — Pipeline Default: EDGE ELITE</option>
       </select>
 
       <div class="note" id="pipelineDefaultNote" style="margin-top:8px">
@@ -1231,22 +1231,22 @@ function buildStadiumTable(){
 
 
 const PIPELINE_DEFAULTS={
-  'NE|SEA':{away:'NE',home:'SEA',rating:'12',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'SF|LAR':{away:'SF',home:'LAR',rating:'12',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'CHI|CAR':{away:'CHI',home:'CAR',rating:'3',consensusText:'6 of 8 Systems',consensusVal:'1'},
-  'TB|CIN':{away:'TB',home:'CIN',rating:'10',consensusText:'6 of 8 Systems',consensusVal:'1'},
-  'BAL|IND':{away:'BAL',home:'IND',rating:'12',consensusText:'6 of 8 Systems',consensusVal:'1'},
-  'NO|DET':{away:'NO',home:'DET',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'BUF|HOU':{away:'BUF',home:'HOU',rating:'3',consensusText:'5 of 8 Systems',consensusVal:'1'},
-  'CLE|JAX':{away:'CLE',home:'JAX',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'ATL|PIT':{away:'ATL',home:'PIT',rating:'7',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'NYJ|TEN':{away:'NYJ',home:'TEN',rating:'10',consensusText:'7 of 8 Systems',consensusVal:'2'},
-  'ARI|LAC':{away:'ARI',home:'LAC',rating:'10',consensusText:'8 of 8 Systems',consensusVal:'2'},
-  'MIA|LVR':{away:'MIA',home:'LVR',rating:'3',consensusText:'4 of 8 Systems',consensusVal:'0'},
-  'GB|MIN':{away:'GB',home:'MIN',rating:'10',consensusText:'6 of 8 Systems',consensusVal:'1'},
-  'DAL|NYG':{away:'DAL',home:'NYG',rating:'3',consensusText:'5 of 8 Systems',consensusVal:'1'},
-  'KC|DEN':{away:'KC',home:'DEN',rating:'12',consensusText:'7 of 8 Systems',consensusVal:'2'},
-  'PHI|WAS':{away:'PHI',home:'WAS',rating:'7',consensusText:'5 of 8 Systems',consensusVal:'1'}
+  'DET|BUF':{away:'DET',home:'BUF',rating:'10'},
+  'CAR|ATL':{away:'CAR',home:'ATL',rating:'10'},
+  'MIN|CHI':{away:'MIN',home:'CHI',rating:'7'},
+  'CIN|HOU':{away:'CIN',home:'HOU',rating:'7'},
+  'PIT|NE':{away:'PIT',home:'NE',rating:'7'},
+  'GB|NYJ':{away:'GB',home:'NYJ',rating:'3'},
+  'PHI|TEN':{away:'PHI',home:'TEN',rating:'3'},
+  'NO|BAL':{away:'NO',home:'BAL',rating:'12'},
+  'CLE|TB':{away:'CLE',home:'TB',rating:'12'},
+  'JAX|DEN':{away:'JAX',home:'DEN',rating:'3'},
+  'LVR|LAC':{away:'LVR',home:'LAC',rating:'12'},
+  'SEA|ARI':{away:'SEA',home:'ARI',rating:'3'},
+  'WAS|DAL':{away:'WAS',home:'DAL',rating:'10'},
+  'MIA|SF':{away:'MIA',home:'SF',rating:'12'},
+  'IND|KC':{away:'IND',home:'KC',rating:'7'},
+  'NYG|LAR':{away:'NYG',home:'LAR',rating:'12'}
 };
 
 function setSelectOptionByText(selectEl,text){
@@ -1273,11 +1273,10 @@ function loadPipelineDefaults(){
   document.getElementById('homeTeam').value=g.home;
   document.getElementById('kpDiff').value=g.rating;
   const models=document.getElementById('models');
-  setSelectOptionByText(models,g.consensusText);
-  if(!models.value)models.value=g.consensusVal;
+  // Week 2 consensus is not hard-coded here; preserve the user's current selection.
   if(note){
     const tier=getEdgeTier(parseInt(g.rating));
-    note.innerHTML='<strong>Pipeline Default Loaded:</strong> '+g.away+' @ '+g.home+' · <span style="color:'+tier.color+'">'+tier.txt+'</span> · '+g.consensusText+' <br><span style="color:var(--text3)">Defaults are editable for NFL EDGE PRO™ users.</span>';
+    note.innerHTML='<strong>Pipeline Default Loaded:</strong> '+g.away+' @ '+g.home+' · <span style="color:'+tier.color+'">'+tier.txt+'</span><br><span style="color:var(--text3)">Week 2 rating loaded. Consensus remains editable and is not overwritten.</span>';
   }
   calc();
 }
@@ -1288,11 +1287,11 @@ checkTierSelection();
 
 
 <!--
-PUBLIC APP SYNC 07/29/26
+PUBLIC APP WEEK 2 SYNC 09/16/26
 Source: CommandCenter_SCORING_ENGINES_REEDITED_07_29_26
 Synchronized:
 - 18-week / 272-game team schedule
-- Latest Week 1 confidence rankings
+- Latest Week 2 confidence rankings
 - LOCK / VALUE / DIFFERENCE output
 - Updated Luck Flags (30 teams present in source)
 - Updated referee reference (16 crews)

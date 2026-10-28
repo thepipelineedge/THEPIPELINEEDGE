@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>THE PIPELINE EDGE™ — Week 8 2026</title>
+<style>
+:root{--bg:#07101c;--card:#111f30;--card2:#182b3f;--text:#f4f7fa;--muted:#a0b1c3;--gold:#f5ab35;--cyan:#2dc5e0;--green:#55d187}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;padding-bottom:74px}
+header{position:sticky;top:0;z-index:4;background:#0a1523;border-bottom:2px solid var(--gold);padding:13px;text-align:center}
+header h1{margin:0;color:var(--gold);font-size:22px}
+header p{margin:4px 0 0;color:var(--muted);font-size:11px}
+.page{display:none;padding:10px}.page.active{display:block}
+.game-card{min-height:136px;background:var(--card);border:1px solid #273b50;border-radius:14px;margin-bottom:9px;padding:10px;display:grid;grid-template-columns:28% 44% 28%;align-items:center}
+.team{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:15px}
+.team img{width:72px;height:72px;object-fit:contain}
+.middle{text-align:center}
+.matchup{font-size:18px;font-weight:800}
+.kickoff{font-size:10px;color:var(--muted);margin-top:5px}
+.data{font-size:11px;color:var(--cyan);font-weight:800;margin-top:8px}
+.live-score{margin:8px auto 0;padding:5px 8px;min-height:34px;max-width:190px;border:1px solid #324a61;border-radius:8px;background:#0b1725;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px}
+.live-score .score-status{font-size:8px;color:var(--muted);font-weight:800;letter-spacing:.04em}
+.live-score .score-value{font-size:14px;color:var(--text);font-weight:900}
+.live-score.live .score-status{color:var(--green)}
+.live-score.final .score-status,.live-score.final .score-value{color:var(--gold)}
+.score-refresh-note{color:var(--muted);font-size:9px;text-align:center;margin:-5px 0 10px}
+.section-title{color:var(--gold);font-size:18px;text-align:center;margin:5px 0 12px}
+.conf-row,.surv-card,.info-card{background:var(--card);border:1px solid #273b50;border-radius:12px;min-height:64px;margin-bottom:8px;padding:8px 12px;display:flex;align-items:center;gap:12px}
+.conf-row img,.surv-card img{width:46px;height:46px;object-fit:contain}
+.rank{color:var(--gold);font-size:19px;font-weight:900;width:28px;text-align:center}
+.surv-card span{color:var(--gold);font-weight:800;flex:1}
+.info-card{color:var(--muted);justify-content:center;text-align:center;line-height:1.4}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:5;background:#0a1523;border-top:1px solid #2b3c4d;display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom)}
+nav button{border:0;background:var(--card2);color:var(--text);font-size:10px;padding:12px 2px;min-height:58px}
+nav button.active{color:var(--gold);background:#20364c}
+@media(max-width:520px){.team img{width:64px;height:64px}.matchup{font-size:16px}nav button{font-size:9px}.game-card{grid-template-columns:27% 46% 27%}}
+.legal-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:12px;padding-bottom:20px}
+.legal-card{background:rgba(0,188,212,0.12);border:2px solid #00BCD4;border-radius:8px;padding:14px;color:#00BCD4;overflow-y:auto;max-height:400px}
+.legal-card-title{font-size:13px;font-weight:700;margin-bottom:8px;color:#00BCD4}
+.legal-card-body{font-size:11px;line-height:1.75;color:#ffffff}
+.legal-card-body strong{color:#00BCD4;font-weight:600}
+.legal-card-body a{text-decoration:underline;color:#ffffff}
+.legal-card-body a:hover{opacity:0.8}
+.legal-card-body p{margin-bottom:10px}
+.legal-card-body ul{margin-left:16px;margin:10px 0 10px 16px}
+.legal-card-body li{margin-bottom:8px;line-height:1.6}
+.legal-card-body h4{margin-top:14px;margin-bottom:8px;color:#00BCD4;font-size:12px;font-weight:700}
+#legalGate{padding:12px 10px 90px}
+#legalGate .btn{border:0;border-radius:8px;cursor:pointer;font-weight:700}
+.about-legal{padding:0 0 20px}
+.about-legal .legal-grid{margin:0;grid-template-columns:1fr}
+.about-legal .legal-card{max-height:none}
+
+.conf-summary{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 12px;padding:12px;background:#182b3f;border:1px solid #314b64;border-radius:10px;font-size:13px}
+.conf-summary strong{color:#f5ab35}.conf-summary span{font-size:10px;color:#a0b1c3}
+.conf-status{margin-left:auto;border-radius:6px;padding:5px 7px;font-size:10px;font-weight:900;white-space:nowrap}
+.conf-status.pending{background:#20354e;color:#b2c7e5}.conf-status.won{background:#163f2b;color:#55d187}.conf-status.lost{background:#49202a;color:#ff818e}
+</style>
+</head>
+<body data-model-version="V12">
+<header><h1>THE PIPELINE EDGE™ — WEEK 8</h1><p>WHERE DATA IS YOUR EDGE • WEEK 8 V12 APPROVED SU</p></header>
+<div id="week8GoogleApp">
+<section class="page active" id="picks">
+<div class="section-title">WEEK 8 — STRAIGHT-UP PICKS</div>
+<div class="score-refresh-note">GAME SCORES UPDATE AUTOMATICALLY EVERY 30 SECONDS • VEGAS LINES PROVISIONAL</div><article class="game-card" data-away="LAC" data-home="LAR"><div class="team"><img alt="LAC logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png"/><b>LAC</b></div><div class="middle"><div class="matchup">LAC @ LAR</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>LAR</strong></div><div class="data">CONFIDENCE: 14 / 14</div><div class="live-score" data-away="LAC" data-home="LAR"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="LAR logo" src="./assets/week7-v44/01.png"/><b>LAR</b></div></article><article class="game-card" data-away="CAR" data-home="GB"><div class="team"><img alt="CAR logo" src="./assets/week7-v44/24.png"/><b>CAR</b></div><div class="middle"><div class="matchup">CAR @ GB</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>GB</strong></div><div class="data">CONFIDENCE: 13 / 14</div><div class="live-score" data-away="CAR" data-home="GB"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="GB logo" src="./assets/week7-v44/09.png"/><b>GB</b></div></article><article class="game-card" data-away="TEN" data-home="CIN"><div class="team"><img alt="TEN logo" src="./assets/week7-v44/16.png"/><b>TEN</b></div><div class="middle"><div class="matchup">TEN @ CIN</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>CIN</strong></div><div class="data">CONFIDENCE: 12 / 14 • Provisional spread: CIN -10 • Total 46.5</div><div class="live-score" data-away="TEN" data-home="CIN"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="CIN logo" src="./assets/week7-v44/05.svg"/><b>CIN</b></div></article><article class="game-card" data-away="BAL" data-home="BUF"><div class="team"><img alt="BAL logo" src="./assets/week7-v44/06.png"/><b>BAL</b></div><div class="middle"><div class="matchup">BAL @ BUF</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>BUF</strong></div><div class="data">CONFIDENCE: 11 / 14</div><div class="live-score" data-away="BAL" data-home="BUF"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="BUF logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png"/><b>BUF</b></div></article><article class="game-card" data-away="NE" data-home="MIA"><div class="team"><img alt="NE logo" src="./assets/week7-v44/19.png"/><b>NE</b></div><div class="middle"><div class="matchup">NE @ MIA</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>NE</strong></div><div class="data">CONFIDENCE: 10 / 14 • Provisional spread: NE -7 • Total 44.5</div><div class="live-score" data-away="NE" data-home="MIA"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="MIA logo" src="./assets/week7-v44/25.svg"/><b>MIA</b></div></article><article class="game-card" data-away="ARI" data-home="DAL"><div class="team"><img alt="ARI logo" src="./assets/week7-v44/12.png"/><b>ARI</b></div><div class="middle"><div class="matchup">ARI @ DAL</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>DAL</strong></div><div class="data">CONFIDENCE: 9 / 14 • Provisional spread: DAL -6.5 • Total 51.5</div><div class="live-score" data-away="ARI" data-home="DAL"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="DAL logo" src="./assets/week7-v44/27.png"/><b>DAL</b></div></article><article class="game-card" data-away="CLE" data-home="PIT"><div class="team"><img alt="CLE logo" src="./assets/week7-v44/15.png"/><b>CLE</b></div><div class="middle"><div class="matchup">CLE @ PIT</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>PIT</strong></div><div class="data">CONFIDENCE: 8 / 14</div><div class="live-score" data-away="CLE" data-home="PIT"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="PIT logo" src="./assets/week7-v44/17.png"/><b>PIT</b></div></article><article class="game-card" data-away="CHI" data-home="SEA"><div class="team"><img alt="CHI logo" src="./assets/week7-v44/20.png"/><b>CHI</b></div><div class="middle"><div class="matchup">CHI @ SEA</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>SEA</strong></div><div class="data">CONFIDENCE: 7 / 14 • Provisional spread: SEA -3 • Total 46.5</div><div class="live-score" data-away="CHI" data-home="SEA"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="SEA logo" src="./assets/week7-v44/14.png"/><b>SEA</b></div></article><article class="game-card" data-away="IND" data-home="JAX"><div class="team"><img alt="IND logo" src="./assets/week7-v44/21.png"/><b>IND</b></div><div class="middle"><div class="matchup">IND @ JAX</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>JAX</strong></div><div class="data">CONFIDENCE: 6 / 14 • Provisional spread: JAX -7.5 • Total 47.5</div><div class="live-score" data-away="IND" data-home="JAX"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="JAX logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"/><b>JAX</b></div></article><article class="game-card" data-away="PHI" data-home="WAS"><div class="team"><img alt="PHI logo" src="./assets/week7-v44/28.png"/><b>PHI</b></div><div class="middle"><div class="matchup">PHI @ WAS</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>WAS</strong></div><div class="data">CONFIDENCE: 5 / 14 • Provisional spread: WAS -3.5 • Total 41.5</div><div class="live-score" data-away="PHI" data-home="WAS"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="WAS logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png"/><b>WAS</b></div></article><article class="game-card" data-away="LVR" data-home="NYJ"><div class="team"><img alt="LVR logo" src="./assets/week7-v44/02.png"/><b>LVR</b></div><div class="middle"><div class="matchup">LVR @ NYJ</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>NYJ</strong></div><div class="data">CONFIDENCE: 4 / 14 • Provisional spread: LVR -1.5 • Total 42.5</div><div class="live-score" data-away="LVR" data-home="NYJ"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="NYJ logo" src="./assets/week7-v44/26.png"/><b>NYJ</b></div></article><article class="game-card" data-away="KC" data-home="DEN"><div class="team"><img alt="KC logo" src="./assets/week7-v44/13.png"/><b>KC</b></div><div class="middle"><div class="matchup">KC @ DEN</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>KC</strong></div><div class="data">CONFIDENCE: 3 / 14 • Provisional spread: KC -1.5 • Total 41.5</div><div class="live-score" data-away="KC" data-home="DEN"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="DEN logo" src="./assets/week7-v44/11.png"/><b>DEN</b></div></article><article class="game-card" data-away="MIN" data-home="DET"><div class="team"><img alt="MIN logo" src="./assets/week7-v44/22.svg"/><b>MIN</b></div><div class="middle"><div class="matchup">MIN @ DET</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>DET</strong></div><div class="data">CONFIDENCE: 2 / 14 • Provisional spread: DET -2.5 • Total 46.5</div><div class="live-score" data-away="MIN" data-home="DET"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="DET logo" src="./assets/week7-v44/10.svg"/><b>DET</b></div></article><article class="game-card" data-away="ATL" data-home="TB"><div class="team"><img alt="ATL logo" src="./assets/week7-v44/04.png"/><b>ATL</b></div><div class="middle"><div class="matchup">ATL @ TB</div><div class="kickoff">WEEK 8 • KICKOFF TIME PENDING VERIFICATION</div><div class="data">PIPELINE PICK: <strong>TB</strong></div><div class="data">CONFIDENCE: 1 / 14 • Provisional spread: TB -1.5 • Total 44.5</div><div class="live-score" data-away="ATL" data-home="TB"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div><div class="team"><img alt="TB logo" src="./assets/week7-v44/23.png"/><b>TB</b></div></article></section>
+<section class="page" id="confidence">
+<div class="section-title">WEEK 8 — CONFIDENCE 14 → 1</div>
+<div class="conf-summary"><strong>POINTS EARNED: <span id="pointsEarned">0</span> / 105</strong><span id="confidenceProgress">0 FINAL • 14 PENDING</span></div><div class="conf-row" data-away="LAC" data-home="LAR" data-pick="LAR" data-points="14"><span class="rank">14</span><img alt="LAR logo" src="./assets/week7-v44/01.png"/><b>LAR</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="CAR" data-home="GB" data-pick="GB" data-points="13"><span class="rank">13</span><img alt="GB logo" src="./assets/week7-v44/09.png"/><b>GB</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="TEN" data-home="CIN" data-pick="CIN" data-points="12"><span class="rank">12</span><img alt="CIN logo" src="./assets/week7-v44/05.svg"/><b>CIN</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="BAL" data-home="BUF" data-pick="BUF" data-points="11"><span class="rank">11</span><img alt="BUF logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png"/><b>BUF</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="NE" data-home="MIA" data-pick="NE" data-points="10"><span class="rank">10</span><img alt="NE logo" src="./assets/week7-v44/19.png"/><b>NE</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="ARI" data-home="DAL" data-pick="DAL" data-points="9"><span class="rank">9</span><img alt="DAL logo" src="./assets/week7-v44/27.png"/><b>DAL</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="CLE" data-home="PIT" data-pick="PIT" data-points="8"><span class="rank">8</span><img alt="PIT logo" src="./assets/week7-v44/17.png"/><b>PIT</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="CHI" data-home="SEA" data-pick="SEA" data-points="7"><span class="rank">7</span><img alt="SEA logo" src="./assets/week7-v44/14.png"/><b>SEA</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="IND" data-home="JAX" data-pick="JAX" data-points="6"><span class="rank">6</span><img alt="JAX logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"/><b>JAX</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="PHI" data-home="WAS" data-pick="WAS" data-points="5"><span class="rank">5</span><img alt="WAS logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png"/><b>WAS</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="LVR" data-home="NYJ" data-pick="NYJ" data-points="4"><span class="rank">4</span><img alt="NYJ logo" src="./assets/week7-v44/26.png"/><b>NYJ</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="KC" data-home="DEN" data-pick="KC" data-points="3"><span class="rank">3</span><img alt="KC logo" src="./assets/week7-v44/13.png"/><b>KC</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="MIN" data-home="DET" data-pick="DET" data-points="2"><span class="rank">2</span><img alt="DET logo" src="./assets/week7-v44/10.svg"/><b>DET</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="ATL" data-home="TB" data-pick="TB" data-points="1"><span class="rank">1</span><img alt="TB logo" src="./assets/week7-v44/23.png"/><b>TB</b><span class="conf-status pending">PENDING</span></div></section>
+<section class="page" id="survivor"><div class="section-title">WEEK 8 — SURVIVOR RESEARCH</div><div class="info-card">Week 8 research board. Verify eligibility and remaining team inventory before making Survivor selections. These are not locked Survivor picks.</div><div class="surv-card"><span>RESEARCH</span><img alt="GB logo" src="./assets/week7-v44/09.png"/><b>GB</b></div><div class="surv-card"><span>RESEARCH</span><img alt="CIN logo" src="./assets/week7-v44/05.svg"/><b>CIN</b></div><div class="surv-card"><span>RESEARCH</span><img alt="BUF logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png"/><b>BUF</b></div><div class="surv-card"><span>RESEARCH</span><img alt="DAL logo" src="./assets/week7-v44/27.png"/><b>DAL</b></div><div class="surv-card"><span>RESEARCH</span><img alt="PIT logo" src="./assets/week7-v44/17.png"/><b>PIT</b></div><div class="surv-card"><span>RESEARCH</span><img alt="JAX logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"/><b>JAX</b></div></section>
+<section class="page" id="about">
+<div class="section-title">LEGAL / ABOUT</div>
+<div class="about-legal">
+<div class="legal-grid" id="legalGrid">
+<div class="legal-card" style="background:rgba(46,160,67,0.12);border:2px solid #3fb950">
+<div class="legal-card-title" style="color:#3fb950">📧 CONTACT &amp; SUPPORT</div>
+<div class="legal-card-body" style="color:#ffffff">
+<p><strong style="color:#3fb950">Questions or need help?</strong></p>
+<p>Email us at: <a href="mailto:thepipelineedge@gmail.com" style="color:#3fb950;font-weight:600">thepipelineedge@gmail.com</a></p>
+<p style="margin-top:12px;font-size:10px">Response time varies during NFL season. For urgent issues, reach out on YouTube community posts.</p>
+</div>
+</div>
+<div class="legal-card">
+<div class="legal-card-title">⚠️ ENTERTAINMENT ONLY</div>
+<div class="legal-card-body">
+<p><strong>This app is for entertainment and recreational pool use only. It is NOT a betting or gambling app.</strong></p>
+<p>No real-money gambling features. No sportsbook integration. No betting advice or odds. No guarantees on predictions.</p>
+<p>The Pipeline is a data-driven, recreational NFL pick'em and confidence pool assistant. It uses historical model validation (60% accuracy over 1,359 games, 2021–2025) to generate weekly predictions and help you track pool results. This app is for entertainment purposes only.</p>
+<p>Weekly selections, confidence rankings, model ratings, and stats are for informational purposes only and do not guarantee future outcomes.</p>
+<h4>Historical Model Validation</h4>
+<p>Walk-forward model validation: 60.0% accuracy across 1,359 historical NFL games (2021–2025). Provided for informational purposes only and does not guarantee future results.</p>
+<h4>🆘 If You Struggle with Gambling</h4>
+<ul>
+<li>🇺🇸 <a href="https://www.ncpgambling.org" target="_blank">1-800-GAMBLER</a> (ncpgambling.org)</li>
+<li>🇬🇧 <a href="https://www.begambleaware.org" target="_blank">0808 8020 133</a> (begambleaware.org)</li>
+<li>🇦🇺 <a href="https://www.gamblinghelponline.org.au" target="_blank">1800 858 858</a> (gamblinghelponline.org.au)</li>
+</ul>
+</div>
+</div>
+<div class="legal-card">
+<div class="legal-card-title">🔒 PRIVACY POLICY — May 2026</div>
+<div class="legal-card-body">
+<h4>Data Stored on Your Device (Local Only)</h4>
+<p>All of the following data is stored <strong>only on your device</strong> in your browser. We never send this to our servers or any other company:</p>
+<ul>
+<li>Weekly pick selections and confidence scores</li>
+<li>Pool results (wins, losses, points each week)</li>
+<li>Season performance history</li>
+<li>Game notes and preferences</li>
+</ul>
+<p><strong>You control this data:</strong> Clear your browser cache anytime to delete everything permanently.</p>
+<h4>Weather Data (Optional Feature)</h4>
+<p>When you click "Load Weather," the app fetches real-time weather data from <strong>Open-Meteo</strong> (openmeteo.com) to help you adjust confidence scores for outdoor stadiums.</p>
+<p><strong>What we send:</strong></p>
+<ul>
+<li>Stadium latitude and longitude coordinates (public information)</li>
+<li><strong>NO personal data:</strong> No names, emails, device IDs, or personal identifiers</li>
+</ul>
+<p><strong>Your control:</strong></p>
+<ul>
+<li>The weather feature is <strong>completely optional</strong> — use it only when you need weather data</li>
+<li>The app works 100% offline without these features</li>
+<li><strong>Not affiliated:</strong> We are not affiliated with Open-Meteo. Review its policies directly.</li>
+</ul>
+<h4>What We Do NOT Collect</h4>
+<ul>
+<li>❌ Personal information (name, email, phone, address)</li>
+<li>❌ Device identifiers or tracking cookies</li>
+<li>❌ Your actual location</li>
+<li>❌ Betting or gambling activity</li>
+</ul>
+<p><strong>We have no servers, no account system, and no way to track you.</strong></p>
+</div>
+</div>
+<div class="legal-card">
+<div class="legal-card-title">📋 TERMS OF SERVICE</div>
+<div class="legal-card-body">
+<h4>Entertainment Purposes Only</h4>
+<p>This app provides NFL pick information for entertainment and informational purposes only. It is not gambling advice, betting advice, or financial advice.</p>
+<h4>No Guarantees</h4>
+<p>We do not guarantee the accuracy of picks, predictions, or outcomes. Historical model validation (60% accuracy over 1,359 games) is provided for informational purposes only and does not guarantee future results.</p>
+<h4>User Responsibility</h4>
+<p>You are fully responsible for any decisions, bets, or financial actions you take based on this app. The Pipeline provides tools for analysis only.</p>
+<h4>No Liability</h4>
+<p>The Pipeline is not responsible for any losses, damages, or outcomes resulting from use of this app. Use at your own risk.</p>
+<h4>External Links</h4>
+<p>Links to external websites (weather, weather services, sports sites) open in your browser. Review their privacy policies and terms directly. We are not responsible for external content.</p>
+<h4>Paid Features (NFL EDGE PRO™ Season Pass)</h4>
+<p>NFL EDGE PRO™ Season Pass: One-time seasonal purchase ($10.00 USD) covering NFL Preseason through the Super Bowl. No automatic renewal. No recurring charges. Includes weekly predictions, confidence ranking tools, survivor board, weather context, and pool tracking. Purchases are handled securely by Apple through the App Store. We do not collect or store payment information.</p>
+<h4>Refunds</h4>
+<p><strong>All refunds are managed exclusively by Apple, not by THE PIPELINE EDGE™.</strong> Refund requests must be submitted directly through Apple and are subject to Apple’s App Store policies and eligibility requirements. THE PIPELINE EDGE™ cannot issue refunds directly, override Apple’s decisions, extend refund eligibility periods, or process payment disputes.</p>
+<h4>Third-Party Services</h4>
+<p>THE PIPELINE EDGE™ may utilize Apple’s App Store for app distribution, purchases, and refunds; Open-Meteo for weather information; and Cloudflare for website hosting and delivery. These services operate under their own terms, privacy policies, and service rules.</p>
+<p style="margin-top:16px;font-size:10px;color:#aaa">© 2026 The Pipeline. All rights reserved.</p>
+</div>
+</div>
+<div class="legal-card">
+<div class="legal-card-title">🛒 AMAZON AFFILIATE DISCLOSURE</div>
+<div class="legal-card-body">
+<h4>Affiliate Partnership</h4>
+<p>The Pipeline participates in the <strong>Amazon Associates Program</strong>. When you click affiliate links and make a purchase, we may earn a small commission at no additional cost to you.</p>
+<h4>What This Means</h4>
+<ul>
+<li>✅ No extra cost to you — price is the same</li>
+<li>✅ Helps fund app development and maintenance</li>
+<li>✅ Completely optional — no obligation to click</li>
+<li>✅ We only recommend products we use</li>
+</ul>
+<h4>Transparency</h4>
+<p>All affiliate links are clearly marked. We disclose our partnership to comply with FTC guidelines. We do not share personal data with Amazon beyond what's necessary for the transaction.</p>
+<h4>Your Privacy</h4>
+<p>Amazon's privacy policy applies to purchases made through affiliate links. Review <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496" style="color:#ffffff" target="_blank">Amazon's privacy policy</a> for details.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<nav>
+<button class="active" data-page="picks">Picks</button>
+<button data-page="confidence">Confidence</button>
+<button data-page="survivor">Survivor</button>
+<button data-page="about">About</button>
+</nav>
+</div>
+<script>
+const TEAM_NORM={JAC:'JAX',LV:'LVR',LVR:'LVR',LA:'LAR',LAR:'LAR',WSH:'WAS',WAS:'WAS',SF:'SF'};
+function normTeam(v){v=String(v||'').toUpperCase().trim();return TEAM_NORM[v]||v;}
+function scoreKey(a,h){return normTeam(a)+'@'+normTeam(h);}
+function scoreStatus(comp){
+  const t=(comp&&comp.status&&comp.status.type)||{};
+  return t.shortDetail||t.detail||t.description||t.name||'SCORE';
+}
+
+function updateConfidenceFromScores(scores){
+  let earned=0,finals=0;
+  const rows=[...document.querySelectorAll('.conf-row[data-pick]')];
+  rows.forEach(row=>{
+    const key=scoreKey(row.dataset.away,row.dataset.home);
+    const result=scores[key];const badge=row.querySelector('.conf-status');
+    badge.className='conf-status pending';badge.textContent='PENDING';
+    if(!result || !result.completed)return;
+    finals++;
+    const away=Number(result.away),home=Number(result.home);
+    const winner=away>home?row.dataset.away:home>away?row.dataset.home:null;
+    const won=winner===row.dataset.pick;
+    if(won)earned+=Number(row.dataset.points);
+    badge.className='conf-status '+(won?'won':'lost');
+    badge.textContent=won?'✓ +'+row.dataset.points+' PTS':'✕ 0 PTS';
+  });
+  document.getElementById('pointsEarned').textContent=String(earned);
+  document.getElementById('confidenceProgress').textContent=finals+' FINAL • '+(rows.length-finals)+' PENDING';
+}
+
+async function refreshScores(){
+  const boxes=[...document.querySelectorAll('.live-score')];
+  if(!boxes.length)return;
+  try{
+    const url='https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?year=2026&seasontype=2&week=8';
+    const res=await fetch(url,{cache:'no-store'});
+    if(!res.ok)throw new Error('score request failed');
+    const data=await res.json();
+    const scores={};
+    (data.events||[]).forEach(ev=>{
+      const comp=(ev.competitions&&ev.competitions[0])||{};
+      const teams=comp.competitors||[];
+      const away=teams.find(x=>x.homeAway==='away');
+      const home=teams.find(x=>x.homeAway==='home');
+      if(!away||!home||!away.team||!home.team)return;
+      const key=scoreKey(away.team.abbreviation||away.team.shortDisplayName,home.team.abbreviation||home.team.shortDisplayName);
+      const completed=!!(comp.status&&comp.status.type&&comp.status.type.completed);
+      const state=(comp.status&&comp.status.type&&comp.status.type.state)||'';
+      scores[key]={
+        away:String(away.score??'0'),
+        home:String(home.score??'0'),
+        status:scoreStatus(comp),
+        completed,
+        state
+      };
+    });
+    boxes.forEach(box=>{
+      const item=scores[scoreKey(box.dataset.away,box.dataset.home)];
+      const status=box.querySelector('.score-status');
+      const value=box.querySelector('.score-value');
+      box.classList.remove('live','final');
+      if(!item){
+        status.textContent='SCORE';
+        value.textContent='—';
+        return;
+      }
+      status.textContent=item.completed?'FINAL':item.status;
+      value.textContent=item.away+' - '+item.home;
+      if(item.completed)box.classList.add('final');
+      else if(item.state==='in')box.classList.add('live');
+    });
+    updateConfidenceFromScores(scores);
+  }catch(e){
+    document.querySelectorAll('.live-score').forEach(box=>{
+      const status=box.querySelector('.score-status');
+      if(status && box.querySelector('.score-value').textContent==='—') status.textContent='SCORE';
+    });
+  }
+}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+  document.getElementById(b.dataset.page).classList.add('active');
+  b.classList.add('active');
+}));
+refreshScores();
+setInterval(refreshScores,30000);
+</script>
+<script id="week8-v12-app-data" type="application/json">{"product":"THE PIPELINE EDGE / NFL EDGE PRO","week":8,"source":"WEEK 8 V12 APPROVED SU","confidence_status":"PROVISIONAL V12 HISTORICAL-INPUT INDEX, NOT WIN PROBABILITY","market_status":"10 UNVERIFIED PROVISIONAL SPREAD/TOTAL PAIRS; 4 MISSING","games":[{"away":"LAC","home":"LAR","pick":"LAR","confidence":14,"vegas":null},{"away":"CAR","home":"GB","pick":"GB","confidence":13,"vegas":null},{"away":"TEN","home":"CIN","pick":"CIN","confidence":12,"vegas":["CIN",-10,46.5]},{"away":"BAL","home":"BUF","pick":"BUF","confidence":11,"vegas":null},{"away":"NE","home":"MIA","pick":"NE","confidence":10,"vegas":["NE",-7,44.5]},{"away":"ARI","home":"DAL","pick":"DAL","confidence":9,"vegas":["DAL",-6.5,51.5]},{"away":"CLE","home":"PIT","pick":"PIT","confidence":8,"vegas":null},{"away":"CHI","home":"SEA","pick":"SEA","confidence":7,"vegas":["SEA",-3,46.5]},{"away":"IND","home":"JAX","pick":"JAX","confidence":6,"vegas":["JAX",-7.5,47.5]},{"away":"PHI","home":"WAS","pick":"WAS","confidence":5,"vegas":["WAS",-3.5,41.5]},{"away":"LVR","home":"NYJ","pick":"NYJ","confidence":4,"vegas":["LVR",-1.5,42.5]},{"away":"KC","home":"DEN","pick":"KC","confidence":3,"vegas":["KC",-1.5,41.5]},{"away":"MIN","home":"DET","pick":"DET","confidence":2,"vegas":["DET",-2.5,46.5]},{"away":"ATL","home":"TB","pick":"TB","confidence":1,"vegas":["TB",-1.5,44.5]}]}</script></body>
+</html>

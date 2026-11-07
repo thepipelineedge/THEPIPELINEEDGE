@@ -1,475 +1,148 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<title>THE PIPELINE EDGE™ — Week 9 2026</title>
-<style>
-:root{--bg:#07101c;--card:#111f30;--card2:#182b3f;--text:#f4f7fa;--muted:#a0b1c3;--gold:#f5ab35;--cyan:#2dc5e0;--green:#55d187}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;padding-bottom:74px}
-header{position:sticky;top:0;z-index:4;background:#0a1523;border-bottom:2px solid var(--gold);padding:13px;text-align:center}
-header h1{margin:0;color:var(--gold);font-size:22px}
-header p{margin:4px 0 0;color:var(--muted);font-size:11px}
-.page{display:none;padding:10px}.page.active{display:block}
-.game-card{min-height:136px;background:var(--card);border:1px solid #273b50;border-radius:14px;margin-bottom:9px;padding:10px;display:grid;grid-template-columns:28% 44% 28%;align-items:center}
-.team{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:15px}
-.team img{width:72px;height:72px;object-fit:contain}
-.middle{text-align:center}
-.matchup{font-size:18px;font-weight:800}
-.kickoff{font-size:10px;color:var(--muted);margin-top:5px}
-.data{font-size:11px;color:var(--cyan);font-weight:800;margin-top:8px}
-.live-score{margin:8px auto 0;padding:5px 8px;min-height:34px;max-width:190px;border:1px solid #324a61;border-radius:8px;background:#0b1725;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px}
-.live-score .score-status{font-size:8px;color:var(--muted);font-weight:800;letter-spacing:.04em}
-.live-score .score-value{font-size:14px;color:var(--text);font-weight:900}
-.live-score.live .score-status{color:var(--green)}
-.live-score.final .score-status,.live-score.final .score-value{color:var(--gold)}
-.score-refresh-note{color:var(--muted);font-size:9px;text-align:center;margin:-5px 0 10px}
-.section-title{color:var(--gold);font-size:18px;text-align:center;margin:5px 0 12px}
-.conf-row,.surv-card,.info-card{background:var(--card);border:1px solid #273b50;border-radius:12px;min-height:64px;margin-bottom:8px;padding:8px 12px;display:flex;align-items:center;gap:12px}
-.conf-row img,.surv-card img{width:46px;height:46px;object-fit:contain}
-.rank{color:var(--gold);font-size:19px;font-weight:900;width:28px;text-align:center}
-.surv-card span{color:var(--gold);font-weight:800;flex:1}
-.info-card{color:var(--muted);justify-content:center;text-align:center;line-height:1.4}
-nav{position:fixed;left:0;right:0;bottom:0;z-index:5;background:#0a1523;border-top:1px solid #2b3c4d;display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom)}
-nav button{border:0;background:var(--card2);color:var(--text);font-size:10px;padding:12px 2px;min-height:58px}
-nav button.active{color:var(--gold);background:#20364c}
-@media(max-width:520px){.team img{width:64px;height:64px}.matchup{font-size:16px}nav button{font-size:9px}.game-card{grid-template-columns:27% 46% 27%}}
-.legal-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:12px;padding-bottom:20px}
-.legal-card{background:rgba(0,188,212,0.12);border:2px solid #00BCD4;border-radius:8px;padding:14px;color:#00BCD4;overflow-y:auto;max-height:400px}
-.legal-card-title{font-size:13px;font-weight:700;margin-bottom:8px;color:#00BCD4}
-.legal-card-body{font-size:11px;line-height:1.75;color:#ffffff}
-.legal-card-body strong{color:#00BCD4;font-weight:600}
-.legal-card-body a{text-decoration:underline;color:#ffffff}
-.legal-card-body a:hover{opacity:0.8}
-.legal-card-body p{margin-bottom:10px}
-.legal-card-body ul{margin-left:16px;margin:10px 0 10px 16px}
-.legal-card-body li{margin-bottom:8px;line-height:1.6}
-.legal-card-body h4{margin-top:14px;margin-bottom:8px;color:#00BCD4;font-size:12px;font-weight:700}
-#legalGate{padding:12px 10px 90px}
-#legalGate .btn{border:0;border-radius:8px;cursor:pointer;font-weight:700}
-.about-legal{padding:0 0 20px}
-.about-legal .legal-grid{margin:0;grid-template-columns:1fr}
-.about-legal .legal-card{max-height:none}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07101c"><meta name="pipeline-build" content="Week9-V13-Web"><title>THE PIPELINE EDGE™ — Week 9 2026</title><style>
+:root{color-scheme:dark;--bg:#07101c;--card:#111f30;--card2:#182b3f;--text:#f4f7fa;--muted:#a0b1c3;--gold:#f5ab35;--cyan:#2dc5e0;--green:#55d187;--line:#2b3e55}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,system-ui,sans-serif;padding-bottom:90px}header{position:sticky;top:0;z-index:5;background:#0a1523;border-bottom:2px solid var(--gold);text-align:center;padding:14px 12px 11px}header .brand{font-weight:900;letter-spacing:.07em;font-size:clamp(18px,4.4vw,27px)}header .sub{color:var(--gold);font-weight:800;font-size:13px;letter-spacing:.1em;margin-top:5px}.wrap{max-width:780px;margin:0 auto;padding:16px 12px}.page{display:none}.page.active{display:block}.section-title{font-weight:900;color:var(--gold);letter-spacing:.04em;margin:4px 0 15px;font-size:19px}.notice{border:1px solid var(--line);border-radius:11px;padding:10px;background:#102034;color:var(--muted);font-size:12px;line-height:1.55;margin-bottom:13px}.game-card{background:linear-gradient(130deg,#14283d,#0d1b2c);border:1px solid #2b4159;border-radius:13px;padding:12px 7px;display:grid;grid-template-columns:78px minmax(0,1fr) 78px;gap:4px;align-items:center;margin-bottom:10px}.side{display:flex;align-items:center;flex-direction:column;gap:4px}.side img{height:54px;width:54px;object-fit:contain}.side b{font-size:16px}.team-score{font-weight:900;color:var(--gold);font-size:20px}.center{text-align:center;min-width:0}.matchup{font-weight:900;font-size:15px}.kickoff{color:var(--muted);font-size:11px;margin-top:5px}.pick-label{font-size:12px;margin-top:9px;color:var(--muted)}.pick-label strong{color:var(--green);font-size:15px}.live-status{font-size:10px;color:var(--cyan);margin-top:7px}.conf-summary{background:var(--card);border:1px solid var(--line);padding:13px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:7px;flex-wrap:wrap;margin-bottom:12px;font-size:13px}.conf-row{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:10px;margin-bottom:8px}.conf-row .rank{font-size:20px;color:var(--gold);width:25px}.conf-row img{height:40px;width:40px;object-fit:contain}.conf-row span:nth-of-type(1){flex:1;min-width:0}.conf-row span b{font-size:13px}.conf-row small{display:block;color:var(--muted);margin-top:4px;font-size:10px}.conf-status{font-weight:700;font-size:10px;white-space:nowrap}.pending{color:var(--muted)}.won{color:var(--green)}.lost{color:#ff8080}.sv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.sv-card{background:linear-gradient(140deg,#182e43,#0c1b2c);border:1px solid #836d37;border-radius:12px;padding:14px;min-width:0}.sv-label{font-size:12px;color:var(--gold);font-weight:900}.sv-team{display:flex;align-items:center;gap:10px;font-size:22px;margin:10px 0}.sv-team img{width:48px;height:48px;object-fit:contain}.sv-card small{color:var(--muted);font-size:10px} .about{background:var(--card);border-radius:12px;padding:17px;border:1px solid var(--line);line-height:1.65}.about a{color:var(--cyan)}.about h3{color:var(--gold)}nav{position:fixed;bottom:0;left:0;right:0;z-index:10;display:grid;grid-template-columns:repeat(4,1fr);background:#091522;border-top:1px solid #385169;padding-bottom:env(safe-area-inset-bottom)}nav button{background:none;border:0;color:var(--muted);font-weight:800;font-size:12px;padding:18px 3px;cursor:pointer}nav button.active{color:var(--gold);border-top:3px solid var(--gold);padding-top:15px} .last-refresh{text-align:center;color:var(--muted);font-size:11px;margin-top:15px}.warn{color:var(--gold)}@media(max-width:370px){.game-card{grid-template-columns:59px minmax(0,1fr) 59px}.side img{width:44px;height:44px}.sv-grid{grid-template-columns:1fr}}
 
-.conf-summary{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 12px;padding:12px;background:#182b3f;border:1px solid #314b64;border-radius:10px;font-size:13px}
-.conf-summary strong{color:#f5ab35}.conf-summary span{font-size:10px;color:#a0b1c3}
-.conf-status{margin-left:auto;border-radius:6px;padding:5px 7px;font-size:10px;font-weight:900;white-space:nowrap}
-.conf-status.pending{background:#20354e;color:#b2c7e5}.conf-status.won{background:#163f2b;color:#55d187}.conf-status.lost{background:#49202a;color:#ff818e}
 
-.game-card .score-check{grid-column:1/-1;border-top:1px solid #2b3c4d;margin-top:8px;padding-top:4px;max-width:100%;font-size:11px;color:#c0d0dd}
-.game-card .score-check summary{cursor:pointer;font-size:10px;font-weight:800;letter-spacing:.03em;text-align:center;color:#eac36b;padding:7px;list-style-position:inside}
-.game-card .score-check-lines{background:#0b1725;padding:10px;border-radius:8px;line-height:1.7;overflow-wrap:anywhere}
-.game-card .score-check-status{color:#eac36b;font-weight:700}
-.game-card .score-check small{font-size:9px;color:#a0b1c3}
-</style>
-</head>
-<body>
-<header><h1>THE PIPELINE EDGE™ — WEEK 9</h1><p>WHERE DATA IS YOUR EDGE</p></header>
-<div id="week8GoogleApp">
-<section class="page active" id="picks"><div class="section-title">WEEK 9 — STRAIGHT-UP PICKS</div><div class="score-refresh-note">GAME SCORES UPDATE AUTOMATICALLY EVERY 30 SECONDS</div><article class="game-card" data-away="JAX" data-home="BAL">
-<div class="team"><img alt="JAX logo" src="assets/week9-v11/JAX.png"/><b>JAX</b></div>
-<div class="middle"><div class="matchup">JAX @ BAL</div><div class="kickoff">Thu, Nov 5 · 8:15 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>JAX</strong></div>
-<div class="live-score" data-away="JAX" data-home="BAL"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="BAL logo" src="assets/week9-v11/BAL.png"/><b>BAL</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> JAX 25.7 – BAL 23.0</div><div><b>Market:</b> JAX 24.2 – BAL 16.3</div><div><b>Efficiency:</b> JAX 24.6 – BAL 23.6</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="CIN" data-home="ATL">
-<div class="team"><img alt="CIN logo" src="assets/week9-v11/CIN.png"/><b>CIN</b></div>
-<div class="middle"><div class="matchup">CIN @ ATL</div><div class="kickoff">Sun, Nov 8 · 9:30 AM ET · Madrid</div>
-<div class="data">PIPELINE PICK: <strong>CIN</strong></div>
-<div class="live-score" data-away="CIN" data-home="ATL"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="ATL logo" src="assets/week9-v11/ATL.png"/><b>ATL</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> CIN 23.0 – ATL 22.1</div><div><b>Market:</b> CIN 27.5 – ATL 25.0</div><div><b>Efficiency:</b> CIN 22.9 – ATL 22.4</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="DEN" data-home="CAR">
-<div class="team"><img alt="DEN logo" src="assets/week9-v11/DEN.png"/><b>DEN</b></div>
-<div class="middle"><div class="matchup">DEN @ CAR</div><div class="kickoff">Sun, Nov 8 · 1:00 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>DEN</strong></div>
-<div class="live-score" data-away="DEN" data-home="CAR"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="CAR logo" src="assets/week9-v11/CAR.png"/><b>CAR</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> DEN 20.9 – CAR 20.4</div><div><b>Market:</b> DEN 23.5 – CAR 21.0</div><div><b>Efficiency:</b> DEN 22.1 – CAR 22.1</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="DAL" data-home="IND">
-<div class="team"><img alt="DAL logo" src="assets/week9-v11/DAL.png"/><b>DAL</b></div>
-<div class="middle"><div class="matchup">DAL @ IND</div><div class="kickoff">Sun, Nov 8 · 1:00 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>DAL</strong></div>
-<div class="live-score" data-away="DAL" data-home="IND"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="IND logo" src="assets/week9-v11/IND.png"/><b>IND</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> DAL 29.6 – IND 34.8</div><div><b>Market:</b> DAL 27.8 – IND 23.7</div><div><b>Efficiency:</b> DAL 26.5 – IND 27.0</div>
-<div class="score-check-status">SCORE CONFLICT</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="NYJ" data-home="KC">
-<div class="team"><img alt="NYJ logo" src="assets/week9-v11/NYJ.png"/><b>NYJ</b></div>
-<div class="middle"><div class="matchup">NYJ @ KC</div><div class="kickoff">Sun, Nov 8 · 1:00 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>KC</strong></div>
-<div class="live-score" data-away="NYJ" data-home="KC"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="KC logo" src="assets/week9-v11/KC.png"/><b>KC</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> NYJ 15.7 – KC 28.7</div><div><b>Market:</b> NYJ 19.9 – KC 28.6</div><div><b>Efficiency:</b> NYJ 18.3 – KC 26.0</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="DET" data-home="MIA">
-<div class="team"><img alt="DET logo" src="assets/week9-v11/DET.png"/><b>DET</b></div>
-<div class="middle"><div class="matchup">DET @ MIA</div><div class="kickoff">Sun, Nov 8 · 1:00 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>DET</strong></div>
-<div class="live-score" data-away="DET" data-home="MIA"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="MIA logo" src="assets/week9-v11/MIA.png"/><b>MIA</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> DET 29.6 – MIA 24.3</div><div><b>Market:</b> DET 27.5 – MIA 22.0</div><div><b>Efficiency:</b> DET 26.3 – MIA 23.3</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="CLE" data-home="NO">
-<div class="team"><img alt="CLE logo" src="assets/week9-v11/CLE.png"/><b>CLE</b></div>
-<div class="middle"><div class="matchup">CLE @ NO</div><div class="kickoff">Sun, Nov 8 · 1:00 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>NO</strong></div>
-<div class="live-score" data-away="CLE" data-home="NO"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="NO logo" src="assets/week9-v11/NO.png"/><b>NO</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> CLE 17.1 – NO 20.9</div><div><b>Market:</b> CLE 19.5 – NO 23.0</div><div><b>Efficiency:</b> CLE 19.4 – NO 22.5</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="NYG" data-home="PHI">
-<div class="team"><img alt="NYG logo" src="assets/week9-v11/NYG.png"/><b>NYG</b></div>
-<div class="middle"><div class="matchup">NYG @ PHI</div><div class="kickoff">Sun, Nov 8 · 1:00 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>PHI</strong></div>
-<div class="live-score" data-away="NYG" data-home="PHI"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="PHI logo" src="assets/week9-v11/PHI.png"/><b>PHI</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> NYG 20.0 – PHI 24.2</div><div><b>Market:</b> NYG 20.1 – PHI 18.4</div><div><b>Efficiency:</b> NYG 21.0 – PHI 23.9</div>
-<div class="score-check-status">2 OF 3 MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="LAR" data-home="WAS">
-<div class="team"><img alt="LAR logo" src="assets/week9-v11/LAR.png"/><b>LAR</b></div>
-<div class="middle"><div class="matchup">LAR @ WAS</div><div class="kickoff">Sun, Nov 8 · 1:00 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>LAR</strong></div>
-<div class="live-score" data-away="LAR" data-home="WAS"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="WAS logo" src="assets/week9-v11/WAS.png"/><b>WAS</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> LAR 31.7 – WAS 21.5</div><div><b>Market:</b> LAR 25.6 – WAS 21.9</div><div><b>Efficiency:</b> LAR 26.2 – WAS 22.0</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="HOU" data-home="LAC">
-<div class="team"><img alt="HOU logo" src="assets/week9-v11/HOU.png"/><b>HOU</b></div>
-<div class="middle"><div class="matchup">HOU @ LAC</div><div class="kickoff">Sun, Nov 8 · 4:05 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>HOU</strong></div>
-<div class="live-score" data-away="HOU" data-home="LAC"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="LAC logo" src="assets/week9-v11/LAC.png"/><b>LAC</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> HOU 20.5 – LAC 19.9</div><div><b>Market:</b> HOU 22.9 – LAC 17.6</div><div><b>Efficiency:</b> HOU 22.5 – LAC 21.3</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="LVR" data-home="SF">
-<div class="team"><img alt="LVR logo" src="assets/week9-v11/LVR.png"/><b>LVR</b></div>
-<div class="middle"><div class="matchup">LVR @ SF</div><div class="kickoff">Sun, Nov 8 · 4:25 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>SF</strong></div>
-<div class="live-score" data-away="LVR" data-home="SF"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="SF logo" src="assets/week9-v11/SF.png"/><b>SF</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> LVR 19.6 – SF 30.0</div><div><b>Market:</b> LVR 21.3 – SF 30.2</div><div><b>Efficiency:</b> LVR 20.4 – SF 26.4</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="GB" data-home="NE">
-<div class="team"><img alt="GB logo" src="assets/week9-v11/GB.png"/><b>GB</b></div>
-<div class="middle"><div class="matchup">GB @ NE</div><div class="kickoff">Sun, Nov 8 · 4:25 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>NE</strong></div>
-<div class="live-score" data-away="GB" data-home="NE"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="NE logo" src="assets/week9-v11/NE.png"/><b>NE</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> GB 20.0 – NE 25.5</div><div><b>Market:</b> GB 20.8 – NE 23.7</div><div><b>Efficiency:</b> GB 21.1 – NE 24.5</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="ARI" data-home="SEA">
-<div class="team"><img alt="ARI logo" src="assets/week9-v11/ARI.png"/><b>ARI</b></div>
-<div class="middle"><div class="matchup">ARI @ SEA</div><div class="kickoff">Sun, Nov 8 · 4:25 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>SEA</strong></div>
-<div class="live-score" data-away="ARI" data-home="SEA"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="SEA logo" src="assets/week9-v11/SEA.png"/><b>SEA</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> ARI 18.7 – SEA 32.0</div><div><b>Market:</b> ARI 15.9 – SEA 23.6</div><div><b>Efficiency:</b> ARI 20.1 – SEA 26.8</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="TB" data-home="CHI">
-<div class="team"><img alt="TB logo" src="assets/week9-v11/TB.png"/><b>TB</b></div>
-<div class="middle"><div class="matchup">TB @ CHI</div><div class="kickoff">Sun, Nov 8 · 8:20 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>CHI</strong></div>
-<div class="live-score" data-away="TB" data-home="CHI"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="CHI logo" src="assets/week9-v11/CHI.png"/><b>CHI</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> TB 20.5 – CHI 26.3</div><div><b>Market:</b> TB 21.0 – CHI 26.5</div><div><b>Efficiency:</b> TB 21.4 – CHI 25.5</div>
-<div class="score-check-status">3-WAY MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article><article class="game-card" data-away="BUF" data-home="MIN">
-<div class="team"><img alt="BUF logo" src="assets/week9-v11/BUF.png"/><b>BUF</b></div>
-<div class="middle"><div class="matchup">BUF @ MIN</div><div class="kickoff">Mon, Nov 9 · 8:15 PM ET</div>
-<div class="data">PIPELINE PICK: <strong>BUF</strong></div>
-<div class="live-score" data-away="BUF" data-home="MIN"><span class="score-status">SCORE</span><span class="score-value">—</span></div></div>
-<div class="team"><img alt="MIN logo" src="assets/week9-v11/MIN.png"/><b>MIN</b></div>
-<details class="score-check"><summary>MODEL SCORE COMPARISON</summary>
-<div class="score-check-lines"><div><b>L14:</b> BUF 19.8 – MIN 22.2</div><div><b>Market:</b> BUF 23.1 – MIN 20.4</div><div><b>Efficiency:</b> BUF 23.6 – MIN 22.8</div>
-<div class="score-check-status">2 OF 3 MATCH</div><small>Score diagnostics only; SU pick is from the Command Center winner model.</small></div></details>
-</article></section>
-<section class="page" id="confidence"><div class="section-title">WEEK 9 — CONFIDENCE 15 → 1</div><div class="conf-summary"><strong>POINTS EARNED: <span id="pointsEarned">0</span> / 120</strong><span id="confidenceProgress">0 FINAL • 15 PENDING</span></div><div class="conf-row" data-away="LVR" data-home="SF" data-pick="SF" data-points="15"><span class="rank">15</span><img alt="SF logo" src="assets/week9-v11/SF.png"/><b>SF</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="NYJ" data-home="KC" data-pick="KC" data-points="14"><span class="rank">14</span><img alt="KC logo" src="assets/week9-v11/KC.png"/><b>KC</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="ARI" data-home="SEA" data-pick="SEA" data-points="13"><span class="rank">13</span><img alt="SEA logo" src="assets/week9-v11/SEA.png"/><b>SEA</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="DET" data-home="MIA" data-pick="DET" data-points="12"><span class="rank">12</span><img alt="DET logo" src="assets/week9-v11/DET.png"/><b>DET</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="TB" data-home="CHI" data-pick="CHI" data-points="11"><span class="rank">11</span><img alt="CHI logo" src="assets/week9-v11/CHI.png"/><b>CHI</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="CLE" data-home="NO" data-pick="NO" data-points="10"><span class="rank">10</span><img alt="NO logo" src="assets/week9-v11/NO.png"/><b>NO</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="BUF" data-home="MIN" data-pick="BUF" data-points="9"><span class="rank">9</span><img alt="BUF logo" src="assets/week9-v11/BUF.png"/><b>BUF</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="HOU" data-home="LAC" data-pick="HOU" data-points="8"><span class="rank">8</span><img alt="HOU logo" src="assets/week9-v11/HOU.png"/><b>HOU</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="LAR" data-home="WAS" data-pick="LAR" data-points="7"><span class="rank">7</span><img alt="LAR logo" src="assets/week9-v11/LAR.png"/><b>LAR</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="CIN" data-home="ATL" data-pick="CIN" data-points="6"><span class="rank">6</span><img alt="CIN logo" src="assets/week9-v11/CIN.png"/><b>CIN</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="JAX" data-home="BAL" data-pick="JAX" data-points="5"><span class="rank">5</span><img alt="JAX logo" src="assets/week9-v11/JAX.png"/><b>JAX</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="NYG" data-home="PHI" data-pick="PHI" data-points="4"><span class="rank">4</span><img alt="PHI logo" src="assets/week9-v11/PHI.png"/><b>PHI</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="GB" data-home="NE" data-pick="NE" data-points="3"><span class="rank">3</span><img alt="NE logo" src="assets/week9-v11/NE.png"/><b>NE</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="DEN" data-home="CAR" data-pick="DEN" data-points="2"><span class="rank">2</span><img alt="DEN logo" src="assets/week9-v11/DEN.png"/><b>DEN</b><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="DAL" data-home="IND" data-pick="DAL" data-points="1"><span class="rank">1</span><img alt="DAL logo" src="assets/week9-v11/DAL.png"/><b>DAL</b><span class="conf-status pending">PENDING</span></div></section>
-<section class="page" id="survivor"><div class="section-title">WEEK 9 — SURVIVOR RESEARCH</div><style>
-.sv8-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0}
-.sv8-card{background:linear-gradient(150deg,#15283c,#0b1422);border:1px solid #826b36;border-radius:11px;padding:10px;min-width:0;color:#eef3f9}
-.sv8-head{display:flex;align-items:center;gap:7px}.sv8-head img{width:38px;height:38px;object-fit:contain;flex:none}
-.sv8-team{font-size:19px;font-weight:900}.sv8-game{font-size:10px;color:#b9c5d1}
-.sv8-title{color:#eac36b;font-weight:800;font-size:11px;letter-spacing:.3px;margin:7px 0}
-.sv8-stats{display:grid;grid-template-columns:1fr 1fr;gap:5px}
-.sv8-stat{background:#0a1522;border:1px solid #263b4c;border-radius:6px;padding:5px 6px;min-width:0}
-.sv8-stat small{display:block;color:#b7c7d8;font-size:9px}.sv8-stat b{font-size:14px;color:#fff}
-.sv8-note{font-size:10px;line-height:1.35;margin-top:7px;color:#cbd7e2}
-@media(max-width:410px){.sv8-grid{grid-template-columns:1fr}}
-</style><div class="sv8-grid"><article class="sv8-card">
-<div class="sv8-head"><img alt="SEA logo" src="assets/week9-v11/SEA.png"/><div><div class="sv8-team">SEA</div><div class="sv8-game">ARI @ SEA · SUN 4:25 PM ET</div></div></div>
-<div class="sv8-title">CHALK</div>
-<div class="sv8-stats">
-<div class="sv8-stat"><small>VEGAS WIN</small><b>79%</b></div>
-<div class="sv8-stat"><small>WIN ESTIMATE</small><b>78%</b></div>
-<div class="sv8-stat"><small>PICK POPULARITY</small><b>25%</b></div>
-<div class="sv8-stat"><small>FUTURE VALUE</small><b>1.6</b></div>
-<div class="sv8-stat"><small>DVOA EDGE</small><b>+20.0 pp</b></div>
-</div><div class="sv8-note"><b>SIGNAL:</b> DVOA favors SEA.</div></article><article class="sv8-card">
-<div class="sv8-head"><img alt="JAX logo" src="assets/week9-v11/JAX.png"/><div><div class="sv8-team">JAX</div><div class="sv8-game">JAX @ BAL · THU 8:15 PM ET</div></div></div>
-<div class="sv8-title">ATS 7+</div>
-<div class="sv8-stats">
-<div class="sv8-stat"><small>VEGAS WIN</small><b>83%</b></div>
-<div class="sv8-stat"><small>WIN ESTIMATE</small><b>81%</b></div>
-<div class="sv8-stat"><small>PICK POPULARITY</small><b>4%</b></div>
-<div class="sv8-stat"><small>FUTURE VALUE</small><b>2.9</b></div>
-<div class="sv8-stat"><small>DVOA EDGE</small><b>+36.7 pp</b></div>
-</div><div class="sv8-note"><b>SIGNAL:</b> Thursday game completed; shown for Week 9 research history. DVOA favors JAX.</div></article><article class="sv8-card">
-<div class="sv8-head"><img alt="DET logo" src="assets/week9-v11/DET.png"/><div><div class="sv8-team">DET</div><div class="sv8-game">DET @ MIA · SUN 1:00 PM ET</div></div></div>
-<div class="sv8-title">BEST USE-NOW</div>
-<div class="sv8-stats">
-<div class="sv8-stat"><small>VEGAS WIN</small><b>75%</b></div>
-<div class="sv8-stat"><small>WIN ESTIMATE</small><b>74%</b></div>
-<div class="sv8-stat"><small>PICK POPULARITY</small><b>13%</b></div>
-<div class="sv8-stat"><small>FUTURE VALUE</small><b>0.7</b></div>
-<div class="sv8-stat"><small>DVOA EDGE</small><b>+37.6 pp</b></div>
-</div><div class="sv8-note"><b>SIGNAL:</b> DVOA favors DET.</div></article><article class="sv8-card">
-<div class="sv8-head"><img alt="KC logo" src="assets/week9-v11/KC.png"/><div><div class="sv8-team">KC</div><div class="sv8-game">NYJ @ KC · SUN 1:00 PM ET</div></div></div>
-<div class="sv8-title">ATTACK</div>
-<div class="sv8-stats">
-<div class="sv8-stat"><small>VEGAS WIN</small><b>82%</b></div>
-<div class="sv8-stat"><small>WIN ESTIMATE</small><b>81%</b></div>
-<div class="sv8-stat"><small>PICK POPULARITY</small><b>15%</b></div>
-<div class="sv8-stat"><small>FUTURE VALUE</small><b>1.1</b></div>
-<div class="sv8-stat"><small>DVOA EDGE</small><b>+26.6 pp</b></div>
-</div><div class="sv8-note"><b>SIGNAL:</b> DVOA favors KC.</div></article><article class="sv8-card">
-<div class="sv8-head"><img alt="HOU logo" src="assets/week9-v11/HOU.png"/><div><div class="sv8-team">HOU</div><div class="sv8-game">HOU @ LAC · SUN 4:05 PM ET</div></div></div>
-<div class="sv8-title">LOW OWNERSHIP</div>
-<div class="sv8-stats">
-<div class="sv8-stat"><small>VEGAS WIN</small><b>67%</b></div>
-<div class="sv8-stat"><small>WIN ESTIMATE</small><b>66%</b></div>
-<div class="sv8-stat"><small>PICK POPULARITY</small><b>1%</b></div>
-<div class="sv8-stat"><small>FUTURE VALUE</small><b>1.6</b></div>
-<div class="sv8-stat"><small>DVOA EDGE</small><b>+42.5 pp</b></div>
-</div><div class="sv8-note"><b>SIGNAL:</b> DVOA favors HOU.</div></article><article class="sv8-card">
-<div class="sv8-head"><img alt="BUF logo" src="assets/week9-v11/BUF.png"/><div><div class="sv8-team">BUF</div><div class="sv8-game">BUF @ MIN · MON 8:15 PM ET</div></div></div>
-<div class="sv8-title">VALUE</div>
-<div class="sv8-stats">
-<div class="sv8-stat"><small>VEGAS WIN</small><b>62%</b></div>
-<div class="sv8-stat"><small>WIN ESTIMATE</small><b>64%</b></div>
-<div class="sv8-stat"><small>PICK POPULARITY</small><b>0%</b></div>
-<div class="sv8-stat"><small>FUTURE VALUE</small><b>2.3</b></div>
-<div class="sv8-stat"><small>DVOA EDGE</small><b>+12.5 pp</b></div>
-</div><div class="sv8-note"><b>SIGNAL:</b> DVOA favors BUF.</div></article></div></section>
-<section class="page" id="about">
-<div class="section-title">LEGAL / ABOUT</div>
-<div class="about-legal">
-<div class="legal-grid" id="legalGrid">
-<div class="legal-card" style="background:rgba(46,160,67,0.12);border:2px solid #3fb950">
-<div class="legal-card-title" style="color:#3fb950">📧 CONTACT &amp; SUPPORT</div>
-<div class="legal-card-body" style="color:#ffffff">
-<p><strong style="color:#3fb950">Questions or need help?</strong></p>
-<p>Email us at: <a href="mailto:thepipelineedge@gmail.com" style="color:#3fb950;font-weight:600">thepipelineedge@gmail.com</a></p>
-<p style="margin-top:12px;font-size:10px">Response time varies during NFL season. For urgent issues, please email us.</p>
-</div>
-</div>
-<div class="legal-card">
-<div class="legal-card-title">⚠️ ENTERTAINMENT ONLY</div>
-<div class="legal-card-body">
-<p><strong>This app is for entertainment and recreational pool use only. It is NOT a betting or gambling app.</strong></p>
-<p>No real-money gambling features. No sportsbook integration. No betting advice or odds. No guarantees on predictions.</p>
-<p>The Pipeline is a data-driven, recreational NFL pick'em and confidence pool assistant. It uses historical model validation (60% accuracy over 1,359 games, 2021–2025) to generate weekly predictions and help you track pool results. This app is for entertainment purposes only.</p>
-<p>Weekly selections, confidence rankings, model ratings, and stats are for informational purposes only and do not guarantee future outcomes.</p>
-<h4>Historical Model Validation</h4>
-<p>Walk-forward model validation: 60.0% accuracy across 1,359 historical NFL games (2021–2025). Provided for informational purposes only and does not guarantee future results.</p>
-<h4>🆘 If You Struggle with Gambling</h4>
-<ul>
-<li>🇺🇸 <a href="https://www.ncpgambling.org" target="_blank">1-800-GAMBLER</a> (ncpgambling.org)</li>
-<li>🇬🇧 <a href="https://www.begambleaware.org" target="_blank">0808 8020 133</a> (begambleaware.org)</li>
-<li>🇦🇺 <a href="https://www.gamblinghelponline.org.au" target="_blank">1800 858 858</a> (gamblinghelponline.org.au)</li>
-</ul>
-</div>
-</div>
-<div class="legal-card">
-<div class="legal-card-title">🔒 PRIVACY POLICY — May 2026</div>
-<div class="legal-card-body">
-<h4>Data Stored on Your Device (Local Only)</h4>
-<p>All of the following data is stored <strong>only on your device</strong> in your browser. We never send this to our servers or any other company:</p>
-<ul>
-<li>Weekly pick selections and confidence scores</li>
-<li>Pool results (wins, losses, points each week)</li>
-<li>Season performance history</li>
-<li>Game notes and preferences</li>
-</ul>
-<p><strong>You control this data:</strong> Clear your browser cache anytime to delete everything permanently.</p>
-<h4>Weather Data (Optional Feature)</h4>
-<p>When you click "Load Weather," the app fetches real-time weather data from <strong>Open-Meteo</strong> (openmeteo.com) to help you adjust confidence scores for outdoor stadiums.</p>
-<p><strong>What we send:</strong></p>
-<ul>
-<li>Stadium latitude and longitude coordinates (public information)</li>
-<li><strong>NO personal data:</strong> No names, emails, device IDs, or personal identifiers</li>
-</ul>
-<p><strong>Your control:</strong></p>
-<ul>
-<li>The weather feature is <strong>completely optional</strong> — use it only when you need weather data</li>
-<li>The app works 100% offline without these features</li>
-<li><strong>Not affiliated:</strong> We are not affiliated with Open-Meteo. Review its policies directly.</li>
-</ul>
-<h4>What We Do NOT Collect</h4>
-<ul>
-<li>❌ Personal information (name, email, phone, address)</li>
-<li>❌ Device identifiers or tracking cookies</li>
-<li>❌ Your actual location</li>
-<li>❌ Betting or gambling activity</li>
-</ul>
-<p><strong>We have no servers, no account system, and no way to track you.</strong></p>
-</div>
-</div>
-<div class="legal-card">
-<div class="legal-card-title">📋 TERMS OF SERVICE</div>
-<div class="legal-card-body">
-<h4>Entertainment Purposes Only</h4>
-<p>This app provides NFL pick information for entertainment and informational purposes only. It is not gambling advice, betting advice, or financial advice.</p>
-<h4>No Guarantees</h4>
-<p>We do not guarantee the accuracy of picks, predictions, or outcomes. Historical model validation (60% accuracy over 1,359 games) is provided for informational purposes only and does not guarantee future results.</p>
-<h4>User Responsibility</h4>
-<p>You are fully responsible for any decisions, bets, or financial actions you take based on this app. The Pipeline provides tools for analysis only.</p>
-<h4>No Liability</h4>
-<p>The Pipeline is not responsible for any losses, damages, or outcomes resulting from use of this app. Use at your own risk.</p>
-<h4>External Links</h4>
-<p>Links to external websites (weather, weather services, sports sites) open in your browser. Review their privacy policies and terms directly. We are not responsible for external content.</p>
-<h4>Paid Features (NFL EDGE PRO™ Season Pass)</h4>
-<p>NFL EDGE PRO™ Season Pass: One-time seasonal purchase ($10.00 USD) covering NFL Preseason through the Super Bowl. No automatic renewal. No recurring charges. Includes weekly predictions, confidence ranking tools, survivor board, weather context, and pool tracking. Purchases are handled securely by Apple through the App Store. We do not collect or store payment information.</p>
-<h4>Refunds</h4>
-<p><strong>All refunds are managed exclusively by Apple, not by THE PIPELINE EDGE™.</strong> Refund requests must be submitted directly through Apple and are subject to Apple’s App Store policies and eligibility requirements. THE PIPELINE EDGE™ cannot issue refunds directly, override Apple’s decisions, extend refund eligibility periods, or process payment disputes.</p>
-<h4>Third-Party Services</h4>
-<p>THE PIPELINE EDGE™ may utilize Apple’s App Store for app distribution, purchases, and refunds; Open-Meteo for weather information; and Cloudflare for website hosting and delivery. These services operate under their own terms, privacy policies, and service rules.</p>
-<p style="margin-top:16px;font-size:10px;color:#aaa">© 2026 The Pipeline. All rights reserved.</p>
-</div>
-</div>
-<div class="legal-card">
-<div class="legal-card-title">🛒 AMAZON AFFILIATE DISCLOSURE</div>
-<div class="legal-card-body">
-<h4>Affiliate Partnership</h4>
-<p>The Pipeline participates in the <strong>Amazon Associates Program</strong>. When you click affiliate links and make a purchase, we may earn a small commission at no additional cost to you.</p>
-<h4>What This Means</h4>
-<ul>
-<li>✅ No extra cost to you — price is the same</li>
-<li>✅ Helps fund app development and maintenance</li>
-<li>✅ Completely optional — no obligation to click</li>
-<li>✅ We only recommend products we use</li>
-</ul>
-<h4>Transparency</h4>
-<p>All affiliate links are clearly marked. We disclose our partnership to comply with FTC guidelines. We do not share personal data with Amazon beyond what's necessary for the transaction.</p>
-<h4>Your Privacy</h4>
-<p>Amazon's privacy policy applies to purchases made through affiliate links. Review <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496" style="color:#ffffff" target="_blank">Amazon's privacy policy</a> for details.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<nav>
-<button class="active" data-page="picks">Picks</button>
-<button data-page="confidence">Confidence</button>
-<button data-page="survivor">Survivor</button>
-<button data-page="about">About</button>
-</nav>
-</div>
-<script>
-const TEAM_NORM={JAC:'JAX',LV:'LVR',LVR:'LVR',LA:'LAR',LAR:'LAR',WSH:'WAS',WAS:'WAS',SF:'SF'};
-function normTeam(v){v=String(v||'').toUpperCase().trim();return TEAM_NORM[v]||v;}
-function scoreKey(a,h){return normTeam(a)+'@'+normTeam(h);}
-function scoreStatus(comp){
-  const t=(comp&&comp.status&&comp.status.type)||{};
-  return t.shortDetail||t.detail||t.description||t.name||'SCORE';
-}
-
-function updateConfidenceFromScores(scores){
-  let earned=0,finals=0;
-  const rows=[...document.querySelectorAll('.conf-row[data-pick]')];
-  rows.forEach(row=>{
-    const key=scoreKey(row.dataset.away,row.dataset.home);
-    const result=scores[key];const badge=row.querySelector('.conf-status');
-    badge.className='conf-status pending';badge.textContent='PENDING';
-    if(!result || !result.completed)return;
-    finals++;
-    const away=Number(result.away),home=Number(result.home);
-    const winner=away>home?row.dataset.away:home>away?row.dataset.home:null;
-    const won=winner===row.dataset.pick;
-    if(won)earned+=Number(row.dataset.points);
-    badge.className='conf-status '+(won?'won':'lost');
-    badge.textContent=won?'✓ +'+row.dataset.points+' PTS':'✕ 0 PTS';
-  });
-  document.getElementById('pointsEarned').textContent=String(earned);
-  document.getElementById('confidenceProgress').textContent=finals+' FINAL • '+(rows.length-finals)+' PENDING';
-}
-
-async function refreshScores(){
-  const boxes=[...document.querySelectorAll('.live-score')];
-  if(!boxes.length)return;
-  try{
-    const url='https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?year=2026&seasontype=2&week=9';
-    const res=await fetch(url,{cache:'no-store'});
-    if(!res.ok)throw new Error('score request failed');
-    const data=await res.json();
-    const scores={};
-    (data.events||[]).forEach(ev=>{
-      const comp=(ev.competitions&&ev.competitions[0])||{};
-      const teams=comp.competitors||[];
-      const away=teams.find(x=>x.homeAway==='away');
-      const home=teams.find(x=>x.homeAway==='home');
-      if(!away||!home||!away.team||!home.team)return;
-      const key=scoreKey(away.team.abbreviation||away.team.shortDisplayName,home.team.abbreviation||home.team.shortDisplayName);
-      const completed=!!(comp.status&&comp.status.type&&comp.status.type.completed);
-      const state=(comp.status&&comp.status.type&&comp.status.type.state)||'';
-      scores[key]={
-        away:String(away.score??'0'),
-        home:String(home.score??'0'),
-        status:scoreStatus(comp),
-        completed,
-        state
-      };
-    });
-    boxes.forEach(box=>{
-      const item=scores[scoreKey(box.dataset.away,box.dataset.home)];
-      const status=box.querySelector('.score-status');
-      const value=box.querySelector('.score-value');
-      box.classList.remove('live','final');
-      if(!item){
-        status.textContent='SCORE';
-        value.textContent='—';
-        return;
-      }
-      status.textContent=item.completed?'FINAL':item.status;
-      value.textContent=item.away+' - '+item.home;
-      if(item.completed)box.classList.add('final');
-      else if(item.state==='in')box.classList.add('live');
-    });
-    updateConfidenceFromScores(scores);
-  }catch(e){
-    document.querySelectorAll('.live-score').forEach(box=>{
-      const status=box.querySelector('.score-status');
-      if(status && box.querySelector('.score-value').textContent==='—') status.textContent='SCORE';
-    });
-  }
-}
-document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
-  document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
-  document.getElementById(b.dataset.page).classList.add('active');
-  b.classList.add('active');
+.sv-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.sv-card{padding:12px}.sv-head{display:flex;gap:9px;align-items:center;margin:9px 0}.sv-head img{width:51px;height:51px;object-fit:contain;flex-shrink:0}.sv-head strong{font-size:22px}.sv-head .sv-versus{font-size:11px;color:var(--muted);margin-top:3px}.sv-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:10px 0}.sv-metric{min-width:0;border:1px solid #2c455d;background:#071624;border-radius:9px;padding:9px 7px}.sv-metric label{display:block;font-size:10px;color:#b9c9d8;line-height:1.25;text-transform:uppercase}.sv-metric b{display:block;font-size:19px;margin-top:6px;color:#fff}.sv-note{font-size:11px;color:#c8d3de;line-height:1.5;margin:8px 0}.sv-status{font-size:10px;color:var(--gold);margin-top:9px;font-weight:700}.conf-summary em{display:block;font-style:normal;color:var(--muted);font-size:11px;margin-top:4px}.conf-feedback{color:var(--muted);font-size:11px;line-height:1.5;padding:0 5px 12px}.conf-row.tie .conf-status{color:var(--gold)}
+@media(max-width:370px){.sv-grid{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="brand">THE PIPELINE EDGE™</div><div class="sub">2026 NFL · WEEK 9</div></header>
+<main class="wrap"><section id="picks" class="page active"><div class="section-title">WEEK 9 — STRAIGHT-UP PICKS</div><div class="notice">15 selections generated by the Python Command Center V12. Score updates every 30 seconds when online. Matchups listed in confidence-rank order. This is a review build, not yet approved for release.</div><article class="game-card" data-away="LVR" data-home="SF">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/LVR.png" alt="LVR logo"><b>LVR</b><span class="team-score" data-team="LVR">—</span></div>
+  <div class="center"><div class="matchup">LVR @ SF</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>SF</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/SF.png" alt="SF logo"><b>SF</b><span class="team-score" data-team="SF">—</span></div>
+ </article><article class="game-card" data-away="NYJ" data-home="KC">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/NYJ.png" alt="NYJ logo"><b>NYJ</b><span class="team-score" data-team="NYJ">—</span></div>
+  <div class="center"><div class="matchup">NYJ @ KC</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>KC</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/KC.png" alt="KC logo"><b>KC</b><span class="team-score" data-team="KC">—</span></div>
+ </article><article class="game-card" data-away="ARI" data-home="SEA">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/ARI.png" alt="ARI logo"><b>ARI</b><span class="team-score" data-team="ARI">—</span></div>
+  <div class="center"><div class="matchup">ARI @ SEA</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>SEA</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/SEA.png" alt="SEA logo"><b>SEA</b><span class="team-score" data-team="SEA">—</span></div>
+ </article><article class="game-card" data-away="DET" data-home="MIA">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/DET.png" alt="DET logo"><b>DET</b><span class="team-score" data-team="DET">—</span></div>
+  <div class="center"><div class="matchup">DET @ MIA</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>DET</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/MIA.png" alt="MIA logo"><b>MIA</b><span class="team-score" data-team="MIA">—</span></div>
+ </article><article class="game-card" data-away="TB" data-home="CHI">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/TB.png" alt="TB logo"><b>TB</b><span class="team-score" data-team="TB">—</span></div>
+  <div class="center"><div class="matchup">TB @ CHI</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>CHI</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/CHI.png" alt="CHI logo"><b>CHI</b><span class="team-score" data-team="CHI">—</span></div>
+ </article><article class="game-card" data-away="CLE" data-home="NO">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/CLE.png" alt="CLE logo"><b>CLE</b><span class="team-score" data-team="CLE">—</span></div>
+  <div class="center"><div class="matchup">CLE @ NO</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>NO</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/NO.png" alt="NO logo"><b>NO</b><span class="team-score" data-team="NO">—</span></div>
+ </article><article class="game-card" data-away="BUF" data-home="MIN">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/BUF.png" alt="BUF logo"><b>BUF</b><span class="team-score" data-team="BUF">—</span></div>
+  <div class="center"><div class="matchup">BUF @ MIN</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>BUF</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/MIN.png" alt="MIN logo"><b>MIN</b><span class="team-score" data-team="MIN">—</span></div>
+ </article><article class="game-card" data-away="HOU" data-home="LAC">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/HOU.png" alt="HOU logo"><b>HOU</b><span class="team-score" data-team="HOU">—</span></div>
+  <div class="center"><div class="matchup">HOU @ LAC</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>HOU</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/LAC.png" alt="LAC logo"><b>LAC</b><span class="team-score" data-team="LAC">—</span></div>
+ </article><article class="game-card" data-away="LAR" data-home="WAS">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/LAR.png" alt="LAR logo"><b>LAR</b><span class="team-score" data-team="LAR">—</span></div>
+  <div class="center"><div class="matchup">LAR @ WAS</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>LAR</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/WAS.png" alt="WAS logo"><b>WAS</b><span class="team-score" data-team="WAS">—</span></div>
+ </article><article class="game-card" data-away="CIN" data-home="ATL">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/CIN.png" alt="CIN logo"><b>CIN</b><span class="team-score" data-team="CIN">—</span></div>
+  <div class="center"><div class="matchup">CIN @ ATL</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>CIN</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/ATL.png" alt="ATL logo"><b>ATL</b><span class="team-score" data-team="ATL">—</span></div>
+ </article><article class="game-card" data-away="JAX" data-home="BAL">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/JAX.png" alt="JAX logo"><b>JAX</b><span class="team-score" data-team="JAX">—</span></div>
+  <div class="center"><div class="matchup">JAX @ BAL</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>JAX</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/BAL.png" alt="BAL logo"><b>BAL</b><span class="team-score" data-team="BAL">—</span></div>
+ </article><article class="game-card" data-away="NYG" data-home="PHI">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/NYG.png" alt="NYG logo"><b>NYG</b><span class="team-score" data-team="NYG">—</span></div>
+  <div class="center"><div class="matchup">NYG @ PHI</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>PHI</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/PHI.png" alt="PHI logo"><b>PHI</b><span class="team-score" data-team="PHI">—</span></div>
+ </article><article class="game-card" data-away="GB" data-home="NE">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/GB.png" alt="GB logo"><b>GB</b><span class="team-score" data-team="GB">—</span></div>
+  <div class="center"><div class="matchup">GB @ NE</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>NE</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/NE.png" alt="NE logo"><b>NE</b><span class="team-score" data-team="NE">—</span></div>
+ </article><article class="game-card" data-away="DEN" data-home="CAR">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/DEN.png" alt="DEN logo"><b>DEN</b><span class="team-score" data-team="DEN">—</span></div>
+  <div class="center"><div class="matchup">DEN @ CAR</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>DEN</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/CAR.png" alt="CAR logo"><b>CAR</b><span class="team-score" data-team="CAR">—</span></div>
+ </article><article class="game-card" data-away="DAL" data-home="IND">
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/DAL.png" alt="DAL logo"><b>DAL</b><span class="team-score" data-team="DAL">—</span></div>
+  <div class="center"><div class="matchup">DAL @ IND</div><div class="kickoff" data-kickoff>Week 9 • 2026</div><div class="pick-label">PIPELINE PICK: <strong>DAL</strong></div><div class="live-status" data-score-status>Scheduled</div></div>
+  <div class="side"><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/IND.png" alt="IND logo"><b>IND</b><span class="team-score" data-team="IND">—</span></div>
+ </article><div class="last-refresh" id="last-refresh">Live scores connecting…</div></section>
+<section id="confidence" class="page"><div class="section-title">WEEK 9 — CONFIDENCE 15 → 1</div><div class="conf-summary"><div><strong>POINTS EARNED: <span id="pointsEarned">0</span> / 120</strong><em>Maximum still possible: <span id="pointsPossible">120</span></em></div><span id="confidenceProgress">0 FINAL • 15 PENDING</span></div><div class="conf-feedback" id="confidenceFeedback" role="status">Waiting for scoreboard…</div><div class="conf-row" data-away="LVR" data-home="SF" data-pick="SF" data-points="15"><strong class="rank">15</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/SF.png" alt="SF logo"><span><b>SF over LVR</b><small>LVR @ SF · Agreement 7/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="NYJ" data-home="KC" data-pick="KC" data-points="14"><strong class="rank">14</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/KC.png" alt="KC logo"><span><b>KC over NYJ</b><small>NYJ @ KC · Agreement 7/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="ARI" data-home="SEA" data-pick="SEA" data-points="13"><strong class="rank">13</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/SEA.png" alt="SEA logo"><span><b>SEA over ARI</b><small>ARI @ SEA · Agreement 7/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="DET" data-home="MIA" data-pick="DET" data-points="12"><strong class="rank">12</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/DET.png" alt="DET logo"><span><b>DET over MIA</b><small>DET @ MIA · Agreement 7/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="TB" data-home="CHI" data-pick="CHI" data-points="11"><strong class="rank">11</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/CHI.png" alt="CHI logo"><span><b>CHI over TB</b><small>TB @ CHI · Agreement 7/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="CLE" data-home="NO" data-pick="NO" data-points="10"><strong class="rank">10</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/NO.png" alt="NO logo"><span><b>NO over CLE</b><small>CLE @ NO · Agreement 5/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="BUF" data-home="MIN" data-pick="BUF" data-points="9"><strong class="rank">9</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/BUF.png" alt="BUF logo"><span><b>BUF over MIN</b><small>BUF @ MIN · Agreement 5/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="HOU" data-home="LAC" data-pick="HOU" data-points="8"><strong class="rank">8</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/HOU.png" alt="HOU logo"><span><b>HOU over LAC</b><small>HOU @ LAC · Agreement 6/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="LAR" data-home="WAS" data-pick="LAR" data-points="7"><strong class="rank">7</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/LAR.png" alt="LAR logo"><span><b>LAR over WAS</b><small>LAR @ WAS · Agreement 6/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="CIN" data-home="ATL" data-pick="CIN" data-points="6"><strong class="rank">6</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/CIN.png" alt="CIN logo"><span><b>CIN over ATL</b><small>CIN @ ATL · Agreement 6/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="JAX" data-home="BAL" data-pick="JAX" data-points="5"><strong class="rank">5</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/JAX.png" alt="JAX logo"><span><b>JAX over BAL</b><small>JAX @ BAL · Agreement 6/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="NYG" data-home="PHI" data-pick="PHI" data-points="4"><strong class="rank">4</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/PHI.png" alt="PHI logo"><span><b>PHI over NYG</b><small>NYG @ PHI · Agreement 4/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="GB" data-home="NE" data-pick="NE" data-points="3"><strong class="rank">3</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/NE.png" alt="NE logo"><span><b>NE over GB</b><small>GB @ NE · Agreement 7/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="DEN" data-home="CAR" data-pick="DEN" data-points="2"><strong class="rank">2</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/DEN.png" alt="DEN logo"><span><b>DEN over CAR</b><small>DEN @ CAR · Agreement 6/7</small></span><span class="conf-status pending">PENDING</span></div><div class="conf-row" data-away="DAL" data-home="IND" data-pick="DAL" data-points="1"><strong class="rank">1</strong><img loading="lazy" src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/DAL.png" alt="DAL logo"><span><b>DAL over IND</b><small>DAL @ IND · Agreement 5/7</small></span><span class="conf-status pending">PENDING</span></div></section>
+<section id="survivor" class="page"><div class="section-title">WEEK 9 — SURVIVOR RESEARCH</div><div class="notice warn">Research categories only. These are not locked contest entries or guaranteed outcomes.</div><div class="sv-grid"><article class="sv-card" data-team="SEA" data-category="CHALK"><div class="sv-label">CHALK</div><div class="sv-head"><img src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/SEA.png" alt="SEA logo" loading="lazy"><div><strong>SEA</strong><div class="sv-versus">vs ARI · Week 9</div></div></div><div class="sv-metrics"><div class="sv-metric"><label>Projected win</label><b>78%</b></div><div class="sv-metric"><label>Pick popularity</label><b>25%</b></div><div class="sv-metric"><label>Future value</label><b>1.6</b></div><div class="sv-metric"><label>Relative 1-week EV</label><b>1.04</b></div></div><div class="sv-note">Most popular candidate; strong win chance but high exposure.</div><div class="sv-status">RESEARCH ONLY · NOT LOCKED</div></article><article class="sv-card" data-team="JAX" data-category="ATS 7+"><div class="sv-label">ATS 7+</div><div class="sv-head"><img src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/JAX.png" alt="JAX logo" loading="lazy"><div><strong>JAX</strong><div class="sv-versus">vs BAL · Week 9</div></div></div><div class="sv-metrics"><div class="sv-metric"><label>Projected win</label><b>81%</b></div><div class="sv-metric"><label>Pick popularity</label><b>4%</b></div><div class="sv-metric"><label>Future value</label><b>2.9</b></div><div class="sv-metric"><label>Relative 1-week EV</label><b>1.07</b></div></div><div class="sv-note">Favored by &gt;=7 points; high win probability and relatively low ownership.</div><div class="sv-status">RESEARCH ONLY · NOT LOCKED</div></article><article class="sv-card" data-team="DET" data-category="BEST USE-NOW"><div class="sv-label">BEST USE-NOW</div><div class="sv-head"><img src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/DET.png" alt="DET logo" loading="lazy"><div><strong>DET</strong><div class="sv-versus">vs MIA · Week 9</div></div></div><div class="sv-metrics"><div class="sv-metric"><label>Projected win</label><b>74%</b></div><div class="sv-metric"><label>Pick popularity</label><b>13%</b></div><div class="sv-metric"><label>Future value</label><b>0.7</b></div><div class="sv-metric"><label>Relative 1-week EV</label><b>0.98</b></div></div><div class="sv-note">Strong this-week win chance with limited future value.</div><div class="sv-status">RESEARCH ONLY · NOT LOCKED</div></article><article class="sv-card" data-team="KC" data-category="ATTACK"><div class="sv-label">ATTACK</div><div class="sv-head"><img src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/KC.png" alt="KC logo" loading="lazy"><div><strong>KC</strong><div class="sv-versus">vs NYJ · Week 9</div></div></div><div class="sv-metrics"><div class="sv-metric"><label>Projected win</label><b>81%</b></div><div class="sv-metric"><label>Pick popularity</label><b>15%</b></div><div class="sv-metric"><label>Future value</label><b>1.1</b></div><div class="sv-metric"><label>Relative 1-week EV</label><b>1.08</b></div></div><div class="sv-note">High one-week relative equity with competitive win odds.</div><div class="sv-status">RESEARCH ONLY · NOT LOCKED</div></article><article class="sv-card" data-team="HOU" data-category="LOW OWNERSHIP"><div class="sv-label">LOW OWNERSHIP</div><div class="sv-head"><img src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/HOU.png" alt="HOU logo" loading="lazy"><div><strong>HOU</strong><div class="sv-versus">vs LAC · Week 9</div></div></div><div class="sv-metrics"><div class="sv-metric"><label>Projected win</label><b>66%</b></div><div class="sv-metric"><label>Pick popularity</label><b>1%</b></div><div class="sv-metric"><label>Future value</label><b>1.6</b></div><div class="sv-metric"><label>Relative 1-week EV</label><b>0.87</b></div></div><div class="sv-note">Very low forecast ownership; significantly greater upset risk.</div><div class="sv-status">RESEARCH ONLY · NOT LOCKED</div></article><article class="sv-card" data-team="BUF" data-category="VALUE"><div class="sv-label">VALUE</div><div class="sv-head"><img src="https://raw.githubusercontent.com/thepipelineedge/THEPIPELINEEDGE/main/assets/week9-v11/BUF.png" alt="BUF logo" loading="lazy"><div><strong>BUF</strong><div class="sv-versus">vs MIN · Week 9</div></div></div><div class="sv-metrics"><div class="sv-metric"><label>Projected win</label><b>64%</b></div><div class="sv-metric"><label>Pick popularity</label><b>0%</b></div><div class="sv-metric"><label>Future value</label><b>2.3</b></div><div class="sv-metric"><label>Relative 1-week EV</label><b>0.85</b></div></div><div class="sv-note">Very low forecast ownership; aggressive high-variance alternative.</div><div class="sv-status">RESEARCH ONLY · NOT LOCKED</div></article></div></section>
+<section id="about" class="page"><div class="section-title">ABOUT THE PIPELINE EDGE™</div><div class="about"><h3>Data-driven NFL research</h3><p>THE PIPELINE EDGE™ tracks straight-up picks, model agreement, confidence rankings, Survivor research and weekly results.</p><p>Our Python Command Center drives this week's 15 selections. The L14 three-way scoring checkpoint remains an internal research diagnostic; it does not override official straight-up picks.</p><p>Selections are informational and may change before kickoff. No result is guaranteed.</p><h3>Responsible play</h3><p>Only participate in legal contests where permitted. For help with problem gambling visit <a href="https://www.ncpgambling.org/" rel="noopener">NCPG</a>.</p><p><small>Week 9 V13 · Web review export</small></p></div></section></main>
+<nav role="tablist" aria-label="Main menu"><button class="active" data-tab="picks" aria-selected="true" type="button">Picks</button><button data-tab="confidence" aria-selected="false" type="button">Confidence</button><button data-tab="survivor" aria-selected="false" type="button">Survivor</button><button data-tab="about" aria-selected="false" type="button">About</button></nav><script>
+(()=>{'use strict';
+const TOTAL=15;
+const canon=s=>{const x=String(s||'').toUpperCase().replace(/[^A-Z]/g,'');const aliases={LV:'LVR',OAK:'LVR',WSH:'WAS',LA:'LAR',JAC:'JAX',ARZ:'ARI',SD:'LAC',STL:'LAR'};return aliases[x]||x;};
+const refreshEl=document.getElementById('last-refresh');
+const feedback=document.getElementById('confidenceFeedback');
+const pointEl=document.getElementById('pointsEarned');
+const progressEl=document.getElementById('confidenceProgress');
+const potentialEl=document.getElementById('pointsPossible');
+const rows=Array.from(document.querySelectorAll('.conf-row'));
+const maxPoints=rows.reduce((sum,row)=>sum+Number(row.dataset.points||0),0);
+if(rows.length!==15||maxPoints!==120||new Set(rows.map(r=>Number(r.dataset.points))).size!==15){
+  feedback.textContent='Confidence setup needs verification: expected 15 ranks totaling 120.';
+}else{feedback.textContent='Points are awarded only when games become final. Scores refresh every 30 seconds when available.';}
+document.querySelectorAll('nav button').forEach(btn=>btn.addEventListener('click',()=>{
+  const target=btn.dataset.tab;
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===target));
+  document.querySelectorAll('nav button').forEach(b=>{let on=b.dataset.tab===target;b.classList.toggle('active',on);b.setAttribute('aria-selected',String(on))});
 }));
-refreshScores();
-setInterval(refreshScores,30000);
-</script>
-<script id="week8-v12-python-data" type="application/json">{"source_python":"THE_PIPELINE_EDGE_WEEK9_V11_L14_WORKING.py","week":9,"season":2026,"su_picks":{"LVR @ SF":"SF","NYJ @ KC":"KC","ARI @ SEA":"SEA","DET @ MIA":"DET","TB @ CHI":"CHI","CLE @ NO":"NO","BUF @ MIN":"BUF","HOU @ LAC":"HOU","LAR @ WAS":"LAR","CIN @ ATL":"CIN","JAX @ BAL":"JAX","NYG @ PHI":"PHI","GB @ NE":"NE","DEN @ CAR":"DEN","DAL @ IND":"DAL"},"confidence_ranks":{"LVR @ SF":15,"NYJ @ KC":14,"ARI @ SEA":13,"DET @ MIA":12,"TB @ CHI":11,"CLE @ NO":10,"BUF @ MIN":9,"HOU @ LAC":8,"LAR @ WAS":7,"CIN @ ATL":6,"JAX @ BAL":5,"NYG @ PHI":4,"GB @ NE":3,"DEN @ CAR":2,"DAL @ IND":1},"confidence_basis":"Week 9 V11 frozen 13-layer rankings; L14 scoring is diagnostic only","l14_three_way_score_check":{"LVR @ SF":{"l14_away":19.56,"l14_home":30.0,"market_away":21.33,"market_home":30.17,"eff_away":20.45,"eff_home":26.4,"status":"3-WAY MATCH"},"NYJ @ KC":{"l14_away":15.7,"l14_home":28.69,"market_away":19.87,"market_home":28.63,"eff_away":18.34,"eff_home":26.0,"status":"3-WAY MATCH"},"ARI @ SEA":{"l14_away":18.7,"l14_home":31.96,"market_away":15.91,"market_home":23.59,"eff_away":20.11,"eff_home":26.82,"status":"3-WAY MATCH"},"DET @ MIA":{"l14_away":29.57,"l14_home":24.31,"market_away":27.48,"market_home":22.02,"eff_away":26.32,"eff_home":23.34,"status":"3-WAY MATCH"},"TB @ CHI":{"l14_away":20.49,"l14_home":26.3,"market_away":20.98,"market_home":26.52,"eff_away":21.37,"eff_home":25.46,"status":"3-WAY MATCH"},"CLE @ NO":{"l14_away":17.14,"l14_home":20.95,"market_away":19.47,"market_home":23.03,"eff_away":19.4,"eff_home":22.52,"status":"3-WAY MATCH"},"BUF @ MIN":{"l14_away":19.75,"l14_home":22.2,"market_away":23.13,"market_home":20.37,"eff_away":23.55,"eff_home":22.77,"status":"2 OF 3 MATCH"},"HOU @ LAC":{"l14_away":20.5,"l14_home":19.95,"market_away":22.87,"market_home":17.63,"eff_away":22.53,"eff_home":21.26,"status":"3-WAY MATCH"},"LAR @ WAS":{"l14_away":31.73,"l14_home":21.51,"market_away":25.58,"market_home":21.92,"eff_away":26.19,"eff_home":22.01,"status":"3-WAY MATCH"},"CIN @ ATL":{"l14_away":23.02,"l14_home":22.11,"market_away":27.51,"market_home":24.99,"eff_away":22.85,"eff_home":22.36,"status":"3-WAY MATCH"},"JAX @ BAL":{"l14_away":25.67,"l14_home":22.99,"market_away":24.23,"market_home":16.27,"eff_away":24.6,"eff_home":23.65,"status":"3-WAY MATCH"},"NYG @ PHI":{"l14_away":19.96,"l14_home":24.21,"market_away":20.11,"market_home":18.39,"eff_away":21.0,"eff_home":23.88,"status":"2 OF 3 MATCH"},"GB @ NE":{"l14_away":20.04,"l14_home":25.49,"market_away":20.77,"market_home":23.73,"eff_away":21.15,"eff_home":24.48,"status":"3-WAY MATCH"},"DEN @ CAR":{"l14_away":20.93,"l14_home":20.36,"market_away":23.49,"market_home":21.01,"eff_away":22.11,"eff_home":22.07,"status":"3-WAY MATCH"},"DAL @ IND":{"l14_away":29.62,"l14_home":34.83,"market_away":27.83,"market_home":23.67,"eff_away":26.52,"eff_home":26.96,"status":"SCORE CONFLICT"}},"survivor_six_categories":[{"category":"CHALK","team":"SEA","opponent":"ARI","win_pct":"78.0","ownership_pct":"25.0","relative_one_week_survivor_EV":"1.042065","future_value_external":"1.6","status":"WEEK 9 RESEARCH CANDIDATE — NOT LOCKED"},{"category":"ATS 7+","team":"JAX","opponent":"BAL","win_pct":"81.0","ownership_pct":"4.0","relative_one_week_survivor_EV":"1.073971","future_value_external":"2.9","status":"WEEK 9 RESEARCH CANDIDATE — NOT LOCKED"},{"category":"BEST USE-NOW","team":"DET","opponent":"MIA","win_pct":"74.0","ownership_pct":"13.0","relative_one_week_survivor_EV":"0.975027","future_value_external":"0.7","status":"WEEK 9 RESEARCH CANDIDATE — NOT LOCKED"},{"category":"ATTACK","team":"KC","opponent":"NYJ","win_pct":"81.0","ownership_pct":"15.0","relative_one_week_survivor_EV":"1.084476","future_value_external":"1.1","status":"WEEK 9 RESEARCH CANDIDATE — NOT LOCKED"},{"category":"LOW OWNERSHIP","team":"HOU","opponent":"LAC","win_pct":"66.0","ownership_pct":"1.0","relative_one_week_survivor_EV":"0.871346","future_value_external":"1.6","status":"WEEK 9 RESEARCH CANDIDATE — NOT LOCKED"},{"category":"VALUE","team":"BUF","opponent":"MIN","win_pct":"64.0","ownership_pct":"0.0","relative_one_week_survivor_EV":"0.846041","future_value_external":"2.3","status":"WEEK 9 RESEARCH CANDIDATE — NOT LOCKED"}],"data_cutoffs":{"L14":"2025 baseline plus 2026 NFLverse through Week 5","market":"Nov 6 pregame working snapshot; not closing","team_DVOA":"2026 through Week 8"}}</script></body>
-</html>
+const url='https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?year=2026&seasontype=2&week=9';
+function showResults(map){
+  let earned=0,finalCount=0,wins=0,losses=0,ties=0,pending=0;
+  document.querySelectorAll('.game-card').forEach(card=>{
+    const item=map.get(card.dataset.away+'@'+card.dataset.home);if(!item)return;
+    const {ev,away,home}=item;
+    const date=ev.date?new Date(ev.date):null;
+    const time=card.querySelector('[data-kickoff]');
+    if(date&&!isNaN(date))time.textContent=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).format(date)+' ET';
+    for(const side of [away,home]){
+      const el=card.querySelector('[data-team="'+canon(side.team?.abbreviation)+'"]');
+      if(el)el.textContent=(side.score===undefined||side.score===null)?'—':side.score;
+    }
+    card.querySelector('[data-score-status]').textContent=ev.status?.type?.shortDetail||ev.status?.type?.description||'Scheduled';
+  });
+  rows.forEach(row=>{
+    const key=row.dataset.away+'@'+row.dataset.home;
+    const item=map.get(key);
+    const status=row.querySelector('.conf-status');
+    if(!item||!item.ev.status?.type?.completed){
+       pending++;status.textContent=item?.ev?.status?.type?.state==='in'?'LIVE':'PENDING';status.className='conf-status pending';return;
+    }
+    const a=Number(item.away.score),h=Number(item.home.score);
+    if(item.away.score===undefined||item.home.score===undefined||!Number.isFinite(a)||!Number.isFinite(h)){
+      pending++;status.textContent='VERIFY';status.className='conf-status pending';return;
+    }
+    finalCount++;
+    if(a===h){ties++;status.textContent='TIE';status.className='conf-status pending';return;}
+    const winner=a>h?row.dataset.away:row.dataset.home;
+    const ok=winner===row.dataset.pick;
+    if(ok){earned+=Number(row.dataset.points);wins++;}else{losses++;}
+    status.textContent=ok?'WIN':'LOSS';status.className='conf-status '+(ok?'won':'lost');
+  });
+  pointEl.textContent=earned;
+  progressEl.textContent=finalCount+' FINAL • '+pending+' PENDING';
+  potentialEl.textContent=(maxPoints-rows.filter(row=>row.querySelector('.conf-status').textContent==='LOSS').reduce((s,r)=>s+Number(r.dataset.points),0));
+  feedback.textContent=wins+' correct • '+losses+' incorrect • '+ties+' tied • '+pending+' ungraded. '+earned+' of '+maxPoints+' earned.';
+}
+async function refresh(){try{
+  const resp=await fetch(url,{cache:'no-store'});if(!resp.ok)throw new Error('HTTP '+resp.status);
+  const payload=await resp.json();if(!Array.isArray(payload.events))throw new Error('Incomplete scoreboard');
+  const map=new Map();
+  for(const ev of payload.events){const competitors=ev.competitions?.[0]?.competitors||[];
+    const away=competitors.find(x=>x.homeAway==='away'),home=competitors.find(x=>x.homeAway==='home');
+    if(away&&home)map.set(canon(away.team?.abbreviation)+'@'+canon(home.team?.abbreviation),{away,home,ev});
+  }
+  if(!map.size)throw new Error('No scoreboard games');
+  showResults(map);
+  refreshEl.textContent='Scores checked: '+new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York'})+' ET';
+}catch(err){
+  refreshEl.textContent='Live score service unavailable; picks remain visible';
+  feedback.textContent='Score updates unavailable. Points cannot be verified until the scoreboard reconnects.';
+}}
+refresh();setInterval(refresh,30000);
+})();
+</script></body></html>
